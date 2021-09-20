@@ -16,8 +16,8 @@
             <div class="col-md-3 logo"><img src="{{ asset('Images/AfriLabLogo.png') }}" width="40%"></div>
             <div class="col-md-9">
                 <div class="row">
-                    <div class="col-md-3 item">Réception</div>
-                    <div class="col-md-3 item">Salle de Pese</div>
+                    <div class="col-md-3 item btn">Réception</div>
+                    <div class="col-md-3 item btn">Salle de Pese</div>
                     <div class="col-md-3 item">Salle Analyse</div>
                     <div class="col-md-3 item">Login</div>
                 </div>
