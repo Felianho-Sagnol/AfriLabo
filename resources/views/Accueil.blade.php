@@ -10,3 +10,25 @@
    
     <title>AfriLab</title>
 </head>
+<body>
+    <nav>
+        <div class="row container">
+            <div class="col-md-3"><img src="{{ asset('Images/LogoAfriLab.svg') }}"></div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-3 item">Réception</div>
+                    <div class="col-md-3 item">2</div>
+                    <div class="col-md-3 item">3</div>
+                    <div class="col-md-3 item">4</div>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <img src="{{ asset('Images/LogoAfriLab.svg') }}">
+    <footer>
+        <div class="foot_title"> Laboratoire Africain des mines et l'environnement</div>
+        <div class="foot_subTitle">No 344, zone industrielle Sidi Ghanem- Marrakech</div>
+
+    </footer>
+</body>
