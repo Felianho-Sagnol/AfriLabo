@@ -4,21 +4,35 @@ body{
    /* background-color: rgb(144, 179, 179); */
    
 }
+.logo{
+    transform: translateY(-20%);
+}
 nav{
-    border-bottom: 1px solid rgb(240, 236, 25);
+    border-bottom: 1px solid #f9bc14;
     height: 15vh;
     padding-top: 2%;
     position: fixed;
     width: 100%;
 }
 .item{
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 10px;
-    border: 2px solid red;
+    border: 1px solid #034a78;
     height: auto;
     text-align: center;
     cursor: pointer;
     height: 7vh;
-    padding: 5px;
+    padding: 2px;
+    position: relative;
+    transform: translateX(5%);
+    color: black;
+    box-shadow: inset 0 0 0 0 #034a78;
+}
+.item:hover{
+    box-shadow: inset 300px 0 0 0 #034a78;
+    transition: all .5s ease;
+    color: #f9bc14;
 }
 footer{
     background-color: #034a78 ;
