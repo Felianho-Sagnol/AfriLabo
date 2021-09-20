@@ -31,7 +31,7 @@ nav{
 }
 .item:hover{
     box-shadow: inset 300px 0 0 0 #034a78;
-    transition: all .5s ease;
+    transition: all .25s ease-in-out;
     color: #f9bc14;
 }
 footer{
