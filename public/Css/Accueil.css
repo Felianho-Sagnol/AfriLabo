@@ -1,7 +1,7 @@
 body{
      /* #034a78 */
-    /* overflow: hidden; */
-   /* background-color: rgb(144, 179, 179); */
+    overflow-x: hidden;
+   background-image: url('../Images/background.jpg') ;
    
 }
 .logo{
@@ -13,6 +13,7 @@ nav{
     padding-top: 2%;
     position: fixed;
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 .item{
     font-size: 25px;
@@ -32,8 +33,15 @@ nav{
 .item:nth-child(4){
     transform: translateX(190%);
     background: none;
+    color:white !important;
     box-shadow: none !important;
     width: auto;
+    border: 1px solid #f9bc14 !important;
+    opacity: 0.5;
+}
+.item:nth-child(4):hover{
+    opacity: 1;
+    transition: all .2 ease-in-out;
 }
 .item:nth-child(3){
     transform: translateX(30%);
@@ -43,7 +51,7 @@ nav{
 }
 .item:hover{
     box-shadow: inset 300px 0 0 0 #034a78;
-    transition: all .25s ease-in-out;
+    transition: all .2s ease;
     color: #f9bc14;
 }
 footer{
@@ -55,6 +63,7 @@ footer{
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
+    box-shadow: 0px 0px 10px black;
 }
 .foot_subTitle{
     font-size: 20px;
