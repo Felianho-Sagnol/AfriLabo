@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ReceptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Accueil');
-});
-Route::get('/Reception',function(){ return view('Reception/Reception'); })->name('reception');
+Route::get('/',[Controller::class,'home'])->name('home');
+
+Route::get('/reception',[ReceptionController::class,'reception'])->name('reception');
