@@ -50,7 +50,7 @@
                             <input placeholder="Mot de Passe" type="password" class="input">
                         </div>
                         <a href="#" class="link">Mot de passe oublié ?</a>
-                        <button class="btn" type="button">Connexion</button>
+                        <button class="btn connexion" type="button">Connexion</button>
                     </form>
                 </div>
 

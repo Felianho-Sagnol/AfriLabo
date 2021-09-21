@@ -3,5 +3,5 @@
     <h2>Réception d'echantilllon</h2>
 @endsection
 @section('containPage')
-    Apprendre les concepts fondamentaux 
+    contenu de la page
 @endsection

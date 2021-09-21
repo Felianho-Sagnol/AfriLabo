@@ -1,5 +1,10 @@
 $(function(){
     $('.formReception').hide(  ).delay( 100 ).show( 200 );
+    $('.connexion').click(function(){
+      $('.formReception').hide();
+    });
+    
+
 
 
     let tabs = document.querySelectorAll(".tab-link:not(.desactive)");
