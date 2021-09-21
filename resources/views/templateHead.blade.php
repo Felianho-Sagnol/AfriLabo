@@ -25,7 +25,7 @@
         <!-- <link rel="stylesheet" href="{{asset('css/sectionsContent/section_css.css')}}" /> -->
     </head>
 <body>
-    <section>
+    <section class="toHide">
         <div class="headBar row">
             <div class="col-md-5"> <img src="{{ asset('Images/AfriLabLogo.png') }}" width="15%"></div>
             <div class="col-md-7 title"> @yield('title')</div>

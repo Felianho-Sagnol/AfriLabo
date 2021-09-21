@@ -1,9 +1,20 @@
 $(function(){
-    $('.formReception').hide(  ).delay( 100 ).show( 200 );
-    $('.connexion').click(function(){
-      $('.formReception').hide();
+  if (1) {
+    $('.formReception').hide( ).delay( 50 ).show( 200 );
+    $('.toHide').css({
+      "filter": "blur(5px)",
+      "cursor": "wait"
     });
-    
+    $('.connexion').click(function(){
+      if (1) {
+        $('.formReception').hide(100);
+        $('toHide').css({
+          "filter": "blur(0px)",
+          "transiton":"all 2s ease",
+        });
+      }
+    });
+  }  
 
 
 
