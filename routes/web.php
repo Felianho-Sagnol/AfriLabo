@@ -16,8 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Accueil');
 });
-<<<<<<< HEAD
-
-Route::get('/Reception',function(){ return view('Reception/Reception'); });
-=======
->>>>>>> 8667687600988d25c2c68b70b3ac6378b7b44d6c
+Route::get('/Reception',function(){ return view('Reception/Reception'); })->name('reception');
