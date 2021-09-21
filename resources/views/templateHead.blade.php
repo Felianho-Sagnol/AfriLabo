@@ -44,11 +44,11 @@
                     <form>
                         <div class="rowTab">
                             <i class="far fa-user"></i>
-                            <input type="text" class="input" placeholder="Entrez votre Nom">
+                            <input id="conncexionName" type="text" class="input" placeholder="Entrez votre Nom">
                         </div>
                         <div class="rowTab">
                             <i class="fas fa-lock"></i>
-                            <input placeholder="Mot de Passe" type="password" class="input">
+                            <input id="connexionPassword" placeholder="Mot de Passe" type="password" class="input">
                         </div>
                         <a href="#" class="link">Mot de passe oublié ?</a>
                         <button class="btn connexion" type="button">Connexion</button>
@@ -59,17 +59,17 @@
                     <form>
                         <div class="rowTab">
                             <i class="far fa-user"></i>
-                            <input type="email" class="input" placeholder="Entrez votre Nom">
+                            <input id="registerName" type="text" class="input" placeholder="Entrez votre Nom">
                         </div>
                         <div class="rowTab">
                         <i class="fas fa-lock"></i>
-                        <input type="password" class="input" placeholder="Mot de Passe">
+                        <input id="registerPassword" type="password" class="input" placeholder="Mot de Passe">
                         </div>
                         <div class="rowTab">
                         <i class="fas fa-lock"></i>
-                        <input type="password" class="input" placeholder="Confirmer Mot de Passe">
+                        <input id="registerPasswordComfirm" type="password" class="input" placeholder="Confirmer Mot de Passe">
                         </div>
-                        <button class="btn" type="button">Inscription</button>
+                        <button class="btn inscription" type="button">Inscription</button>
                     </form>
                 </div>
 
