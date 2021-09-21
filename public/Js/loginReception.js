@@ -1,4 +1,7 @@
 $(function(){
+    $('.formReception').hide(  ).delay( 100 ).show( 200 );
+
+
     let tabs = document.querySelectorAll(".tab-link:not(.desactive)");
 
     tabs.forEach((tab) => {
@@ -23,5 +26,8 @@ $(function(){
     }
     
     document.querySelector(".tab-link.active").click();
+
     
+
+
 });

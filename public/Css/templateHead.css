@@ -3,24 +3,40 @@
 * {
   box-sizing: border-box;
 }
-
-n.headBar{
-    width: 100%;
+body{
+  overflow: hidden;
 }
-body {
+.headBar{
+width: auto;
+background-color:rgba(3, 73, 119,0.6);
+font-family: Georgia, 'Times New Roman', Times, serif;
+color: white;
+font-weight: bold;
+margin: 2px;
+
+}
+.title {
+  padding-top: 13px;
+  font-size:35px;
+
+}
+.formReception {
   margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
+  z-index: 2;
+  /* visibility: hidden; */
+  top: -20vh;
 }
-
-.container {
+.formReception .container {
   position: relative;
   width: 35%;
   min-height: 490px;
-  height: auto;
+  height: 500px;
   max-height: 520px;
 border: 1px solid #f9bc14;
   padding: 15px 25px;
@@ -40,7 +56,7 @@ border: 1px solid #f9bc14;
   border-radius: 50%;
   box-shadow: 0 3px 3px black;
   font-size: 1.8em;
-  background-color: #034a78;
+  background-color: rgb(3, 73, 119);
   color: #f0f6fb;
   display: flex;
   justify-content: center;
@@ -64,8 +80,7 @@ border: 1px solid #f9bc14;
 .tab-body.active {
   display: block;
 }
-
-.row {
+.formReception .rowTab {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #f9bc14;
@@ -73,7 +88,7 @@ border: 1px solid #f9bc14;
   margin: 20px 0;
 }
 
-.row .input {
+.formReception .rowTab .input {
   width: 90%;
   border: none;
   outline: none;
@@ -126,7 +141,7 @@ border: 1px solid #f9bc14;
 
 .tab-link {
   text-decoration: none;
-  color: #6ba1f9ee;
+  color: #034a78;
   margin: 0 3%;
 }
 
