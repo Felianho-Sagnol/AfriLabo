@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReceptionController;
+use App\Http\Controllers\APIReceptorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,13 @@ use App\Http\Controllers\ReceptionController;
 
 Route::get('/',[Controller::class,'home'])->name('home');
 
+/********************Recetion ROUTING******************/
 Route::get('/reception',[ReceptionController::class,'reception'])->name('reception');
+
+
+/********************Receptor API ROUTING******************/
+Route::get('/register',[APIReceptorController::class,'registerReceptor'])->name('registerReceptor');
+Route::get('/login',[APIReceptorController::class,'login'])->name('login');
+Route::get('/isLoggedIn',[APIReceptorController::class,'isLoggedIn'])->name('isLoggedIn');
+Route::get('/logout',[APIReceptorController::class,'logout'])->name('logout');
+
