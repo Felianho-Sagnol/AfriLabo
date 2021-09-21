@@ -24,8 +24,9 @@
     </head>
     <body>
 
-    <div class="container-fuild">
-        @yield('title')
+    <div class="headBar row">
+        <div class="col-md-3"> <img src="{{ asset('Images/AfriLabLogo.png') }}" width="10%"></div>
+        <div class="col-md-9"> @yield('title')</div>
     </div>
 
 <div class="formReception">

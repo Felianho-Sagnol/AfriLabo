@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+n.headBar{
+    width: 100%;
+}
 body {
   margin: 0;
   display: flex;
@@ -24,6 +27,7 @@ border: 1px solid #f9bc14;
   border-radius: 10px;
   font-size: 18px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -128,6 +132,7 @@ border: 1px solid #f9bc14;
 
 .tab-link.active {
   font-weight: bold;
+  color: black;
 }
 
 @media screen and (max-width: 520px) {
