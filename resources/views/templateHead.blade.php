@@ -27,8 +27,9 @@
 <body>
     <section class="toHide">
         <div class="headBar row">
-            <div class="col-md-5"> <img src="{{ asset('Images/AfriLabLogo.png') }}" width="15%"></div>
-            <div class="col-md-7 title"> @yield('title')</div>
+            <div class="col-md-3"> <img src="{{ asset('Images/AfriLabLogo.png') }}" width="15%"></div>
+            <div class="col-md-5 title"> @yield('title')</div>
+            <div class="col-md-3 logout"> Déconnexion</div>
         </div>
         @yield('containPage')
     </section>

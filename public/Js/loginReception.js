@@ -10,7 +10,7 @@ $(function(){
         $('.formReception').hide(100);
         $('.toHide').css({
           "filter": "blur(0px)",
-          "cursor": "wait"
+          "cursor": "auto"
         });
       }
     });

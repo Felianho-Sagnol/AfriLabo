@@ -7,12 +7,14 @@ body{
   overflow: hidden;
 }
 .headBar{
+  position: static;
 width: auto;
 background-color:rgba(3, 73, 119,0.6);
 font-family: Georgia, 'Times New Roman', Times, serif;
 color: white;
 font-weight: bold;
 margin: 2px;
+box-shadow: 0px 0px 5px black;
 
 }
 .title {
@@ -45,7 +47,24 @@ border: 1px solid #f9bc14;
   font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
+.logout{
+  border: 1px solid #f9bc14;
+  border-radius: 10px;
+  font-size: 20px;
+  width: auto;
+  height: 25%;
+  margin-top: 5px;
+  padding: 5px;
+  text-align: center;
+  opacity: 0.9;
+  transform: translateX(100px);
+}
+.logout:hover{
+  background-color:#034a78 ;
+  border: 1px solid white;
+  transition: all 0.3 ease;
+  opacity: 1;
+} 
 .logo {
   position: absolute;
   /* top: 2%; */
