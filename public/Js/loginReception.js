@@ -8,9 +8,9 @@ $(function(){
     $('.connexion').click(function(){
       if (1) {
         $('.formReception').hide(100);
-        $('toHide').css({
+        $('.toHide').css({
           "filter": "blur(0px)",
-          "transiton":"all 2s ease",
+          "cursor": "wait"
         });
       }
     });
