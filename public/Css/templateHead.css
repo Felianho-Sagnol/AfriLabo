@@ -4,7 +4,9 @@
 }
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
+    background-image: url('../Images/background2.jpg') ;
+    background-repeat: no-repeat;
 }
 
 .headBar {

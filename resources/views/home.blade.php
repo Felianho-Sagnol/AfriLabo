@@ -13,7 +13,7 @@
 <body>
     <nav>
         <div class="row container">
-            <div class="col-md-3 logo"><img src="{{ asset('Images/AfriLabLogo.png') }}" width="40%"></div>
+            <div class="col-md-3 logo"><img src="{{ asset('Images/logoAfriLab.png') }}" width="80%"></div>
             <div class="col-md-9">
                 <div class="row">
                     <div class="col-md-3 item btn reception">Réception</div>
