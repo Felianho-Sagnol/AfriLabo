@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReceptionController;
 use App\Http\Controllers\APIReceptorController;
+use App\Http\Controllers\receptionMailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,6 @@ Route::get('/register',[APIReceptorController::class,'registerReceptor'])->name(
 Route::get('/login',[APIReceptorController::class,'login'])->name('login');
 Route::get('/isLoggedIn',[APIReceptorController::class,'isLoggedIn'])->name('isLoggedIn');
 Route::get('/logout',[APIReceptorController::class,'logout'])->name('logout');
+Route::get('/bar',[receptionMailController::class,'bar'])->name('bar');
+
 
