@@ -16,6 +16,7 @@ class CreateRecepteursTable extends Migration
         Schema::create('recepteurs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('matricule');
             $table->string('password');
             $table->dateTime('created_at');
         });
