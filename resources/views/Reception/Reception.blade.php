@@ -8,11 +8,11 @@
         <div class="row line">
             <div class="col-md-6">
                 <label class="ombre" for="demandeur">Demandeur :</label>
-                <input id="conncexionName" type="text" class="input" placeholder="Demandeur">
+                <input id="2" type="text" class="input" placeholder="Demandeur">
             </div>
             <div class="col-md-6">
                 <label class="ombre" for="societe">Société :</label>
-                <input id="conncexionName" type="text" class="input" placeholder="Sociéte">
+                <input id="1" type="text" class="input" placeholder="Sociéte">
             </div>
         </div>
         <div class="row line">
