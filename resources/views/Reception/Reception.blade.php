@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
-@extends('templateHead')
-@section('title')
-    <h2>Réception des echantilllons</h2>
-@endsection
-@section('containPage')
+    @extends('templateHead')
+    @section('title')
+        <h2>Réception des echantilllons</h2>
+    @endsection
+    @section('containPage')
     <div class="row tab1 toHide">
         <div class="row line">
             <div class="col-md-6">
