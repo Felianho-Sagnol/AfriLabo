@@ -75,9 +75,10 @@
         <label class="ombre" for="nbrEch">Nombre d'echantillons:</label>
            <select name="etat" id="etat">
                 <option value="">Nombre</option>
-                <option value="1" >1</option>
-                <option value="2" >2</option>
-                <option value="3">3</option>
+                <?php $nombre=27?>
+                @foreach( $nombre as $coach)
+                    <option  value = '{{ $coach}}'>{{ $coach}}</option>
+                @endforeach
            </select >
     </div>
     <table class="tab2">
