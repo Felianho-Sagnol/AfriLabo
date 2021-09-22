@@ -6,12 +6,13 @@ export function receteurLogin() {
         localData = data
     }).then(() => {
         if (!localData.isLoggedIn) {
-            console.log('not logged in')
+            // console.log('not logged in')
             $('.formReception').hide().delay(50).show(100);
             $('.toHide').css({
                 "filter": "blur(5px)",
                 "cursor": "wait"
             });
+            $('.logout').hide();
             $('.connexion').click(function() {
                 let name = $('#conncexionName').val()
                 let password = $('#connexionPassword').val()
@@ -22,7 +23,7 @@ export function receteurLogin() {
                 console.log("name " + name)
 
                 if (nameError || passwordError) {
-                    $('.errorLogin').text("Veillez saisir correctement toutes informations")
+                    $('.errorLogin').text("Veillez saisir correctement toutes les informations")
                     // console.log('Veillez saisir correctement toutes informations')
                 } else {
                     let url = "http://127.0.0.1:8000/login"
@@ -39,6 +40,8 @@ export function receteurLogin() {
                                 "filter": "blur(0px)",
                                 "cursor": "auto"
                             });
+                             $('.logout').show();
+
                         } else {
                              $('.errorLogin').text("Aucun compte trouvé ")
 
@@ -70,8 +73,7 @@ export function receteurRegister() {
         if (passwordConfirm.length < 6) passwordError = true
 
         if (nameError || passwordError) {
-            //affichage
-            console.log('une grave erreur')
+            $('.errorSignin').text("Veillez saisir correctement toutes les informations")
         } else {
             let status
             let comfirmErorStatus
@@ -89,10 +91,15 @@ export function receteurRegister() {
                         "cursor": "auto"
                     });
                     receteurLogin()
+                    $('.errorSignin').text("Votre compte a été crée ; Passe à  la connexion ").css({
+                        "color":"green"
+                    })
+
                 }
                 if (comfirmErorStatus) {
-                    //affichage de l'erreur sans compte
-                    console.log('les deux pawword ne sont pas identiques.')
+                    $('.errorSignin').text("les deux mots de passe ne sont pas identiques.")
+                        //affichage de l'erreur sans compte
+                    // console.log('les deux pawword ne sont pas identiques.')
                 }
             })
 

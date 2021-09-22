@@ -45,7 +45,7 @@
                     <form>
                         <div class="rowTab">
                             <i class="far fa-user"></i>
-                            <input id="conncexionName" type="text" class="input" placeholder="Entrez votre Nom">
+                            <input id="conncexionName" type="text" class="input" placeholder="Matricule">
                         </div>
                         <div class="rowTab">
                             <i class="fas fa-lock"></i>
@@ -57,21 +57,26 @@
                 </div>
 
                 <div class="tab-body" data-id="inscription">
-                    <span class="errorSigin">bien</span>
+                    <span class="errorSignin"></span>
 
                     <form>
+                        <div class="rowTab">
+                            <i class="fas fa-passport"></i>
+                            <input id="registerPasswordComfirm" type="text" class="input" placeholder="Matricule">
+                        </div>
                         <div class="rowTab">
                             <i class="far fa-user"></i>
                             <input id="registerName" type="text" class="input" placeholder="Entrez votre Nom">
                         </div>
                         <div class="rowTab">
-                        <i class="fas fa-lock"></i>
-                        <input id="registerPassword" type="password" class="input" placeholder="Mot de Passe">
+                            <i class="fas fa-lock"></i>
+                            <input id="registerPassword" type="password" class="input" placeholder="Mot de Passe">
                         </div>
                         <div class="rowTab">
-                        <i class="fas fa-lock"></i>
-                        <input id="registerPasswordComfirm" type="password" class="input" placeholder="Confirmer Mot de Passe">
+                            <i class="fas fa-lock"></i>
+                            <input id="registerPasswordComfirm" type="password" class="input" placeholder="Confirmer Mot de Passe">
                         </div>
+                   
                         <button class="btn inscription" type="button">Inscription</button>
                     </form>
                 </div>
