@@ -1,7 +1,7 @@
 $(function(){
     $( "select" ).change(function () {
       var str = "";
-      $( "select option:selected" ).each(function() {
+      $( "#etat option:selected" ).each(function() {
         str = $( this ).text() ;
         if (str=="Solide") {
             console.log("echantillon solide ")

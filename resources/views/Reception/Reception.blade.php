@@ -73,7 +73,7 @@
     </div>
     <div>
         <label class="ombre" for="nbrEch">Nombre d'echantillons:</label>
-           <select name="etat" id="etat">
+           <select name="nombre" >
                 <option value="">Nombre</option>
                 <option value="1" >1</option>
                 <option value="2" >2</option>
