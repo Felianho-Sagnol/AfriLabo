@@ -7,7 +7,7 @@ export function receteurLogin() {
     }).then(() => {
         if (!localData.isLoggedIn) {
             console.log('not logged in')
-            $('.formReception').hide().delay(50).show(200);
+            $('.formReception').hide().delay(50).show(100);
             $('.toHide').css({
                 "filter": "blur(5px)",
                 "cursor": "wait"
@@ -22,8 +22,8 @@ export function receteurLogin() {
                 console.log("name " + name)
 
                 if (nameError || passwordError) {
-                    //affichage
-                    console.log('une grave erreur')
+                    $('.errorLogin').text("Veillez saisir correctement toutes informations")
+                    // console.log('Veillez saisir correctement toutes informations')
                 } else {
                     let url = "http://127.0.0.1:8000/login"
                     let localData
@@ -31,7 +31,7 @@ export function receteurLogin() {
                     $.get(url, { name: name, password: password }, (data) => {
                         localData = data
                     }).then(() => {
-                        console.log(localData)
+                        // console.log(localData)
                         status = localData.success
                         if (status) {
                             $('.formReception').hide(100);
@@ -40,7 +40,9 @@ export function receteurLogin() {
                                 "cursor": "auto"
                             });
                         } else {
-                            console.log('Aucun compte trouvé pour ce recepteur')
+                             $('.errorLogin').text("Aucun compte trouvé ")
+
+                            // console.log("Aucun compte trouvé pour ce recepteur")
                         }
                     })
 

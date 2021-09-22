@@ -4,7 +4,7 @@
     <h2>Réception des echantilllons</h2>
 @endsection
 @section('containPage')
-    <div class="row tab1">
+    <div class="row tab1 toHide">
         <div class="row line">
             <div class="col-md-6">
                 <label class="ombre" for="demandeur">Demandeur :</label>

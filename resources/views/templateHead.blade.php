@@ -41,6 +41,7 @@
                 </div>
 
                 <div class="tab-body" data-id="connexion">
+                    <span class="errorLogin"></span>
                     <form>
                         <div class="rowTab">
                             <i class="far fa-user"></i>
@@ -56,6 +57,8 @@
                 </div>
 
                 <div class="tab-body" data-id="inscription">
+                    <span class="errorSigin">bien</span>
+
                     <form>
                         <div class="rowTab">
                             <i class="far fa-user"></i>
