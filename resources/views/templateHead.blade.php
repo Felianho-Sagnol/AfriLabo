@@ -45,7 +45,7 @@
                     <form>
                         <div class="rowTab">
                             <i class="far fa-user"></i>
-                            <input id="conncexionName" type="text" class="input" placeholder="Matricule">
+                            <input id="conncexionMatricule" type="text" class="input" placeholder="Matricule">
                         </div>
                         <div class="rowTab">
                             <i class="fas fa-lock"></i>
@@ -62,7 +62,7 @@
                     <form>
                         <div class="rowTab">
                             <i class="fas fa-passport"></i>
-                            <input id="registerPasswordComfirm" type="text" class="input" placeholder="Matricule">
+                            <input id="registerMatricule" type="text" class="input" placeholder="Matricule">
                         </div>
                         <div class="rowTab">
                             <i class="far fa-user"></i>

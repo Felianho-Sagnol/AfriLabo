@@ -8,32 +8,44 @@ use Illuminate\Http\Request;
 class APIReceptorController extends Controller
 {
     public function registerReceptor(){
-        if(isset($_GET['name']) && isset($_GET['password']) && isset($_GET['comfirmPassword'])){
+        if(isset($_GET['name']) && isset($_GET['password']) && isset($_GET['comfirmPassword']) && isset($_GET['matricule'])){
             if($_GET['password'] != $_GET['comfirmPassword']){
                 return response()->json([
                     'success' => false,
                     'comfirmError' => true,
+                    'userAlreadyExists' => false,
                 ]);
             }else{
-                $receptor = new Recepteur();
-                $receptor->name = htmlspecialchars($_GET['name']);
-                $receptor->password = sha1($_GET['password']);
-                $receptor->created_at = new \DateTime();
-
-                $receptor->save();
-                        
-                return response()->json([
-                    'success' => true,
-                    'comfirmError' => false,
-                ]);
+                $info = Recepteur::where('matricule', $_GET['matricule'])->first();
+                if(!empty($info)){
+                    return response()->json([
+                        'success' => false,
+                        'comfirmError' => false,
+                        'userAlreadyExists' => true,
+                    ]);
+                }else{
+                    $receptor = new Recepteur();
+                    $receptor->name = htmlspecialchars($_GET['name']);
+                    $receptor->matricule = htmlspecialchars($_GET['matricule']);
+                    $receptor->password = sha1($_GET['password']);
+                    $receptor->created_at = new \DateTime();
+    
+                    $receptor->save();
+                            
+                    return response()->json([
+                        'success' => true,
+                        'comfirmError' => false,
+                        'userAlreadyExists' => false,
+                    ]);
+                }
             }
         }
     }
 
     public function login(Request $request){
-        if(isset($_GET['name']) && isset($_GET['password'])){
+        if(isset($_GET['matricule']) && isset($_GET['password'])){
             $receptor = Recepteur::where([
-                ['name',$_GET['name']],
+                ['matricule',$_GET['matricule']],
                 ['password',sha1($_GET['password'])],
             ])->first();
 

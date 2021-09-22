@@ -6,7 +6,6 @@ export function receteurLogin() {
         localData = data
     }).then(() => {
         if (!localData.isLoggedIn) {
-            // console.log('not logged in')
             $('.formReception').hide().delay(50).show(100);
             $('.toHide').css({
                 "filter": "blur(5px)",
@@ -14,25 +13,21 @@ export function receteurLogin() {
             });
             $('.logout').hide();
             $('.connexion').click(function() {
-                let name = $('#conncexionName').val()
+                let matricule = $('#conncexionMatricule').val()
                 let password = $('#connexionPassword').val()
                 let nameError = false
                 let passwordError = false
-                if (name.length <= 2) nameError = true
+                if (!matriculeRegex(matricule)) nameError = true
                 if (password.length < 6) passwordError = true
-                console.log("name " + name)
-
                 if (nameError || passwordError) {
                     $('.errorLogin').text("Veillez saisir correctement toutes les informations")
-                    // console.log('Veillez saisir correctement toutes informations')
                 } else {
                     let url = "http://127.0.0.1:8000/login"
                     let localData
                     let status
-                    $.get(url, { name: name, password: password }, (data) => {
+                    $.get(url, { matricule: matricule, password: password }, (data) => {
                         localData = data
                     }).then(() => {
-                        // console.log(localData)
                         status = localData.success
                         if (status) {
                             $('.formReception').hide(100);
@@ -40,15 +35,11 @@ export function receteurLogin() {
                                 "filter": "blur(0px)",
                                 "cursor": "auto"
                             });
-                             $('.logout').show();
-
+                            $('.logout').show();
                         } else {
-                             $('.errorLogin').text("Aucun compte trouvé ")
-
-                            // console.log("Aucun compte trouvé pour ce recepteur")
+                            $('.errorLogin').text("Aucun compte trouvé ")
                         }
                     })
-
                 }
             });
         } else {
@@ -64,26 +55,37 @@ export function receteurLogin() {
 export function receteurRegister() {
     $('.inscription').click(function() {
         let name = $('#registerName').val()
+        let matricule = $('#registerMatricule').val()
         let password = $('#registerPassword').val()
         let passwordConfirm = $('#registerPasswordComfirm').val()
         let nameError = false
+        let matriculeError = false
         let passwordError = false
         if (name.length <= 2) nameError = true
+        if (!matriculeRegex(matricule)) matriculeError = true
         if (password.length < 6) passwordError = true
         if (passwordConfirm.length < 6) passwordError = true
 
-        if (nameError || passwordError) {
+        if (nameError || passwordError || matriculeError) {
             $('.errorSignin').text("Veillez saisir correctement toutes les informations")
         } else {
             let status
             let comfirmErorStatus
+            let userAlreadyExistStatus
             let url = "http://127.0.0.1:8000/register"
             let localData
-            $.get(url, { name: name, password: password, comfirmPassword: passwordConfirm }, (data) => {
+            $.get(url, { name: name, password: password, comfirmPassword: passwordConfirm, matricule: matricule }, (data) => {
                 localData = data
             }).then(() => {
                 status = localData.success
                 comfirmErorStatus = localData.comfirmError
+                userAlreadyExistStatus = localData.userAlreadyExists
+                if (userAlreadyExistStatus) {
+                    $('.errorSignin').text("Ce matricule est déjà utilisé pour un autre compte.")
+                }
+                if (comfirmErorStatus) {
+                    $('.errorSignin').text("Les deux mots de passe ne sont pas identiques.")
+                }
                 if (status) {
                     $('.formReception').hide();
                     $('.toHide').css({
@@ -92,15 +94,10 @@ export function receteurRegister() {
                     });
                     receteurLogin()
                     $('.errorSignin').text("Votre compte a été crée ; Passe à  la connexion ").css({
-                        "color":"green"
+                        "color": "green"
                     })
+                }
 
-                }
-                if (comfirmErorStatus) {
-                    $('.errorSignin').text("les deux mots de passe ne sont pas identiques.")
-                        //affichage de l'erreur sans compte
-                    // console.log('les deux pawword ne sont pas identiques.')
-                }
             })
 
         }
@@ -114,4 +111,10 @@ export function logout() {
             document.location = "http://127.0.0.1:8000"
         })
     })
+}
+
+export function matriculeRegex(chaine) {
+    let pattern = /^[A-Z][0-9]{6}[A-Z]$/
+    if (pattern.test(chaine)) return true
+    return false
 }
