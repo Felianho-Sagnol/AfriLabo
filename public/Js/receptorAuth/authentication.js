@@ -1,11 +1,10 @@
 export function receteurLogin() {
     let url = "http://127.0.0.1:8000/isLoggedIn"
-
     let localData
+
     $.get(url, (data) => {
         localData = data
     }).then(() => {
-        //return localData.isLoggedIn
         if (!localData.isLoggedIn) {
             console.log('not logged in')
             $('.formReception').hide().delay(50).show(200);
@@ -18,9 +17,9 @@ export function receteurLogin() {
                 let password = $('#connexionPassword').val()
                 let nameError = false
                 let passwordError = false
-                let notFound = false
                 if (name.length <= 2) nameError = true
                 if (password.length < 6) passwordError = true
+                console.log("name " + name)
 
                 if (nameError || passwordError) {
                     //affichage
@@ -46,13 +45,8 @@ export function receteurLogin() {
                     })
 
                 }
-                if (notFound) {
-                    //affichage de l'erreur sans compte
-
-                }
             });
         } else {
-            console.log("login")
             $('.formReception').hide(0);
             $('.toHide').css({
                 "filter": "blur(0px)",
@@ -69,7 +63,6 @@ export function receteurRegister() {
         let passwordConfirm = $('#registerPasswordComfirm').val()
         let nameError = false
         let passwordError = false
-        let error = false
         if (name.length <= 2) nameError = true
         if (password.length < 6) passwordError = true
         if (passwordConfirm.length < 6) passwordError = true
@@ -78,8 +71,6 @@ export function receteurRegister() {
             //affichage
             console.log('une grave erreur')
         } else {
-            //let result = register(name, password, passwordConfirm);
-            //console.log(result)
             let status
             let comfirmErorStatus
             let url = "http://127.0.0.1:8000/register"
@@ -87,7 +78,6 @@ export function receteurRegister() {
             $.get(url, { name: name, password: password, comfirmPassword: passwordConfirm }, (data) => {
                 localData = data
             }).then(() => {
-                console.log(localData)
                 status = localData.success
                 comfirmErorStatus = localData.comfirmError
                 if (status) {
@@ -100,7 +90,7 @@ export function receteurRegister() {
                 }
                 if (comfirmErorStatus) {
                     //affichage de l'erreur sans compte
-                    console.log('Une errreur est survenu veillez reprendre')
+                    console.log('les deux pawword ne sont pas identiques.')
                 }
             })
 
