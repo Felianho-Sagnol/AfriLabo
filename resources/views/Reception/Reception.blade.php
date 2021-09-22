@@ -1,20 +1,11 @@
 <script defer type='module' src="{{asset('/js/reception.js')}}"></script>
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
-<<<<<<< HEAD
     @extends('templateHead')
     @section('title')
         <h2>Réception des echantilllons</h2>
     @endsection
     @section('containPage')
     <div class="row tab1 toHide">
-=======
-@extends('templateHead')
-@section('title')
-    <h2>Réception des echantilllons</h2>
-@endsection
-@section('containPage')
-    <div class="row tab1 ">
->>>>>>> d516dd839c35009ed5c9c057e55e3f6f67f7d19a
         <div class="row line">
             <div class="col-md-6">
                 <label class="ombre" for="demandeur">Demandeur :</label>
