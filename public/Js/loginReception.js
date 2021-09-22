@@ -1,6 +1,7 @@
 import { receteurLogin, receteurRegister, logout } from './receptorAuth/authentication.js'
-
+$('#solideOptions').hide();
 $(function() {
+    
     receteurLogin()
     receteurRegister()
     logout()

@@ -1,10 +1,11 @@
+<script defer type='module' src="{{asset('/js/reception.js')}}"></script>
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
 @extends('templateHead')
 @section('title')
     <h2>Réception des echantilllons</h2>
 @endsection
 @section('containPage')
-    <div class="row tab1 toHide">
+    <div class="row tab1 ">
         <div class="row line">
             <div class="col-md-6">
                 <label class="ombre" for="demandeur">Demandeur :</label>
@@ -30,10 +31,10 @@
                 <label class="ombre" for="demandeur">Etat de l'echantillon :</label>
                 <select name="etat" id="etat">
                     <option value="">--Etat--</option>
-                    <option value="solide">Solide</option>
-                    <option value="liquide">Liquide</option>
+                    <option value="solide" id="solideChoose">Solide</option>
+                    <option value="liquide" selected>Liquide</option>
                     <option value="pulpe">Pulpe</option>
-                </select>
+                </select >
                 <div id="solideOptions">
                      <div >
                         <input type="radio" id="roche" name="solide" value="roche"
@@ -70,4 +71,28 @@
             </div>
         </div>
     </div>
+    <div>
+        <label class="ombre" for="nbrEch">Nombre d'echantillons:</label>
+           <select name="etat" id="etat">
+                <option value="">Nombre</option>
+                <option value="1" >1</option>
+                <option value="2" >2</option>
+                <option value="3">3</option>
+           </select >
+    </div>
+    <table class="tab2">
+        <tr id="entete">
+            <th>Designation</th>
+            <th>Reference Labo</th>
+            <th colspan="4">Elements</th>
+        </tr>
+        <tr id="element">
+            <td></td>
+            <td></td>
+            <th>Zn</td>
+            <th>Cu</td>
+            <th>Pb</td>
+            <th>Ag</td>
+        </tr>
+    </table>
 @endsection

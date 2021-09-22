@@ -6,7 +6,9 @@ export function receteurLogin() {
         localData = data
     }).then(() => {
         if (!localData.isLoggedIn) {
-            $('.formReception').hide().delay(50).show(100);
+            $('.formReception').css({
+                "visibility":"visible"
+            }).hide().delay().show()
             $('.toHide').css({
                 "filter": "blur(5px)",
                 "cursor": "wait"
