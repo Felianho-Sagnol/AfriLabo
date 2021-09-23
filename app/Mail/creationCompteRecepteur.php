@@ -11,14 +11,10 @@ class creationCompteRecepteur extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $data=[];
+    public function __construct(array $recepteur)
     {
-        //
+        $this->data=$recepteur;
     }
 
     /**
@@ -28,6 +24,8 @@ class creationCompteRecepteur extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.recepteur');
+        return $this->subject('Monmessage person')
+                    ->view('emails.recepteurMail')
+                    ->attach(public_path('Images/background1.jpg'));// mettre une piece jointe
     }
 }
