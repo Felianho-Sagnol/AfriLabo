@@ -116,12 +116,12 @@
             <th>Ag</td>
         </tr>
         <tr>
-            <td id="1">EHAN 1</td>
-            <td>RE_454_1</td>
-            <td><input type='checkbox' class='zn' name='zn' ></td>
-            <td> <input type='checkbox' class='cu' name='cu'></td>
-            <td><input type='checkbox' class='pb' name='pb' ></td>
-            <td><input type='checkbox' id='ag' name='ag' > </td>
+            <td id="design1">EHAN 1</td>
+            <td id='ref1'>RE_454_1</td>
+            <td><input type='checkbox' class='Zn' name='checkbox1' ></td>
+            <td> <input type='checkbox' class='Cu' name='checkbox1'></td>
+            <td><input type='checkbox' class='Pb' name='checkbox1' ></td>
+            <td><input type='checkbox' id='Ag' name='checkbox1' > </td>
         </tr>
     </table>
     <div class="btns">

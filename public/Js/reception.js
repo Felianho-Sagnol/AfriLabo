@@ -10,8 +10,11 @@ function getDemandeInformations() {
         nombreEchantillons = $(" #nombre option:selected").val()
         etatSolid = $('input[name=solide]:checked').val();
         console.log(demandeur, societe, identificateur, numDemande, etat, etatSolid, echantionnage, nombreEchantillons);
-
-        let lines = document.querySelectorAll(".lines")
+        let designation,reference,elements
+        for (let j = 1; j <= nombreEchantillons; j++) {
+            console.log($('#design'+j).text()+$('input[name=checkbox'+j+']:checked').attr('class'));
+            
+        }
 
 
 
@@ -23,6 +26,7 @@ $(function() {
     getDemandeInformations();
     let max
     let echNumber;
+    let i ;
     max = 0
     $("select").change(function() {
         var str = "";
@@ -56,12 +60,19 @@ $(function() {
                 }
 
             } else {
-                for (let i = 1; i < echNumber; i++) {
-                    if ($(this).val() > i || i != max) {
-                        $("table").append("<tr id=" + (i + 1) + "><td >EHAN" + (i + 1) + "<td>RE_454_" + (i + 1) + "<td><input type='checkbox' class='zn' name='zn' ></td><td> <input type='checkbox' class='cu' name='cu'></td><td><input type='checkbox' class='pb' name='pb' ></td><td><input type='checkbox' id='ag' name='ag' > </td></td></tr>");
-                        max = i;
+                console.log("forormax:"+max+"le i: "+i)
+                for ( i = 1; i < echNumber; i++) {
+                    console.log("max:"+max+"le i: "+i)
+                    console.log($(this).val()+" this")
+                    if ( i != max && i>max ) {
+                        $("table").append("<tr id=" + (i+1) + "><td id=design"+(i+1)+">EHAN" + (i + 1) + "<td id=ref"+(i+1)+">RE_454_" + (i + 1) + "<td><input type='checkbox' class='zn' name=checkbox"+(i+1)+" ></td><td> <input type='checkbox' class='cu' name=checkbox"+(i+1)+" ></td><td><input type='checkbox' class='pb' name=checkbox"+(i+1)+"  ></td><td><input type='checkbox' id='ag' name=checkbox"+(i+1)+"  > </td></td></tr>");
+                        console.log("maxdans si est: "+max +" le i dans si "+i) 
+                        max=i;
+                        
                     }
                 }
+                console.log("maxFinal est: "+max) 
+
             }
         });
     }).change();
