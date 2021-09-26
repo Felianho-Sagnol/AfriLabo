@@ -9,26 +9,26 @@
         <div class="row line">
             <div class="col-md-6">
                 <label class="ombre" for="demandeur">Demandeur :</label>
-                <input id="2" type="text" class="input" placeholder="Demandeur">
+                <input id="demandeur" type="text" class="input" placeholder="Demandeur">
             </div>
             <div class="col-md-6">
                 <label class="ombre" for="societe">Société :</label>
-                <input id="1" type="text" class="input" placeholder="Sociéte">
+                <input id="societe" type="text" class="input" placeholder="Sociéte">
             </div>
         </div>
         <div class="row line">
             <div class="col-md-6">
-                <label class="ombre" for="demandeur">Identificqtion des echantillons :</label>
-                <input  type="text" class="input" placeholder="Exemple: Roche">
+                <label class="ombre" for="identificateur">Identification des echantillons :</label>
+                <input id='identificateur'  type="text" class="input" placeholder="Exemple: Roche">
             </div>
             <div class="col-md-6">
-                <label class="ombre" for="societe">Numero de la demande :</label>
-                <input  type="text" class="input" placeholder="Numero de la demande">
+                <label class="ombre" for="numDemande">Numero de la demande :</label>
+                <input id='numDemande'  type="text" class="input" placeholder="Numero de la demande">
             </div>
         </div>
         <div class="row line">
             <div class="col-md-6">
-                <label class="ombre" for="demandeur">Etat de l'echantillon :</label>
+                <label class="ombre" for="etat">Etat de l'echantillon :</label>
                 <select name="etat" id="etat">
                     <option value="">--Etat--</option>
                     <option value="solide" id="solideChoose">Solide</option>
@@ -38,7 +38,7 @@
                 <div id="solideOptions">
                      <div >
                         <input type="radio" id="roche" name="solide" value="roche"
-                                checked>
+                                >
                         <label  for="roche">Roche</label>
                     </div>
 
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <label class="ombre" for="societe">echantillonnage :</label>
+                <label class="ombre" for="echantillonnage">echantillonnage :</label>
                 <div id="echantionnage">
                     <div>
                         <input type="radio" id="afilab" name="echantionnage" value="Afrilab">
@@ -125,6 +125,6 @@
         </tr>
     </table>
     <div class="btns">
-        <button class="btn">Enregistrer</Sbutton>
+        <button class="btn registerBTN">Enregistrer</Sbutton>
     </div>
 @endsection
