@@ -115,8 +115,8 @@
             <th>Pb</td>
             <th>Ag</td>
         </tr>
-        <tr>
-            <td id="1">EHAN 1</td>
+        <tr class="lines" id="1">
+            <td >EHAN 1</td>
             <td>RE_454_1</td>
             <td><input type='checkbox' class='zn' name='zn' ></td>
             <td> <input type='checkbox' class='cu' name='cu'></td>
