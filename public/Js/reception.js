@@ -1,20 +1,16 @@
 function getDemandeInformations() {
     $('.registerBTN').on('click', () => {
-        let demandeur, societe, identificateur, numDemande, echantionnage, etat, nombreEchantillons, etatSolid;
+        let demandeur, societe, identificateur, numDemande, etat, solideOptions, nombreEchantillons,etatSolid;
         demandeur = $("#demandeur").val();
         societe = $("#societe").val();
         identificateur = $("#identificateur").val();
-        numDemande = $("#numDemande").val();
+        numDemande = $("#etat").val();
         etat = $("#etat option:selected").val();
-        echantionnage = $('input[name=echantionnage]:checked').val();
-        nombreEchantillons = $(" #nombre option:selected").val()
-        etatSolid = $('input[name=solide]:checked').val();
-        console.log(demandeur, societe, identificateur, numDemande, etat, etatSolid, echantionnage, nombreEchantillons);
-
-        let lines = document.querySelectorAll(".lines")
-
-
-
+        solideOptions = $('input[name=echantionnage]:checked').val();
+        nombreEchantillons =$(" #nombre option:selected").val()
+        console.log('il faut commiter maitenant')
+        etatSolid=$('input[name=solide]:checked').val();
+        console.log(demandeur, solideOptions, societe, identificateur, numDemande, etat, nombreEchantillons,etatSolid);
     })
 }
 
@@ -65,6 +61,7 @@ $(function() {
                 }
             }
         });
+        console.log("le nombre d'echantillon pour la demande est: " + (echNumber))
     }).change();
 
 })
