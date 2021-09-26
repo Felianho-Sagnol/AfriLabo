@@ -85,8 +85,10 @@ table ,tr,th {
     font-weight: bold;
     text-align: center;
     font-size: auto;
-    width: 70%;
     margin: auto;
+}
+table{
+    width: 80%;
 }
 #element>th{
     background-color: rgba(0, 0, 0, 0.418);
