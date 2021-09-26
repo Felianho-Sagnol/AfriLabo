@@ -124,4 +124,7 @@
             <td><input type='checkbox' id='ag' name='ag' > </td>
         </tr>
     </table>
+    <div class="btns">
+        <button class="btn">Enregistrer</Sbutton>
+    </div>
 @endsection
