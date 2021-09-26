@@ -8,6 +8,7 @@ function getDemandeInformations() {
         etat = $("#etat option:selected").val();
         solideOptions = $("#solideOptions").val();
         nombreEchantillons = $("#nombre option:selected")
+        console.log('il faut commiter maitenant')
         console.log(demandeur, solideOptions, societe, identificateur, numDemande, etat, nombreEchantillons);
     })
 }
