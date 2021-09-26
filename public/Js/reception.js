@@ -1,15 +1,16 @@
 function getDemandeInformations() {
     $('.registerBTN').on('click', () => {
-        let demandeur, societe, identificateur, numDemande, etat, solideOptions, nombreEchantillons;
+        let demandeur, societe, identificateur, numDemande, etat, solideOptions, nombreEchantillons,etatSolid;
         demandeur = $("#demandeur").val();
         societe = $("#societe").val();
         identificateur = $("#identificateur").val();
         numDemande = $("#etat").val();
         etat = $("#etat option:selected").val();
-        solideOptions = $("#solideOptions").val();
-        nombreEchantillons = $("#nombre option:selected")
+        solideOptions = $('input[name=echantionnage]:checked').val();
+        nombreEchantillons =$(" #nombre option:selected").val()
         console.log('il faut commiter maitenant')
-        console.log(demandeur, solideOptions, societe, identificateur, numDemande, etat, nombreEchantillons);
+        etatSolid=$('input[name=solide]:checked').val();
+        console.log(demandeur, solideOptions, societe, identificateur, numDemande, etat, nombreEchantillons,etatSolid);
     })
 }
 
