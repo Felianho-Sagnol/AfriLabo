@@ -43,7 +43,7 @@
                     </div>
 
                     <div>
-                        <input type="radio" id="minerai" name="solide" value="minerai">
+                        <input type="radio" id="minerai" name=" " value="minerai">
                         <label  for="minerai">Minerai</label>
                     </div>
                     <div>
