@@ -42,13 +42,14 @@
     color: blue;
 }
 option,select{
-    background-color: none;
+    background-color: none !important;
     border: none;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
     font-weight: bold;
 
 }
+
 #solideChoose{
     cursor: pointer;
 }
@@ -77,22 +78,22 @@ th{
     text-shadow: 1px 1px 2px black;
 
 }
-tr{
-    border: 2px solid white;
-}
-table ,td,th {
+table ,tr,th {
     border: 1px solid white;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
     font-weight: bold;
     text-align: center;
-    font-size: 20px;
+    font-size: auto;
     width: 70%;
     margin: auto;
 }
-td{
-    margin: 2%;
-}
 #element>th{
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.418);
+    margin: 2%;
+    
+}
+input[type="checkbox"]:checked{
+    background-color:#f9bc14 !important;
+
 }

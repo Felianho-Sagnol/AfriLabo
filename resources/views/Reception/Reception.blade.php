@@ -73,9 +73,9 @@
     </div>
     <div>
         <label class="ombre" for="nbrEch">Nombre d'echantillons:</label>
-           <select name="nombre" >
-                <option value="">Nombre</option>
-                <option value="1" >1</option>
+           <select name="nombre" id="nombre">
+                <option value="">Choix</option>
+                <option value="1" selected>1</option>
                 <option value="2" >2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -92,30 +92,36 @@
                 <option value="15">15</option>
                 <option value="16">16</option>
                 <option value="17">17</option>
-                <option value="18">1</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
            </select >
     </div>
-    <table class="tab2">
+    <table class="tab2" >
         <tr id="entete">
-            <th>Designation</th>
-            <th>Reference Labo</th>
-            <th colspan="4">Elements</th>
+            <th rowspan="2">Designation</th>
+            <th rowspan="2">Reference Labo</th>
+            <th colspan="4">Elements démandés</th>
         </tr>
-        <tr id="element">
-            <td></td>
-            <td></td>
+        <tr id="element" >
             <th>Zn</td>
             <th>Cu</td>
             <th>Pb</td>
             <th>Ag</td>
+        </tr>
+        <tr>
+            <td id="1">EHAN 1</td>
+            <td>RE_454_1</td>
+            <td><input type='checkbox' class='zn' name='zn' ></td>
+            <td> <input type='checkbox' class='cu' name='cu'></td>
+            <td><input type='checkbox' class='pb' name='pb' ></td>
+            <td><input type='checkbox' id='ag' name='ag' > </td>
         </tr>
     </table>
 @endsection
