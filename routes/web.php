@@ -31,3 +31,9 @@ Route::get('/logout',[APIReceptorController::class,'logout'])->name('logout');
 Route::get('/bar',[receptionMailController::class,'bar'])->name('bar');
 
 
+/********************************Demande API ROUTE**************** */
+Route::post('/demande',[DemandeAndEchantillonController::class,'addDemand'])->name('addDemand');
+Route::post('/echantillons',[DemandeAndEchantillonController::class,'addEchantillon'])->name('addEchantillon');
+
+
+
