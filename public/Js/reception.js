@@ -1,5 +1,9 @@
+function copyText(id1,id2) {
+        $(id1).val()=$(id2+" option:selected").val();
+}
 function getDemandeInformations() {
     $('.registerBTN').on('click', () => {
+<<<<<<< HEAD
         let demandeur, societe, identificateur, numDemande, echantionnage, etat, nombreEchantillons, etatSolid;
         demandeur = $("#demandeur").val();
         societe = $("#societe").val();
@@ -13,6 +17,33 @@ function getDemandeInformations() {
         let designation, reference, elements
         for (let j = 1; j <= nombreEchantillons; j++) {
             console.log($('#design' + j).text() + $('input[name=checkbox' + j + ']:checked').attr('class'));
+=======
+        let tableauDemande={
+                    'nomDemandeur':$("#demandeur").val(),
+                    'societe':$("#societe").val(),
+                    'numeroDemande':$("#numDemande").val(),
+                    'indentificateur':$("#identificateur").val(),
+                    'etatEchantillon':$("#etat option:selected").val(),
+                    'casSolide':$('input[name=solide]:checked').val(),
+                    'echantillonage':$('input[name=echantionnage]:checked').val(),
+                    'nombreEchantillon':$(" #nombre option:selected").val()
+                 }
+                //  var arr = { "un" : 1, "deux" : 2, "trois": 3 };  
+                for(var element in tableauDemande)
+                {
+                    var value = tableauDemande[element];
+                    console.log(value)
+                }
+                // return tableauDemande
+        // console.log(demandeur, societe, identificateur, numDemande, etat, etatSolid, echantionnage, nombreEchantillons);
+        // let designation,reference,elements
+        // for (let j = 1; j <= nombreEchantillons; j++) {
+        //     console.log($('#design'+j).text()+$('input[name=line'+j+']:checked').attr('class'));
+            
+        // }
+
+
+>>>>>>> 5ab2c379331ab68cf55994b17f6d5abbdc0293b7
 
         }
     })
@@ -41,6 +72,23 @@ $(function() {
             }
         });
     }).change();
+
+    $("select").change(function() {
+        var str = "";
+        $("#depotAfrilab option:selected").each(function() {
+            str = $(this).text();
+            if (str == "AFRILAB") {
+                console.log(" AfriLab depot ")
+                $('#depotoire').css({
+                    "visibility": "visible"
+                }).show()
+            } else {
+                $('#depotoire').css({
+                    "visibility": "hidden"
+                }).hide()
+            }
+        });
+    }).change();
     //------------------------------------------------------
     $("#nombre").change(function() {
 
@@ -57,6 +105,7 @@ $(function() {
                 }
 
             } else {
+<<<<<<< HEAD
                 console.log("forormax:" + max + "le i: " + i)
                 for (i = 1; i < echNumber; i++) {
                     console.log("max:" + max + "le i: " + i)
@@ -66,6 +115,19 @@ $(function() {
                         console.log("maxdans si est: " + max + " le i dans si " + i)
                         max = i;
 
+=======
+                console.log("forormax:"+max+"le i: "+i)
+               let numDemande=$('#numDemande').val()
+                console.log(numDemande)
+                for ( i = 1; i < echNumber; i++) {
+                    console.log("max:"+max+"le i: "+i)
+                    console.log($(this).val()+" this")
+                    if ( i != max && i>max ) {
+                       $("table").append("<tr><td id='design"+(i+1)+"' class='elementscar'><input type='text' placeholder='Designation'></td> <td id='ref1'>R/"+numDemande+"_2021_"+(i+1)+"</td> <td> <input type='checkbox' name='line"+(i+1)+"' value='zn'></td> <td><input type='checkbox' name='line"+(i+1)+"' value='ag'></td> <td><input type='checkbox' name='line"+(i+1)+"' value='pb'></td> <td><input type='checkbox' name='line"+(i+1)+"' value='cu'></td> </tr>")
+                        max=i;
+                        // $('#'+i).val()= etat = 
+                        console.log($("#elemnt1 option:selected").val()+" options selectionner");
+>>>>>>> 5ab2c379331ab68cf55994b17f6d5abbdc0293b7
                     }
                 }
                 console.log("maxFinal est: " + max)
