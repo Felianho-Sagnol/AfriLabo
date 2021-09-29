@@ -144,23 +144,28 @@
         </tr>
     </table>
     <div class="btns">
-        <button type="button" class="btn btn-lg registerBTN">Enregistrer</button>
+        <button type="button" class="btn btn-lg valide registerBTN">Enregistrer</button>
         <button type="button" class="btn btn-lg danger annuler">Réinitialiser</button>
     </div>
     <div class="container popup">
         <div class="row">
-            <div class="col-md-12">
-            <div class="col-md-3"> <img src="{{ asset('Images/logoAfriLab.png') }}" width="50%"></div>
-
+            <div class="col-md-3"></div>
+            <div class="col-md-6"> 
+                <img src="{{ asset('Images/logoAfriLab.png') }}" width="80%">
             </div>
+            <div class="col-md-3"></div>
         </div>
         <div class="row">
-            <div class="col-md-4" id="1">demande Numero: <span>ici num demande </span></div>
-            <div class="col-md-4" id="2"></div>
-            <div class="col-md-4" id="3"></div>
+            <div class="col-md-12" >Demande Numéro: <span id="NoDemandePop">ici num demande </span></div>
+            <div class="col-md-12">Sociéte :<span id="societePop">ciscom</span> </div>
+            <div class="col-md-12" >Démandeur: <span id="NomDemandeurPop">techno</span> </div>
+            <div class="col-md-12"> Nombre d'echantillons :<span id="numEch"> num echan</span> </div>
+            <div class="col-md-12"> Recepteur :<span id="recepteur"> recetion</span> </div>
+            <div class="col-md-6">Date :<span>01/01/2001</span> </div>
+            <div class="col-md-6">Heure :<span>12h30</span></div>
         </div>
-        <div class="row">
-            <button type="button" class="btn  valider">Valider</button>
+        <div class="row btnsPop">
+            <button type="button" class="btn  valide valider">Valider</button>
             <button type="button" class="btn  danger nonValider">Annuler</button>
         </div>
     </div>
