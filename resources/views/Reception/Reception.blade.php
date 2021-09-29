@@ -43,7 +43,7 @@
                     </div>
 
                     <div>
-                        <input type="radio" id="minerai" name=" " value="minerai">
+                        <input type="radio" id="minerai" name="solide" value="minerai">
                         <label  for="minerai">Minerai</label>
                     </div>
                     <div>
@@ -133,8 +133,8 @@
             <th>Pb</th>
             <th>Cu</th>
         </tr>
-           <td id='design"+(i+1)+"' class='elementscar'><input type='text' placeholder='Designation'></td>
-           <td id='ref1'>R/"+numDemande+"_2021_"+(i+1)+"</td>
+           <td  class='elementscar'><input id="design1" type='text' placeholder='Designation'></td>
+           <td id='ref1'>Reference</td>
            <td> <input type="checkbox" name="line1" value="zn"> </td>
            <td><input type="checkbox" name="line1" value="ag"></td>
            <td><input type="checkbox" name="line1" value="pb"></td>
