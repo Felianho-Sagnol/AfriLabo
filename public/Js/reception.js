@@ -1,5 +1,3 @@
-import { isEmpty } from "lodash"
-
 $(function () {
     
 
@@ -114,7 +112,7 @@ $(function () {
                     for (i = 1; i < echNumber; i++) {
                         console.log("max:" + max + "le i: " + i)
                         console.log($(this).val() + " this")
-                        if (i != max && i > max && !isEmpty(numDemande)) {
+                        if (i != max && i > max) {
                             $("table").append("<tr><td  class='elementscar'><input id='design"+i+"' type='text' placeholder='Designation'></td> <td id='ref"+i+"'>R/"+numDemande+"_2021_"+i+"</td> <td> <input type='checkbox' name='line"+i+"' value='Zn'> </td> <td><input type='checkbox' name='line"+i+" value='Ag'></td> <td><input type='checkbox' name='line"+i+"' value='Pb'></td> <td><input type='checkbox' name='line"+i+"' value='Cu'></td> </tr>")
                             max = i;
                             // console.log("forormax:"+max+"le i: "+i)
