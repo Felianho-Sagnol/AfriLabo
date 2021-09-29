@@ -52,9 +52,9 @@ class APIReceptorController extends Controller
             if(!empty($receptor)){
                 if(session()->has('receptor_id')){
                     session()->pull('receptor_id');
-                    $request->session()->put('receptor_id',$receptor->id);
+                    $request->session()->put('receptor_id',$receptor->matricule);
                 }else{
-                    $request->session()->put('receptor_id',$receptor->id);
+                    $request->session()->put('receptor_id',$receptor->matricule);
                 }
                 
                 return response()->json([

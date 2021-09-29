@@ -164,5 +164,4 @@
             <button type="button" class="btn  danger nonValider">Annuler</button>
         </div>
     </div>
-
 @endsection

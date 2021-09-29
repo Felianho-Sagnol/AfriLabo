@@ -16,10 +16,10 @@ class CreateEchantillonsTable extends Migration
         Schema::create('echantillons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('designation');
-            $table->string('reference_labo');
+            $table->string('demand_id');
             $table->string('reference_labo');
             $table->string('elements_d_analyse');
-            $table->int('etat');
+            $table->integer('etat')->default(0);
             $table->dateTime('created_at');
         });
     }
