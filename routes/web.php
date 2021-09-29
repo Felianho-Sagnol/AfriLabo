@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReceptionController;
 use App\Http\Controllers\APIReceptorController;
 use App\Http\Controllers\receptionMailController;
+use App\Http\Controllers\DemandeAndEchantillonController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +33,5 @@ Route::get('/bar',[receptionMailController::class,'bar'])->name('bar');
 
 
 /********************************Demande API ROUTE**************** */
-Route::post('/demande',[DemandeAndEchantillonController::class,'addDemand'])->name('addDemand');
-Route::post('/echantillons',[DemandeAndEchantillonController::class,'addEchantillon'])->name('addEchantillon');
-
-
-
+Route::get('/demande',[DemandeAndEchantillonController::class,'addDemand'])->name('addDemand');
+Route::get('/echantillons',[DemandeAndEchantillonController::class,'addEchantillon'])->name('addEchantillon');
