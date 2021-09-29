@@ -1,4 +1,6 @@
 <script defer type='module' src="{{asset('/js/reception.js')}}"></script>
+<script defer type='module' src="{{asset('/Js/formulaireResultant/resultatSaisi.js')}}"></script>
+
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
     @extends('templateHead')
     @section('title')
@@ -135,13 +137,32 @@
         </tr>
            <td  class='elementscar'><input id="design1" type='text' placeholder='Designation'></td>
            <td id='ref1'>Reference</td>
-           <td> <input type="checkbox" name="line1" value="zn"> </td>
-           <td><input type="checkbox" name="line1" value="ag"></td>
-           <td><input type="checkbox" name="line1" value="pb"></td>
-           <td><input type="checkbox" name="line1" value="cu"></td>
+           <td> <input type="checkbox" name="line1" value="Zn"> </td>
+           <td><input type="checkbox" name="line1" value="Ag"></td>
+           <td><input type="checkbox" name="line1" value="Pb"></td>
+           <td><input type="checkbox" name="line1" value="Cu"></td>
         </tr>
     </table>
     <div class="btns">
-        <button class="btn registerBTN">Enregistrer</Sbutton>
+        <button type="button" class="btn btn-lg registerBTN">Enregistrer</button>
+        <button type="button" class="btn btn-lg danger annuler">Réinitialiser</button>
     </div>
+    <div class="container popup">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="col-md-3"> <img src="{{ asset('Images/logoAfriLab.png') }}" width="50%"></div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" id="1">demande Numero: <span>ici num demande </span></div>
+            <div class="col-md-4" id="2"></div>
+            <div class="col-md-4" id="3"></div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn  valider">Valider</button>
+            <button type="button" class="btn  danger nonValider">Annuler</button>
+        </div>
+    </div>
+
 @endsection

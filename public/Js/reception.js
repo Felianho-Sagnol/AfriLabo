@@ -103,20 +103,16 @@ $(function () {
                     console.log("car on a max: " + max + " et EchNumbre: " + echNumber)
                     for (let i = echNumber + 1; i <= max; i++) {
                         let idEmp = "#" + i
-                        // console.log(idEmp)
                     }
 
                 } else {
                     let numDemande=$('#numDemande').val()
-                    console.log("forormax:" + max + "le i: " + i)
                     for (i = 1; i < echNumber; i++) {
                         console.log("max:" + max + "le i: " + i)
                         console.log($(this).val() + " this")
                         if (i != max && i > max) {
-                            $("table").append("<tr><td  class='elementscar'><input id='design"+i+"' type='text' placeholder='Designation'></td> <td id='ref"+i+"'>R/"+numDemande+"_2021_"+i+"</td> <td> <input type='checkbox' name='line"+i+"' value='Zn'> </td> <td><input type='checkbox' name='line"+i+" value='Ag'></td> <td><input type='checkbox' name='line"+i+"' value='Pb'></td> <td><input type='checkbox' name='line"+i+"' value='Cu'></td> </tr>")
+                            $("table").append("<tr><td  class='elementscar'><input id='design"+(i+1)+"' type='text' placeholder='Designation'></td> <td id='ref"+(i+1)+"'>R/"+numDemande+"_2021_"+(i+1)+"</td> <td> <input type='checkbox' name='line"+(i+1)+"' value='Zn'> </td> <td><input type='checkbox' name='line"+(i+1)+" value='Ag'></td> <td><input type='checkbox' name='line"+(i+1)+"' value='Pb'></td> <td><input type='checkbox' name='line"+(i+1)+"' value='Cu'></td></tr>")
                             max = i;
-                            // console.log("forormax:"+max+"le i: "+i)
-                            // console.log(numDemande)
                             for ( i = 1; i < echNumber; i++) {
                         // console.log("max:"+max+"le i: "+i)
                         // console.log($(this).val()+" this")
