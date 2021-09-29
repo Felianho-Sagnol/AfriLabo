@@ -3,21 +3,29 @@ function copyText(id1,id2) {
 }
 function getDemandeInformations() {
     $('.registerBTN').on('click', () => {
-        let demandeur, societe, identificateur, numDemande, echantionnage, etat, nombreEchantillons, etatSolid;
-        demandeur = $("#demandeur").val();
-        societe = $("#societe").val();
-        identificateur = $("#identificateur").val();
-        numDemande = $("#numDemande").val();
-        etat = $("#etat option:selected").val();
-        echantionnage = $('input[name=echantionnage]:checked').val();
-        nombreEchantillons = $(" #nombre option:selected").val()
-        etatSolid = $('input[name=solide]:checked').val();
-        console.log(demandeur, societe, identificateur, numDemande, etat, etatSolid, echantionnage, nombreEchantillons);
-        let designation,reference,elements
-        for (let j = 1; j <= nombreEchantillons; j++) {
-            console.log($('#design'+j).text()+$('input[name=line'+j+']:checked').attr('class'));
+        let tableauDemande={
+                    'nomDemandeur':$("#demandeur").val(),
+                    'societe':$("#societe").val(),
+                    'numeroDemande':$("#numDemande").val(),
+                    'indentificateur':$("#identificateur").val(),
+                    'etatEchantillon':$("#etat option:selected").val(),
+                    'casSolide':$('input[name=solide]:checked').val(),
+                    'echantillonage':$('input[name=echantionnage]:checked').val(),
+                    'nombreEchantillon':$(" #nombre option:selected").val()
+                 }
+                //  var arr = { "un" : 1, "deux" : 2, "trois": 3 };  
+                for(var element in tableauDemande)
+                {
+                    var value = tableauDemande[element];
+                    console.log(value)
+                }
+                // return tableauDemande
+        // console.log(demandeur, societe, identificateur, numDemande, etat, etatSolid, echantionnage, nombreEchantillons);
+        // let designation,reference,elements
+        // for (let j = 1; j <= nombreEchantillons; j++) {
+        //     console.log($('#design'+j).text()+$('input[name=line'+j+']:checked').attr('class'));
             
-        }
+        // }
 
 
 
