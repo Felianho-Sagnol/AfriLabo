@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-6">
                 <label class="ombre" for="numDemande">Numero de la demande :</label>
-                <input id='numDemande'  type="text" class="input" placeholder="Numero de la demande">
+                <input id='numDemande'  type="number" class="input" placeholder="Numero de la demande">
             </div>
         </div>
         <div class="row line">
@@ -58,16 +58,34 @@
             </div>
             <div class="col-md-6">
                 <label class="ombre" for="echantillonnage">echantillonnage :</label>
-                <div id="echantionnage">
-                    <div>
-                        <input type="radio" id="afilab" name="echantionnage" value="Afrilab">
-                        <label  for="afrilab">AfriLab</label>
+                <select name="depotAfrilab" id="depotAfrilab">
+                    <option value="">--choix--</option>
+                    <option value="AfriLAb" >AFRILAB</option>
+                    <option value="Client" selected>Client</option>
+                </select >
+                <div id="depotoire">
+                    <div >
+                       <input type="radio" id="ULS" name="depot" value="ULS">
+                       <label  for="ULS">ULS</label>
+                   </div>
+
+                   <div>
+                       <input type="radio" id="AZILOG" name="depot" value="AZILOG">
+                       <label  for="AZILOG">AZILOG</label>
+                   </div>
+                   <div>
+                       <input type="radio" id="SSL" name="depot" value="SSL">
+                       <label  for="SSL">SSL</label>
+                   </div>
+                   <div>
+                       <input type="radio" id="BELARCO" name="depot" value="BELARCO">
+                       <label  for="BELARCO">BELARCO</label>
+                   </div>
+                   <div>
+                        <input type="radio" id="Site_client" name="depot" value="Site client">
+                        <label  for="Site_client">Site client</label>
                     </div>
-                    <div>
-                        <input type="radio" id="client" name="echantionnage" value="Client" >
-                        <label  for="client">Client</label>
-                    </div>
-                </div>
+               </div>
             </div>
         </div>
     </div>
@@ -109,19 +127,18 @@
             <th rowspan="2">Reference Labo</th>
             <th colspan="4">Elements démandés</th>
         </tr>
-        <tr id="element" >
-            <th>Zn</td>
-            <th>Cu</td>
-            <th>Pb</td>
-            <th>Ag</td>
-        </tr>
         <tr>
-            <td id="design1">EHAN 1</td>
-            <td id='ref1'>RE_454_1</td>
-            <td><input type='checkbox' class='Zn' name='checkbox1' ></td>
-            <td> <input type='checkbox' class='Cu' name='checkbox1'></td>
-            <td><input type='checkbox' class='Pb' name='checkbox1' ></td>
-            <td><input type='checkbox' id='Ag' name='checkbox1' > </td>
+            <th>Zn</th>
+            <th>Ag</th>
+            <th>Pb</th>
+            <th>Cu</th>
+        </tr>
+           <td id='design"+(i+1)+"' class='elementscar'><input type='text' placeholder='Designation'></td>
+           <td id='ref1'>R/"+numDemande+"_2021_"+(i+1)+"</td>
+           <td> <input type="checkbox" name="line1" value="zn"> </td>
+           <td><input type="checkbox" name="line1" value="ag"></td>
+           <td><input type="checkbox" name="line1" value="pb"></td>
+           <td><input type="checkbox" name="line1" value="cu"></td>
         </tr>
     </table>
     <div class="btns">

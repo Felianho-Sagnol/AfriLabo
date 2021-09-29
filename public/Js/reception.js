@@ -1,3 +1,6 @@
+function copyText(id1,id2) {
+        $(id1).val()=$(id2+" option:selected").val();
+}
 function getDemandeInformations() {
     $('.registerBTN').on('click', () => {
         let demandeur, societe, identificateur, numDemande, echantionnage, etat, nombreEchantillons, etatSolid;
@@ -12,7 +15,7 @@ function getDemandeInformations() {
         console.log(demandeur, societe, identificateur, numDemande, etat, etatSolid, echantionnage, nombreEchantillons);
         let designation,reference,elements
         for (let j = 1; j <= nombreEchantillons; j++) {
-            console.log($('#design'+j).text()+$('input[name=checkbox'+j+']:checked').attr('class'));
+            console.log($('#design'+j).text()+$('input[name=line'+j+']:checked').attr('class'));
             
         }
 
@@ -44,6 +47,23 @@ $(function() {
             }
         });
     }).change();
+
+    $("select").change(function() {
+        var str = "";
+        $("#depotAfrilab option:selected").each(function() {
+            str = $(this).text();
+            if (str == "AFRILAB") {
+                console.log(" AfriLab depot ")
+                $('#depotoire').css({
+                    "visibility": "visible"
+                }).show()
+            } else {
+                $('#depotoire').css({
+                    "visibility": "hidden"
+                }).hide()
+            }
+        });
+    }).change();
     //------------------------------------------------------
     $("#nombre").change(function() {
 
@@ -61,14 +81,16 @@ $(function() {
 
             } else {
                 console.log("forormax:"+max+"le i: "+i)
+               let numDemande=$('#numDemande').val()
+                console.log(numDemande)
                 for ( i = 1; i < echNumber; i++) {
                     console.log("max:"+max+"le i: "+i)
                     console.log($(this).val()+" this")
                     if ( i != max && i>max ) {
-                        $("table").append("<tr id=" + (i+1) + "><td id=design"+(i+1)+">EHAN" + (i + 1) + "<td id=ref"+(i+1)+">RE_454_" + (i + 1) + "<td><input type='checkbox' class='zn' name=checkbox"+(i+1)+" ></td><td> <input type='checkbox' class='cu' name=checkbox"+(i+1)+" ></td><td><input type='checkbox' class='pb' name=checkbox"+(i+1)+"  ></td><td><input type='checkbox' id='ag' name=checkbox"+(i+1)+"  > </td></td></tr>");
-                        console.log("maxdans si est: "+max +" le i dans si "+i) 
+                       $("table").append("<tr><td id='design"+(i+1)+"' class='elementscar'><input type='text' placeholder='Designation'></td> <td id='ref1'>R/"+numDemande+"_2021_"+(i+1)+"</td> <td> <input type='checkbox' name='line"+(i+1)+"' value='zn'></td> <td><input type='checkbox' name='line"+(i+1)+"' value='ag'></td> <td><input type='checkbox' name='line"+(i+1)+"' value='pb'></td> <td><input type='checkbox' name='line"+(i+1)+"' value='cu'></td> </tr>")
                         max=i;
-                        
+                        // $('#'+i).val()= etat = 
+                        console.log($("#elemnt1 option:selected").val()+" options selectionner");
                     }
                 }
                 console.log("maxFinal est: "+max) 

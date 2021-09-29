@@ -1,11 +1,11 @@
 .tab1{
     /* margin-top: 50px; */
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(0, 0, 0, 0.3); */
 }
 .ombre{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 25px;
     text-shadow: 1px 1px 2px black;
@@ -13,7 +13,7 @@
 }
 .input {
     width: 90%;
-    border: none;
+    border: none !important;
     outline: none;
     color: black;
     /* font-weight: 550; */
@@ -29,9 +29,15 @@
     box-shadow: 0px 0px 1px black;
 
 }
-/* .input:checked{
-    background-color: rgba(3, 74, 120,0.5);
-} */
+.elementscar input{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    /* text-shadow: 1px 1px 2px black; */
+}
 .input::placeholder {
     font-size: 15px;
     color: rgba(0, 0, 0, 0.37);
@@ -53,19 +59,23 @@ option,select{
 #solideChoose{
     cursor: pointer;
 }
-#solideOptions{
+#solideOptions,#depotoire{
     visibility: hidden;
 }
-#solideOptions,#echantionnage{
+#solideOptions,#echantionnage,#depotoire{
     display: flex;
     flex-direction: line;
 }
-#solideOptions label,#echantionnage label{
+#solideOptions label,#echantionnage label,#depotoire label{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
     font-weight: bold;
-    font-size: 20px;
-    text-shadow: 1px 1px 2px black;
+    font-size: 15px;
+    /* text-shadow: 0px 0px 2px black; */
+}
+#depotoire>div{
+    margin-left: 10px;
+    /* border: 1px solid rgba(0, 0, 0, 0.356); */
 }
 #solideOptions>div,#echantionnage>div{
     margin-left: 5px;
@@ -74,14 +84,15 @@ option,select{
 }
 th{
     background-color: #f9bc14;
-    font-size: 25px;
+    font-size: auto;
     text-shadow: 1px 1px 2px black;
 
 }
+
 table ,tr,th {
-    border: 1px solid white;
+    border: 1px solid black;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
     font-weight: bold;
     text-align: center;
     font-size: auto;
@@ -92,10 +103,13 @@ table{
 }
 #element>th{
     background-color: rgba(0, 0, 0, 0.418);
-    margin: 2%;
+    /* margin: 2%; */
     
 }
 input[type="checkbox"]:checked{
     background-color:#f9bc14 !important;
 
 }
+/* #el1{
+    border: 1px solid red;
+} */
