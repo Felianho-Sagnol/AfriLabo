@@ -18,7 +18,7 @@ class CreateEchantillonsTable extends Migration
             $table->string('designation');
             $table->string('demand_id');
             $table->string('reference_labo');
-            $table->string('elements_d_analyse');
+            $table->text('elements_d_analyse');
             $table->integer('etat')->default(0);
             $table->dateTime('created_at');
         });
