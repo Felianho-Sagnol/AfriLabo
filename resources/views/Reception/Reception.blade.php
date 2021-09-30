@@ -34,7 +34,7 @@
                 <select name="etat" id="etat">
                     <option value="">--Etat--</option>
                     <option value="solide" id="solideChoose">Solide</option>
-                    <option value="liquide" selected>Liquide</option>
+                    <option value="liquide" >Liquide</option>
                     <option value="pulpe">Pulpe</option>
                 </select >
                 <div id="solideOptions">
