@@ -63,6 +63,20 @@ class DemandeAndEchantillonController extends Controller {
         }
     }
 
+    public function deleteDemande(){
+        if(isset($_GET['demandeId'])){
+            Echantillon::where('demand_id',$_GET['demandeId'])->delete();
+            Demande::where('demand_id',$_GET['demandeId'])->delete();
+            return response()->json([
+                'success' => true,
+            ]);
+        }else{
+            return response()->json([
+                'success' => false,
+            ]);
+        }
+    }
+
 
     public function addEchantillon(Request $request){
         if(

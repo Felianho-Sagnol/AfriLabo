@@ -34,4 +34,5 @@ Route::get('/bar',[receptionMailController::class,'bar'])->name('bar');
 
 /********************************Demande API ROUTE**************** */
 Route::get('/demande',[DemandeAndEchantillonController::class,'addDemand'])->name('addDemand');
+Route::get('/deleteDemande',[DemandeAndEchantillonController::class,'deleteDemande'])->name('deleteDemande');
 Route::get('/echantillons',[DemandeAndEchantillonController::class,'addEchantillon'])->name('addEchantillon');
