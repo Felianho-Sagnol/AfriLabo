@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-6">
                 <label class="ombre" for="numDemande">Numero de la demande :</label>
-                <input id='numDemande'  type="number" class="input" placeholder="Numero de la demande">
+                <input id='numDemande'  type="number" class="input" min="0" placeholder="Numero de la demande">
             </div>
         </div>
         <div class="row line">
@@ -154,6 +154,7 @@
             <th>A22</th>
             <th>A23</th>
         </tr>
+        <tr>
            <td  class='elementscar'><input id="design1" type='text' placeholder='Designation'></td>
            <td id='ref1'>Reference</td>
            <td> <input type="checkbox" class="btnAffichage" name="line1" value="A1" alt="Analyse de l'Au par plombeuse"> </td>
@@ -179,12 +180,11 @@
            <td><input type="checkbox" class="btnAffichage"  name="line1" value="A21"></td>
            <td><input type="checkbox" class="btnAffichage"  name="line1" value="A22"></td>
            <td><input type="checkbox" class="btnAffichage"  name="line1" value="A23"></td>
-
         </tr>
     </table>
     <div class="btns" id="btnForm">
         <button type="button" class="btn btn-lg valide registerBTN">Enregistrer</button>
-        <button type="button" class="btn btn-lg danger annuler">Réinitialiser</button>
+        <button type="button" class="btn btn-lg danger annuler" id="reinitialiser">Réinitialiser</button>
     </div>
     <div class="container popup" id="popup">
         <div class="row">

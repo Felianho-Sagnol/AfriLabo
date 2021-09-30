@@ -31,15 +31,23 @@ body {
 
 .formReception {
     margin: 0;
+    border: 2px solid #f9bc14;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transform: translateX(-70vh);
+    background-color: white;
     align-items: center;
-    height: 100vh;
+    height: auto;
+    width: 100%;
     position: relative;
     z-index: 2;
     visibility: hidden;
-    top: -20vh;
+    top: 20vh;
+    border-radius: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+
 }
 
 
@@ -91,8 +99,8 @@ body {
     display: none;
     height: auto;
     max-height: 320px;
-    padding: 15% 5%;
-    margin-top: 20%;
+    padding: 10% 2%;
+    margin-top: 15%;
     background-color: #fff;
     color: #f9bc14;
     box-shadow: 0px 5px 10px #000000;
@@ -114,8 +122,8 @@ body {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #f9bc14;
-    /* padding: 1.8% 0;*/
-    margin: 20px 0; 
+    padding: 1.1% 0;
+    margin: 10px 0; 
 }
 .formReception input{
     border: none ;
@@ -168,7 +176,9 @@ body {
     font-weight: bold;
     color: black;
 }
-
+/* .rowTab .btn{
+    background-color: red;
+} */
 @media screen and (max-width: 520px) {
     .container {
         width: 80%;

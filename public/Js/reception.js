@@ -106,14 +106,29 @@ $(function() {
                 });
                 $('.registerBTN,.annuler').show()
                 $('input').val("")
+
+                //retour
+                let url = "http://127.0.0.1:8000/reception"
+                    $.get(url, () => {
+                        document.location ="http://127.0.0.1:8000/reception"
+                    })
+                 
             })
+            $('#reinitialiser').click(function(){
+                let url = "http://127.0.0.1:8000/reception"
+                $.get(url, () => {
+                    document.location ="http://127.0.0.1:8000/reception"
+                })
+            })
+
+            
 
         })
     }
 
 
 
-    $(function() {
+$(function() {
         getDemandeInformations();
         let max
         let echNumber;
@@ -153,31 +168,41 @@ $(function() {
         }).change();
         //------------------------------------------------------
         $("#nombre").change(function() {
+            $("#ref1").text("R/"+$('#numDemande').val()+"_2021_1")
  
-            $(" #nombre option:selected").each(function() {
-                echNumber = +$(this).val();
-                if (echNumber < max) {
-                    console.log("on doit supprimer")
-                    console.log("car on a max: " + max + " et EchNumbre: " + echNumber)
-                    for (let i = echNumber + 1; i <= max; i++) {
-                        let idEmp = "#" + i
+            if (1) {
+                $(" #nombre option:selected").each(function() {
+                    echNumber = +$(this).val();
+                    if (echNumber < max) {
+                        // console.log("on doit supprimer")
+                        // console.log("car on a max: " + max + " et EchNumbre: " + echNumber)
+                        for (let i = echNumber + 1; i <= max; i++) {
+                            let idEmp = "#" + i
+                        }
                     }
-                }
-                else 
-                {
-            
-                    let numDemande=$('#numDemande').val()
-                            max = i;
-                            for (i = 1; i <= echNumber; i++) 
-                            {
-                                if (i != max && i > max) {
-                                    $("table").append("<tr><td  class='elementscar'><input id='design" + (i) + "'type='text' placeholder='Designation'></td> <td id='ref" + (i) + "'>R/" + numDemande + "_2021_" + (i) + "</td> <td> <input type='checkbox' name='line" + (i) + "' value='Zn'></td> <td><input type='checkbox' name='line" + (i) + "' value='Ag'></td> <td><input type='checkbox' name='line" + (i) + "' value='Pb'></td> <td><input type='checkbox' name='line" + (i) + "' value='Cu'></td> </tr>")
-                                    max = i;
-                                }
-                            }
-                }
+                    else 
+                    {
                 
-            });
+                        let numDemande=$('#numDemande').val()
+                            max = i;
+                            for (i = 0; i <= echNumber; i++) 
+                            {
+                                console.log('max est  for :' +max+" la valeur de i: "+i)
+                                if (i != max && i > max) {
+                                    $("table").append("<tr><td  class='elementscar'><input id='design" + (i+1) + "'type='text' placeholder='Designation'></td> <td id='ref" + (i+1) + "'>R/" + numDemande + "_2021_" + (i+1) + "</td> <td> <input type='checkbox' name='line" + (i+1) + "' value='A1'></td> <td><input type='checkbox' name='line" + (i+1) + "' value='A2'></td> <td><input type='checkbox' name='line" + (i+1) + "' value='A3'></td> <td><input type='checkbox' name='line" + (i+1) + "' value='A4'></td> <td><input type='checkbox' name='line" + (i+1) + "' value='A5'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A6'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A7'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A8'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A9'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A10'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A11'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A12'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A13'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A14'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A15'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A16'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A17'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A18'></td><td><input type='checkbox' name='line" + (i+1) + "' value='19'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A20'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A21'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A22'></td><td><input type='checkbox' name='line" + (i+1) + "' value='23'></td></tr>")
+                                    
+                                }
+                                // max = i;
+                            }
+                            max = i;
+                            //i != max &&//
+                    }
+                    
+                });
+            }
+            else{
+                console.log(1)
+            }
         }).change();
 
     })
