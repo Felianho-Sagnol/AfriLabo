@@ -200,8 +200,8 @@
             <div class="col-md-12" >Démandeur: <span id="NomDemandeurPop">techno</span> </div>
             <div class="col-md-12"> Nombre d'echantillons :<span id="numEch"> num echan</span> </div>
             <div class="col-md-12"> Recepteur :<span id="recepteur"> recetion</span> </div>
-            <div class="col-md-6">Date :<span>01/01/2001</span> </div>
-            <div class="col-md-6">Heure :<span>12h30</span></div>
+            <div class="col-md-6">Date :<span id="date"></span> </div>
+            <div class="col-md-6">Heure :<span id="heure"></span></div>
         </div>
         <div class="row btnsPop">
             <button type="button" class="btn  valide valider">Valider</button>

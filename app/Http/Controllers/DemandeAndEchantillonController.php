@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Demande;
+use App\Models\Recepteur;
 use App\Models\Echantillon;
 use Illuminate\Http\Request;
 
@@ -48,7 +49,8 @@ class DemandeAndEchantillonController extends Controller {
     
                 return response()->json([
                     'success' => true,
-                    'demandId' => $id,
+                    'demande' => $demande,
+                    'recepteur' => Recepteur::where('matricule',session()->get('receptor_id'))->first()->name,
                     'demandAlreadyExist' =>false,
                 ]);
             }
@@ -60,6 +62,8 @@ class DemandeAndEchantillonController extends Controller {
             ]);
         }
     }
+
+
     public function addEchantillon(Request $request){
         if(
             isset($_GET['designation']) && isset($_GET['reference']) 
