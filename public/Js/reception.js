@@ -133,7 +133,7 @@ $(function() {
         let max
         let echNumber;
         let i;
-        max = 0
+        max = 1
         $("select").change(function() {
             var str = "";
             $("#etat option:selected").each(function() {
@@ -184,18 +184,19 @@ $(function() {
                     {
                 
                         let numDemande=$('#numDemande').val()
-                            max = i;
-                            for (i = 0; i <= echNumber; i++) 
+                            for (i = 1; i <= echNumber; i++) 
                             {
-                                console.log('max est  for :' +max+" la valeur de i: "+i)
-                                if (i != max && i > max) {
-                                    $("table").append("<tr><td  class='elementscar'><input id='design" + (i+1) + "'type='text' placeholder='Designation'></td> <td id='ref" + (i+1) + "'>R/" + numDemande + "_2021_" + (i+1) + "</td> <td> <input type='checkbox' name='line" + (i+1) + "' value='A1'></td> <td><input type='checkbox' name='line" + (i+1) + "' value='A2'></td> <td><input type='checkbox' name='line" + (i+1) + "' value='A3'></td> <td><input type='checkbox' name='line" + (i+1) + "' value='A4'></td> <td><input type='checkbox' name='line" + (i+1) + "' value='A5'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A6'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A7'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A8'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A9'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A10'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A11'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A12'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A13'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A14'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A15'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A16'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A17'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A18'></td><td><input type='checkbox' name='line" + (i+1) + "' value='19'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A20'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A21'></td><td><input type='checkbox' name='line" + (i+1) + "' value='A22'></td><td><input type='checkbox' name='line" + (i+1) + "' value='23'></td></tr>")
+                                if (i!=max && i > max) {
+                                    console.log("max et i sont differents Max est: "+max+" et i est :"+i+" en plus "+i+">"+max)
+                                    $("table").append("<tr><td  class='elementscar'><input id='design" + (i) + "'type='text' placeholder='Designation'></td> <td id='ref" + (i) + "'>R/" + numDemande + "_2021_" + (i) + "</td> <td> <input type='checkbox' name='line" + (i) + "' value='A1'></td> <td><input type='checkbox' name='line" + (i) + "' value='A2'></td> <td><input type='checkbox' name='line" + (i) + "' value='A3'></td> <td><input type='checkbox' name='line" + (i) + "' value='A4'></td> <td><input type='checkbox' name='line" + (i) + "' value='A5'></td><td><input type='checkbox' name='line" + (i) + "' value='A6'></td><td><input type='checkbox' name='line" + (i) + "' value='A7'></td><td><input type='checkbox' name='line" + (i) + "' value='A8'></td><td><input type='checkbox' name='line" + (i) + "' value='A9'></td><td><input type='checkbox' name='line" + (i) + "' value='A10'></td><td><input type='checkbox' name='line" + (i) + "' value='A11'></td><td><input type='checkbox' name='line" + (i) + "' value='A12'></td><td><input type='checkbox' name='line" + (i) + "' value='A13'></td><td><input type='checkbox' name='line" + (i) + "' value='A14'></td><td><input type='checkbox' name='line" + (i) + "' value='A15'></td><td><input type='checkbox' name='line" + (i) + "' value='A16'></td><td><input type='checkbox' name='line" + (i) + "' value='A17'></td><td><input type='checkbox' name='line" + (i) + "' value='A18'></td><td><input type='checkbox' name='line" + (i) + "' value='19'></td><td><input type='checkbox' name='line" + (i) + "' value='A20'></td><td><input type='checkbox' name='line" + (i) + "' value='A21'></td><td><input type='checkbox' name='line" + (i) + "' value='A22'></td><td><input type='checkbox' name='line" + (i) + "' value='23'></td></tr>")
                                     
                                 }
                                 // max = i;
                             }
-                            max = i;
-                            //i != max &&//
+                            max = i-1;
+                            console.log("max: "+max)
+
+                            //i != max &&//i != max && i > max
                     }
                     
                 });
