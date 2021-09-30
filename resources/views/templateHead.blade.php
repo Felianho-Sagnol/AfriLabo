@@ -27,9 +27,11 @@
 <body>
     <section class="toHide">
         <div class="headBar row">
-            <div class="col-md-3"> <img src="{{ asset('Images/logoAfriLab.png') }}" width="50%"></div>
-            <div class="col-md-5 title"> @yield('title')</div>
-            <div class="col-md-3 logout"> Déconnexion</div>
+            <div class="col-md-2"> <img src="{{ asset('Images/logoAfriLab.png') }}" width="50%"></div>
+            <div class="col-md-2 title"> @yield('title')</div>
+            <div class="col-md-3 listElement"> Liste des Elements </div>
+            <div class="col-md-3 EchantillonModification"> Modification</div>
+            <div class="col-md-2 logout"> Déconnexion</div>
         </div>
         @yield('containPage')
     </section>

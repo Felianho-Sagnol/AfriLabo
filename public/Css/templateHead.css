@@ -43,25 +43,30 @@ body {
 }
 
 
-.logout {
-    border: 1px solid #f9bc14;
+.logout,.EchantillonModification,.listElement{
+    border: 2px solid #f9bc14;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 4vh;
     width: auto;
     cursor: pointer;
-    height: 25%;
-    margin-top: 5px;
+    height: 35%;
+    margin-top: 1%;
     padding: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
     text-align: center;
     opacity: 0.9;
-    transform: translateX(100px);
+    /* transform: translateX(100px); */
 }
 
-.logout:hover {
+.logout:hover,.EchantillonModification:hover,.listElement:hover {
     background-color: #034a78;
-    border: 1px solid white;
+    border: 2px solid white;
     transition: all 0.3 ease;
     opacity: 1;
+}
+.logout{
+    transform: translateX(25vh);
 }
 
 .logo {
@@ -179,6 +184,7 @@ body {
 }
 
 /* ////////////////////// */
+
 .btns{
     /* border: 2px solid red; */
     position: relative;
@@ -215,6 +221,9 @@ body {
     color: white !important;
     border: 2px solid #df4759 !important; 
     transition: .5 all ease;
+}
+#btnForm,#popup{
+    visibility: hidden;
 }
 /* gestion du popup  */
 .popup{

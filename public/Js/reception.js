@@ -37,8 +37,7 @@ $(function() {
             console.log(designations)
             console.log(references)
             console.log(elementAnalyse)
-
-
+ 
             let demandeUrl = "http://127.0.0.1:8000/demande"
             let localData
             $.get(
@@ -79,17 +78,35 @@ $(function() {
                     }
                 }
             })
+            //remplissage du pop
+            $('#NoDemandePop').text($("#numDemande").val())
+            $('#societePop').text($("#societe").val())
+            $('#NomDemandeurPop').text($("#demandeur").val())
+            $('#numEch').text($("#nombre option:selected").val())
+            $('#recepteur').text('Ahmed')
+            //affichage du popup resultant 
+            $('#popup').css({
+                "visibility":"visible",
+                "tansform":"translateY(500px)"
+            }).hide().delay().show()
+            $('table,.tab1,.autre').css({
+                "filter": "blur(5px)",
+                "cursor": "wait"
+            });
+            $('.registerBTN,.annuler').hide()
 
-
-            //let i=1
-            // for(var element in tableauDemande)
-            // {
-            //     var value = tableauDemande[element];
-            //     console.log(i+" : "+value)
-            //     i++
-            // }
-            // return tableauDemande
-
+            //btn validation
+            $('.valide').click(function(){
+                $('#popup').css({
+                    "visibility":"hidden",
+                }).hide()
+                $('table,.tab1,.autre').css({
+                    "filter": "blur(0px)",
+                    "cursor": "pointer"
+                });
+                $('.registerBTN,.annuler').show()
+                $('input').val("")
+            })
 
         })
     }
@@ -136,7 +153,7 @@ $(function() {
         }).change();
         //------------------------------------------------------
         $("#nombre").change(function() {
-
+ 
             $(" #nombre option:selected").each(function() {
                 echNumber = +$(this).val();
                 if (echNumber < max) {
@@ -148,6 +165,7 @@ $(function() {
                 }
                 else 
                 {
+            
                     let numDemande=$('#numDemande').val()
                             max = i;
                             for (i = 1; i <= echNumber; i++) 
@@ -163,4 +181,14 @@ $(function() {
         }).change();
 
     })
+
+
+
+        // affichages des buttons enregistre et annuler
+        $('.btnAffichage').click(function () {
+            $('#btnForm').css({
+                "visibility":"visible"
+           }).show() 
+        })
+
 })

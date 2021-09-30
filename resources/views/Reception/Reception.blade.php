@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
     @extends('templateHead')
     @section('title')
-        <h2>Réception des echantilllons</h2>
+        <h2>Réception </h2>
     @endsection
     @section('containPage')
     <div class="row tab1 toHide">
@@ -91,7 +91,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="autre">
         <label class="ombre" for="nbrEch">Nombre d'echantillons:</label>
            <select name="nombre" id="nombre">
                 <option value="">Choix</option>
@@ -123,31 +123,70 @@
                 <option value="26">26</option>
            </select >
     </div>
-    <table class="tab2" >
+    <table class="tab2" toHide>
         <tr id="entete">
             <th rowspan="2">Designation</th>
             <th rowspan="2">Reference Labo</th>
-            <th colspan="4">Elements démandés</th>
+            <th colspan="23">Elements démandés</th>
         </tr>
-        <tr>
-            <th>Zn</th>
-            <th>Ag</th>
-            <th>Pb</th>
-            <th>Cu</th>
+        <tr id="enteteElement">
+            <th>A1</th>
+            <th>A2</th>
+            <th>A3</th>
+            <th>A4</th>
+            <th>A5</th>
+            <th>A6</th>
+            <th>A7</th>
+            <th>A8</th>
+            <th>A9</th>
+            <th>A10</th>
+            <th>A11</th>
+            <th>A12</th>
+            <th>A13</th>
+            <th>A14</th>
+            <th>A15</th>
+            <th>A16</th>
+            <th>A17</th>
+            <th>A18</th>
+            <th>A19</th>
+            <th>A20</th>
+            <th>21</th>
+            <th>A22</th>
+            <th>A23</th>
         </tr>
            <td  class='elementscar'><input id="design1" type='text' placeholder='Designation'></td>
            <td id='ref1'>Reference</td>
-           <td> <input type="checkbox" name="line1" value="Zn"> </td>
-           <td><input type="checkbox" name="line1" value="Ag"></td>
-           <td><input type="checkbox" name="line1" value="Pb"></td>
-           <td><input type="checkbox" name="line1" value="Cu"></td>
+           <td> <input type="checkbox" class="btnAffichage" name="line1" value="A1" alt="Analyse de l'Au par plombeuse"> </td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A2"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A3"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A4"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A5"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A6"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A7"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A8"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A9"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A10"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A11"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A12"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A13"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A14"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A15"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A16"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A17"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A18"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A19"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A20"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A21"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A22"></td>
+           <td><input type="checkbox" class="btnAffichage"  name="line1" value="A23"></td>
+
         </tr>
     </table>
-    <div class="btns">
+    <div class="btns" id="btnForm">
         <button type="button" class="btn btn-lg valide registerBTN">Enregistrer</button>
         <button type="button" class="btn btn-lg danger annuler">Réinitialiser</button>
     </div>
-    <div class="container popup">
+    <div class="container popup" id="popup">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6"> 
