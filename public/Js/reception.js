@@ -74,7 +74,6 @@ $(function() {
                                 console.log(forLocalData);
                             })
                         }
-
                     }
                 }
             }).then(() => {
@@ -106,29 +105,29 @@ $(function() {
 
                     //btn validation
                     $('.valide').click(function() {
-                            $('#popup').css({
-                                "visibility": "hidden",
-                            }).hide()
-                            $('table,.tab1,.autre').css({
-                                "filter": "blur(0px)",
-                                "cursor": "pointer"
-                            });
-                            $('.registerBTN,.annuler').show()
-                            $('input').val("")
+                        document.location = "http://127.0.0.1:8000/reception"
+                    })
 
-                            //retour
-                            let url = "http://127.0.0.1:8000/reception"
-                            $.get(url, () => {
-                                document.location = "http://127.0.0.1:8000/reception"
-                            })
+                    //btn nonvalidation
+                    $('.nonValider').click(function() {
+                        $('#popup').css({
+                            "visibility": "hidden",
+                        }).hide()
+                        $('table,.tab1,.autre').css({
+                            "filter": "blur(0px)",
+                            "cursor": "pointer"
+                        });
+                        $('.registerBTN,.annuler').show()
 
+                        let deleteUrl = "http://127.0.0.1:8000/deleteDemande"
+                        let demandId = localData.demande.demand_id
+                        $.get(deleteUrl, { demandeId: demandId }, (data) => {
+                            console.log(data)
                         })
-                        /*$('#reinitialiser').click(function() {
-                            let url = "http://127.0.0.1:8000/reception"
-                            $.get(url, () => {
-                                document.location = "http://127.0.0.1:8000/reception"
-                            })
-                        })*/
+                    })
+                    $('#reinitialiser').click(function() {
+                        document.location = "http://127.0.0.1:8000/reception"
+                    })
                 } else {
                     console.log("Error")
                 }
