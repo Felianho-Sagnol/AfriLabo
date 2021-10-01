@@ -22,6 +22,8 @@ Route::get('/',[Controller::class,'home'])->name('home');
 
 /********************Recetion ROUTING******************/
 Route::get('/reception',[ReceptionController::class,'reception'])->name('reception');
+Route::get('/modification',[ReceptionController::class,'modification'])->name('modification');
+
 
 
 /********************Receptor API ROUTING******************/
