@@ -1,0 +1,36 @@
+.barre{
+    /* display: flex; */
+    width: auto;
+    /* margin: 3px; */
+}
+.affichage{
+    overflow-y: scroll;
+  
+}
+.rechercheText{
+    margin: initial;
+    width: 100%;
+    border: none;
+    height: 6vh;
+    border-bottom: 2px solid #f9bc14;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    font-weight: bold;
+    margin-top: 2%;
+
+}
+.rechercheText:active{
+    border: none;
+}
+button{
+    font-size: auto;
+    width: auto;
+    height: inherit;
+}
+.rechercheBtn{
+    border-radius: 10px;
+    background-color: #f9bc14 !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white !important;
+    font-weight: bold;
+}

@@ -1,5 +1,4 @@
 <script defer type='module' src="{{asset('/js/reception.js')}}"></script>
-<script defer type='module' src="{{asset('/Js/formulaireResultant/resultatSaisi.js')}}"></script>
 
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
     @extends('templateHead')

@@ -92,7 +92,7 @@ $(function() {
                     }
                 }
             }).then(() => {
-                if (localData.success) {
+                if (localData.success && errorDemande) {
                     let demande = localData.demande
                     console.log(localData)
 
@@ -154,11 +154,11 @@ $(function() {
 
 
     $(function() {
+        let errorDemande = false
         getDemandeInformations();
         let max
         let echNumber;
         let i;
-        let errorDemande = false
         max = 1
         $("select").change(function() {
             var str = "";
