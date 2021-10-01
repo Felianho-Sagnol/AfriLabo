@@ -221,6 +221,9 @@ $(function() {
             // }
 
         }
+        if($("#depotAfrilab option:selected").val()==""){
+            errorDemande=redBox("#depotAfrilab")
+        }
     
     }
 

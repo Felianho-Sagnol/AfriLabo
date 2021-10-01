@@ -63,7 +63,7 @@
                 <select name="depotAfrilab" id="depotAfrilab">
                     <option value="">--choix--</option>
                     <option value="AfriLAb" >AFRILAB</option>
-                    <option value="Client" selected>Client</option>
+                    <option value="Client" >Client</option>
                 </select >
                 <div id="depotoire">
                     <div >
