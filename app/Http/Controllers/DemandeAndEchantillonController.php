@@ -102,6 +102,31 @@ class DemandeAndEchantillonController extends Controller {
         }
     }
 
+    public function getDemande(){
+        if(isset($_GET['demandeId'])){
+            $demande = Demande::where('demand_id',$_GET['demandeId'])->first();
+            if(!empty($demande)){
+                $echantillons =  Echantillon::where('demand_id',$_GET['demandeId'])->get();
+                return response()->json([
+                    'success' => true,
+                    'demande' => $demande,
+                    'echantillons' => $echantillons,
+                    'demandeExist' => true,
+                ]);
+            }else{
+                return response()->json([
+                    'success' => true,
+                    'demandeExist' => false,
+                    'message' => "Aucune demande trouvée pour le numéro de demande : " + $_GET['demandeId'],
+                ]);
+            }
+        }else{
+            return response()->json([
+                'success' => false,
+            ]);
+        }
+    }
+
     
 }
 
