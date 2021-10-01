@@ -235,6 +235,7 @@ body {
 #btnForm,#popup{
     visibility: hidden;
 }
+
 /* gestion du popup  */
 .popup{
     border: 2px solid rgb(3, 73, 119);;
@@ -243,6 +244,8 @@ body {
     width: 50% ;
     border-radius: 10px;
     box-shadow: 0px 3px 10px black;
+    transform: translateY(-50vh);
+    background-color: white;
 }
 .btnsPop{
    transform: translateX(18vh);
