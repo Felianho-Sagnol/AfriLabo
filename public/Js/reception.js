@@ -1,15 +1,16 @@
-function redBox(idElement){
-    if ($(idElement).val()=="")  {
+function redBox(idElement) {
+    if ($(idElement).val() == "") {
         console.log("le  dchampemandeur est vide")
-        $(idElement).css({"box-shadow":"0px 0px 10px red"})
+        $(idElement).css({ "box-shadow": "0px 0px 10px red" })
         setTimeout(() => {
-        $(idElement).css({"box-shadow":"0px 0px 0px black"})
+            $(idElement).css({ "box-shadow": "0px 0px 0px black" })
         }, 5000);
         return true
-    } 
-    return false 
+    }
+    return false
 }
-function redOnly(idElement){
+
+function redOnly(idElement) {
 
 }
 $(function() {
@@ -157,7 +158,7 @@ $(function() {
         let max
         let echNumber;
         let i;
-        let errorDemande=false
+        let errorDemande = false
         max = 1
         $("select").change(function() {
             var str = "";
@@ -194,40 +195,38 @@ $(function() {
         //------------------------------------------------------
         $("#nombre").change(function() {
             $("#ref1").text("R/" + $('#numDemande').val() + "_2021_1")
-            //les verification
-       if ($(" #nombre option:selected").val()!=1) {
-       //--------------------------------sur le champ demandeur-----------
-       errorDemande= redBox("#demandeur")
-       //--------------------------------sur le champ societe-----------
-        errorDemande=redBox("#societe")
-       //--------------------------------sur le champ identificateur-----------
-       errorDemande=redBox("#identificateur")
-       //--------------------------------sur le champ numero de demande-----------
-       errorDemande=redBox("#numDemande")
-       //--------------------------------sur le champ numero de Etat de l'echantillon-----------
-        if($("#etat option:selected").val()==""){
-            errorDemande=redBox("#etat")
+                //les verification
+            if ($(" #nombre option:selected").val() != 1) {
+                //--------------------------------sur le champ demandeur-----------
+                errorDemande = redBox("#demandeur")
+                    //--------------------------------sur le champ societe-----------
+                errorDemande = redBox("#societe")
+                    //--------------------------------sur le champ identificateur-----------
+                errorDemande = redBox("#identificateur")
+                    //--------------------------------sur le champ numero de demande-----------
+                errorDemande = redBox("#numDemande")
+                    //--------------------------------sur le champ numero de Etat de l'echantillon-----------
+                if ($("#etat option:selected").val() == "") {
+                    errorDemande = redBox("#etat")
 
-        }
-        else if ($("#etat option:selected").val()=="solide") 
-        {
-            let vari="vide "
-             vari=vari+"autre"+$('input[name=solide]:checked').val()
-            console.log("option solide "+vari )
-            // if ($('input[name=solide]:checked').val()=="") {
-            //     console.log("l'etat est solide sans  ")
-            //     errorDemande=redBox('#solideOptions option')
-                
-            // }
+                } else if ($("#etat option:selected").val() == "solide") {
+                    let vari = "vide "
+                    vari = vari + "autre" + $('input[name=solide]:checked').val()
+                    console.log("option solide " + vari)
+                        // if ($('input[name=solide]:checked').val()=="") {
+                        //     console.log("l'etat est solide sans  ")
+                        //     errorDemande=redBox('#solideOptions option')
 
-        }
-        if($("#depotAfrilab option:selected").val()==""){
-            errorDemande=redBox("#depotAfrilab")
-        }
-    
-    }
+                    // }
 
-       //-----------------------------------------------
+                }
+                if ($("#depotAfrilab option:selected").val() == "") {
+                    errorDemande = redBox("#depotAfrilab")
+                }
+
+            }
+
+            //-----------------------------------------------
 
             if (!errorDemande) {
                 $(" #nombre option:selected").each(function() {
@@ -270,6 +269,10 @@ $(function() {
         $('#btnForm').css({
             "visibility": "visible"
         }).show()
+    })
+
+    $('.EchantillonModification').click(() => {
+        document.location = "http://127.0.0.1:8000/modification"
     })
 
 })
