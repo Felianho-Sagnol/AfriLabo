@@ -3,7 +3,10 @@
 
 
 @extends('templateHead')
-    @section('title')
+    @section('titleHead')
+        Réception|modification Echantillon
+    @endsection
+    @section('titlePage')
         <h2>Réception </h2>
     @endsection
     @section('containPage')

@@ -1,8 +1,14 @@
 <script defer type='module' src="{{asset('/js/reception.js')}}"></script>
-
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer type='module' src="{{asset('/js/layoutJs/popupController.js')}}"></script>
+
     @extends('templateHead')
-    @section('title')
+    @section('titleHead')
+        AfriLab|Réception
+    @endsection
+    @section('titlePage')
         <h2>Réception </h2>
     @endsection
     @section('containPage')
@@ -18,17 +24,21 @@
             </div>
         </div>
         <div class="row line">
-            <div class="col-md-6">
+            <div class="col-md-4 col-sm-4">
                 <label class="ombre" for="identificateur">Identification des echantillons :</label>
                 <input id='identificateur'  type="text" class="input" placeholder="Exemple: Roche">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4 col-sm-4">
                 <label class="ombre" for="numDemande">Numero de la demande :</label>
                 <input id='numDemande'  type="number" class="input" min="0" placeholder="Numero de la demande">
             </div>
+            <div class="col-md-4 col-sm-4">
+                <label class="ombre" for="numDemande">Emplacement:</label>
+                <input id='numDemande'  type="text" class="input" min="0" placeholder="exemple YO28 ">
+            </div>
         </div>
         <div class="row line">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6">
                 <label class="ombre" for="etat">Etat de l'echantillon :</label>
                 <select name="etat" id="etat">
                     <option value="">--Etat--</option>
@@ -127,7 +137,6 @@
             <th rowspan="2">Designation</th>
             <th rowspan="2">Reference Labo</th>
             <th colspan="23">Elements démandés</th>
-            <th rowspan="2">Emplacement</th>
         </tr>
         <tr id="enteteElement">
             <th>A1</th>
@@ -180,7 +189,6 @@
            <td><input type="checkbox" class="btnAffichage"  name="line1" value="A21"></td>
            <td><input type="checkbox" class="btnAffichage"  name="line1" value="A22"></td>
            <td><input type="checkbox" class="btnAffichage"  name="line1" value="A23"></td>
-           <td><input type="text"  class="place1" placeholder="Emplacement de l'l'échantillon"></td>
         
         </tr>
     </table>
@@ -188,27 +196,7 @@
         <button type="button" class="btn btn-lg valide registerBTN">Enregistrer</button>
         <button type="button" class="btn btn-lg danger annuler" id="reinitialiser">Réinitialiser <img src="{{ asset('Images/arrow-clockwise.svg') }} " width="10%"></button>
     </div>
-<!-- require_once() -->
-    <div class="container popup" id="popup">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6"> 
-                <img src="{{ asset('Images/logoAfriLab.png') }}" width="80%">
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-12" >Demande Numéro: <span id="NoDemandePop">ici num demande </span></div>
-            <div class="col-md-12">Société :<span id="societePop">ciscom</span> </div>
-            <div class="col-md-12" >Démandeur: <span id="NomDemandeurPop">techno</span> </div>
-            <div class="col-md-12"> Nombre d'echantillons :<span id="numEch"> num echan</span> </div>
-            <div class="col-md-12"> Recepteur :<span id="recepteur"> recetion</span> </div>
-            <div class="col-md-6">Date :<span id="date"></span> </div>
-            <div class="col-md-6">Heure :<span id="heure"></span></div>
-        </div>
-        <div class="row btnsPop">
-            <button type="button" class="btn  valide valider">Valider</button>
-            <button type="button" class="btn  danger nonValider">Annuler</button>
-        </div>
-    </div>
+    @include('layouts.popupValidation')
+    @include('layouts.appercue')
+
 @endsection

@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>@yield('titleHead')</title>
 
         <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
         <!-- <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> -->
@@ -27,40 +28,40 @@
 <body>
     <section class="toHide">
         <div class="headBar row">
-            <div class="col-md-2"> <img src="{{ asset('Images/logoAfriLab.png') }}" width="50%"></div>
-            <div class="col-md-2 title"> @yield('title')</div>
-            <div class="col-md-3 listElement"> 
-            <div class="teteLi">Liste des Elements d'analyse 
-            </div> 
+            <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2"> <img src="{{ asset('Images/logoAfriLab.png') }}" width="50%"></div>
+            <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 title"> @yield('titlePage')</div>
+            <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3 listElement"> 
+                <div class="teteLi">Liste des Elements d'analyse 
+                </div> 
                 <ul class="elementLi">
                 <span class="quitter"> <img src="{{ asset('Images/x-lg.svg') }}"></span> 
                     <li> <span>A1 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
                     <li><span>A2 : </span> <em>Analyse de l'Ag par fusion plombeuse</em> </li>
                     <li><span>A3 : </span> <em>Analyse du Cu par Analyse chimique</em> </li>
                     <li><span>A4 : </span> <em>Analyse du Mn par Analyse Chimique</em> </li>
-                    <li><span>A5 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A6 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A7 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A8 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A9 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A9 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A10 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A10 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A11 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A12 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A13 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A14 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A15 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A16 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A5 : </span> <em>Analyse du Zn par Analyse Chimique</em> </li>
+                    <li><span>A6 : </span> <em>Analyse Pb par Analyse Chimique</em> </li>
+                    <li><span>A7 : </span> <em>Analyse du Fe par Analyse Chimique</em> </li>
+                    <li><span>A8 : </span> <em>Analyse de l'Ag par Absorption Atomique flamme</em> </li>
+                    <li><span>A9 : </span> <em>Analyse du Cu par Absorption Atomique flamme</em> </li>
+                    <li><span>A10 : </span> <em>Analyse du Pb par Absorption Atomique flamme</em> </li>
+                    <li><span>A11 : </span> <em>Analyse du Zn par Absorption Atomique flamme</em> </li>
+                    <li><span>A12 : </span> <em>Analyse du Mn par Absorption Atomique flamme</em> </li>
+                    <li><span>A13 : </span> <em>Analyse du Co par Absorption Atomique flamme</em> </li>
+                    <li><span>A14 : </span> <em>Analyse du Ni par Absorption Atomique flamme</em> </li>
+                    <li><span>A15 : </span> <em>Analyse du Fe par Absorption Atomique flamme</em> </li>
+                    <li><span>A16 : </span> <em>Détermination de la teneur des majeurs (Al2O3, CaO,Fe2O3,K2O,MgO,P2O5,S,SiO2,TiO2 Traces: As,B,Ba,Be,Bi,Cd,Co,Cr,Cu,Li,Mo,Nb,Ni,Pb,Sb,Se,Sr,Ta,V,Zn)</em> </li>
                     <li><span>A17 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
                     <li><span>A18 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
                     <li><span>A19 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
                     <li><span>A20 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A21 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
                     <li><span>A22 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A23 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
                 </ul>
             </div>
-            <div class="col-md-3 EchantillonModification"> Modification</div>
-            <div class="col-md-2 logout"> Déconnexion</div>
+            <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3 EchantillonModification"> Modification</div>
+            <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 logout"> Déconnexion</div>
         </div>
         @yield('containPage')
     </section>
