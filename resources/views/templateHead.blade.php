@@ -30,8 +30,10 @@
             <div class="col-md-2"> <img src="{{ asset('Images/logoAfriLab.png') }}" width="50%"></div>
             <div class="col-md-2 title"> @yield('title')</div>
             <div class="col-md-3 listElement"> 
-            <div class="teteLi">Liste des Elements d'analyse <span class="quitter"> <img src="{{ asset('Images/x-lg.svg') }}"></span> </div> 
+            <div class="teteLi">Liste des Elements d'analyse 
+            </div> 
                 <ul class="elementLi">
+                <span class="quitter"> <img src="{{ asset('Images/x-lg.svg') }}"></span> 
                     <li> <span>A1 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
                     <li><span>A2 : </span> <em>Analyse de l'Ag par fusion plombeuse</em> </li>
                     <li><span>A3 : </span> <em>Analyse du Cu par Analyse chimique</em> </li>

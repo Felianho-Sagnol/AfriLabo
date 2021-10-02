@@ -273,7 +273,7 @@ $(function() {
          $(".quitter").show(400).fadeIn(200)
     })
     $(".quitter").click(function(){
-        $(".listElement ul").hide()
-        $(".quitter").hide()
+        $(".listElement ul").hide(200).fadeOut(200)
+        $(".quitter").hide().fadeOut(400)
     })
 })
