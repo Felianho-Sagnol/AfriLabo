@@ -5,15 +5,12 @@
 
 body {
     overflow-x: hidden;
-    /* background-image: url('../Images/background2.jpg') ; */
-    /* background-repeat: no-repeat;
-    display: flex;
-    flex-direction: row; */
 }
 
 .headBar {
     /* position: static; */
     width: 100%;
+    height: 15%;
     background-color: rgba(3, 73, 119, 0.5);
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
@@ -28,46 +25,92 @@ body {
     padding-top: 13px;
     font-size: 35px;
 }
+.teteLi{
+    background-color:rgba(3, 73, 119, 0.5) !important;
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+    border: 2px solid #f9bc14;
+    font-size: auto;
+    cursor: pointer !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
 
+}
+.listElement{
+    position: relative;
+    z-index: 2;
+ 
+
+}
+.elementLi{
+    height: 50vh;
+    overflow-y: scroll;
+    box-shadow: 0px 0px 5px black;
+}
+
+.listElement ul li{
+    text-decoration: none;
+    border-bottom: 1px solid rgba(3, 73, 119, 0.5);
+    list-style-type: none;
+    text-align: start;
+    display: block;
+}
+.listElement ul li span{
+    color:#f9bc14;
+}
+ul{
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    /* visibility: hidden; */
+}
+.teteLi :hover > ul {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
 .formReception {
     margin: 0;
     border: 2px solid #f9bc14;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transform: translateX(-70vh);
+    transform: translate(70vh,-100vh);
     background-color: white;
     align-items: center;
-    height: auto;
-    width: 100%;
+    height: 78vh;
+    width: 40%;
     position: relative;
     z-index: 2;
     visibility: hidden;
-    top: 20vh;
-    border-radius: 30px;
+     border-radius: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
 
 }
 
 
-.logout,.EchantillonModification,.listElement{
+.logout,.EchantillonModification{
     border: 2px solid #f9bc14;
     border-radius: 10px;
-    font-size: 4vh;
+    font-size: auto;
     width: auto;
     cursor: pointer !important;
-    height: 35%;
-    margin-top: 1%;
-    padding: 5px;
+    height:35%;
+    margin-top: 2%;
+    /* padding: 5px; */
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
     text-align: center;
     opacity: 0.9;
+    line-height: -5px;
     /* transform: translateX(100px); */
 }
 
-.logout:hover,.EchantillonModification:hover,.listElement:hover {
+.logout:hover,.EchantillonModification:hover{
     background-color: #034a78;
     border: 2px solid white;
     transition: all 0.3 ease;

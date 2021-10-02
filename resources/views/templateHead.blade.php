@@ -29,7 +29,34 @@
         <div class="headBar row">
             <div class="col-md-2"> <img src="{{ asset('Images/logoAfriLab.png') }}" width="50%"></div>
             <div class="col-md-2 title"> @yield('title')</div>
-            <div class="col-md-3 listElement"> Liste des Elements </div>
+            <div class="col-md-3 listElement"> 
+            <div class="teteLi">Liste des Elements d'analyse</div> 
+                <ul class="elementLi">
+                    <li> <span>A1 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A2 : </span> <em>Analyse de l'Ag par fusion plombeuse</em> </li>
+                    <li><span>A3 : </span> <em>Analyse du Cu par Analyse chimique</em> </li>
+                    <li><span>A4 : </span> <em>Analyse du Mn par Analyse Chimique</em> </li>
+                    <li><span>A5 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A6 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A7 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A8 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A9 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A9 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A10 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A10 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A11 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A12 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A13 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A14 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A15 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A16 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A17 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A18 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A19 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A20 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A22 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                </ul>
+            </div>
             <div class="col-md-3 EchantillonModification"> Modification</div>
             <div class="col-md-2 logout"> Déconnexion</div>
         </div>

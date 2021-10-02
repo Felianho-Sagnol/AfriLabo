@@ -127,6 +127,7 @@
             <th rowspan="2">Designation</th>
             <th rowspan="2">Reference Labo</th>
             <th colspan="23">Elements démandés</th>
+            <th rowspan="2">Emplacement</th>
         </tr>
         <tr id="enteteElement">
             <th>A1</th>
@@ -179,12 +180,15 @@
            <td><input type="checkbox" class="btnAffichage"  name="line1" value="A21"></td>
            <td><input type="checkbox" class="btnAffichage"  name="line1" value="A22"></td>
            <td><input type="checkbox" class="btnAffichage"  name="line1" value="A23"></td>
+           <td><input type="text"  class="place1" placeholder="Emplacement de l'l'échantillon"></td>
+        
         </tr>
     </table>
     <div class="btns" id="btnForm">
         <button type="button" class="btn btn-lg valide registerBTN">Enregistrer</button>
         <button type="button" class="btn btn-lg danger annuler" id="reinitialiser">Réinitialiser</button>
     </div>
+<!-- require_once() -->
     <div class="container popup" id="popup">
         <div class="row">
             <div class="col-md-3"></div>
@@ -195,7 +199,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" >Demande Numéro: <span id="NoDemandePop">ici num demande </span></div>
-            <div class="col-md-12">Sociéte :<span id="societePop">ciscom</span> </div>
+            <div class="col-md-12">Société :<span id="societePop">ciscom</span> </div>
             <div class="col-md-12" >Démandeur: <span id="NomDemandeurPop">techno</span> </div>
             <div class="col-md-12"> Nombre d'echantillons :<span id="numEch"> num echan</span> </div>
             <div class="col-md-12"> Recepteur :<span id="recepteur"> recetion</span> </div>
