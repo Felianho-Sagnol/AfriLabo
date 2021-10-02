@@ -186,7 +186,7 @@
     </table>
     <div class="btns" id="btnForm">
         <button type="button" class="btn btn-lg valide registerBTN">Enregistrer</button>
-        <button type="button" class="btn btn-lg danger annuler" id="reinitialiser">Réinitialiser</button>
+        <button type="button" class="btn btn-lg danger annuler" id="reinitialiser">Réinitialiser <img src="{{ asset('Images/arrow-clockwise.svg') }} " width="10%"></button>
     </div>
 <!-- require_once() -->
     <div class="container popup" id="popup">

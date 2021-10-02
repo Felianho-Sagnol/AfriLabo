@@ -61,16 +61,17 @@ body {
 .listElement ul li span{
     color:#f9bc14;
 }
-ul{
+.listElement ul{
     background-color: white;
     border-radius: 10px;
     text-align: center;
-    /* visibility: hidden; */
 }
-.teteLi :hover > ul {
-    visibility: visible;
-    opacity: 1;
-    display: block;
+
+.quitter img{
+    /* background-color: black; */
+    color: white;
+    margin: 2%;
+    /* transform: rotate(45deg); */
 }
 .formReception {
     margin: 0;

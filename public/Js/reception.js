@@ -87,7 +87,7 @@ $(function() {
                     }
                 }
             }).then(() => {
-                if (localData.success && errorDemande) {
+                if (localData.success ) {
                     let demande = localData.demande
                     console.log(localData)
 
@@ -268,4 +268,12 @@ $(function() {
         document.location = "http://127.0.0.1:8000/modification"
     })
 
+    $( ".teteLi" ) .click(function() {
+         $(".listElement ul").show(200).fadeIn(200)
+         $(".quitter").show(400).fadeIn(200)
+    })
+    $(".quitter").click(function(){
+        $(".listElement ul").hide()
+        $(".quitter").hide()
+    })
 })
