@@ -124,10 +124,10 @@ class DemandeAndEchantillonController extends Controller {
         }else{
             return response()->json([
                 'success' => false,
+                'text' =>'je suis par la'
             ]);
         }
     }
-
     
 }
 
