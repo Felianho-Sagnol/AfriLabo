@@ -1,3 +1,5 @@
+import { getDemandeEchantillonsInfos } from "./layoutJs/popupController.js"
+
 function redBox(idElement) {
     if ($(idElement).val() == "") {
         console.log("le  dchampemandeur est vide")
@@ -67,6 +69,7 @@ $(function() {
                 (data) => {
                     localData = data
                 }).then(() => {
+                let demandeId = localData.demande.demand_id
                 if (localData.demandAlreadyExist) {
                     //numero de mande existant
                 } else {
@@ -88,8 +91,10 @@ $(function() {
                         }
                     }
                 }
+                console.log("start")
+                getDemandeEchantillonsInfos(demandeId)
             }).then(() => {
-                if (localData.success ) {
+                if (localData.success) {
                     let demande = localData.demande
                     console.log(localData)
 
@@ -116,12 +121,12 @@ $(function() {
                     $('.registerBTN,.annuler').hide()
 
                     //btn validation
-                    $('.valide').click(function() {
+                    $('.valide').on('click', function() {
                         document.location = "http://127.0.0.1:8000/reception"
                     })
 
                     //btn nonvalidation
-                    $('.nonValider').click(function() {
+                    $('.nonValider').on('click', function() {
                         $('#popup').css({
                             "visibility": "hidden",
                         }).hide()
@@ -137,10 +142,13 @@ $(function() {
                             console.log(data)
                         })
                         $('.headBar').css({
-                            "filter":"blur(0px)"
+                            "filter": "blur(0px)"
                         })
                     })
-                    $('#reinitialiser').click(function() {
+
+
+
+                    $('#reinitialiser').on('click', function() {
                         document.location = "http://127.0.0.1:8000/reception"
                     })
                 } else {
@@ -148,7 +156,7 @@ $(function() {
                 }
             })
             $('.headBar').css({
-                "filter":"blur(5px)"
+                "filter": "blur(5px)"
             })
         })
     }
@@ -225,7 +233,6 @@ $(function() {
                 if ($("#depotAfrilab option:selected").val() == "") {
                     errorDemande = redBox("#depotAfrilab")
                 }
-
             }
 
             //-----------------------------------------------
@@ -275,16 +282,16 @@ $(function() {
         document.location = "http://127.0.0.1:8000/modification"
     })
 
-    $( ".teteLi" ) .click(function() {
-         $(".listElement ul").show(200).fadeIn(200)
-         $(".quitter").show(400).fadeIn(200)
+    $(".teteLi").click(function() {
+        $(".listElement ul").show(200).fadeIn(200)
+        $(".quitter").show(400).fadeIn(200)
 
     })
-    $(".quitter").click(function(){
+    $(".quitter").click(function() {
         $(".listElement ul").hide(200).fadeOut(200)
         $(".quitter").hide().fadeOut(400)
-        // $('.headBar').css({
-        //     "filter": "blur(5px)"
-        // })
+            // $('.headBar').css({
+            //     "filter": "blur(5px)"
+            // })
     })
 })
