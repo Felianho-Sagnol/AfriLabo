@@ -14,6 +14,7 @@ class DemandeAndEchantillonController extends Controller {
             && isset($_GET['identification_echantillon']) && isset($_GET['numeroDemande']) 
             && isset($_GET['echantillonnage']) 
             && isset($_GET['nombreEchantillons'])
+            && isset($_GET['emplacement'])
         ){
             $verifDemand = Demande::where('demand_id',$_GET['numeroDemande'])->first();
 
@@ -29,11 +30,11 @@ class DemandeAndEchantillonController extends Controller {
                 $demande->society = $_GET['societe'];
                 $demande->identification_echantillon = $_GET['identification_echantillon'];
                 $demande->demandeur = $_GET['demand'];
+                $demande->emplacement = $_GET['emplacement'];
                 $demande->etat = $_GET['etat'];
                 $demande->echantillonnage = $_GET['echantillonnage'];
                 $demande->nombre_echantillons = $_GET['nombreEchantillons'];
                 $demande->created_at = new \DateTime();
-
                 $demande->recepteur_id = $request->session()->get('receptor_id');
     
                 if(isset($_GET['depot'])){

@@ -33,8 +33,8 @@
                 <input id='numDemande'  type="number" class="input" min="0" placeholder="Numero de la demande">
             </div>
             <div class="col-md-4 col-sm-4">
-                <label class="ombre" for="numDemande">Emplacement:</label>
-                <input id='numDemande'  type="text" class="input" min="0" placeholder="exemple YO28 ">
+                <label class="ombre" for="emplacement">Emplacement:</label>
+                <input id='emplacement'  type="text" class="input"  placeholder="exemple YO28 ">
             </div>
         </div>
         <div class="row line">

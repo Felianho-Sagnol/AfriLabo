@@ -27,7 +27,8 @@ $(function() {
                 'casSolide': $('input[name=solide]:checked').val(),
                 'echantillonage': $("#depotAfrilab option:selected").val(),
                 'depot': $('input[name=depot]:checked').val(),
-                'nombreEchantillon': $("#nombre option:selected").val()
+                'nombreEchantillon': $("#nombre option:selected").val(),
+                'emplacement': $("#emplacement").val(),
             }
             console.log(tableauDemande)
             let elementAnalyse = []
@@ -54,13 +55,14 @@ $(function() {
                 demandeUrl, {
                     demand: tableauDemande.nomDemandeur,
                     societe: tableauDemande.societe,
+                    emplacement: tableauDemande.emplacement,
                     etat: tableauDemande.etatEchantillon,
                     identification_echantillon: tableauDemande.indentificateur,
                     echantillonnage: tableauDemande.echantillonage,
                     depot: tableauDemande.depot,
                     etatSolid: tableauDemande.casSolide,
                     nombreEchantillons: tableauDemande.nombreEchantillon,
-                    numeroDemande: tableauDemande.numeroDemande
+                    numeroDemande: tableauDemande.numeroDemande,
                 },
                 (data) => {
                     localData = data
