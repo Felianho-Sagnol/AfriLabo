@@ -109,14 +109,12 @@ class DemandeAndEchantillonController extends Controller {
             if(!empty($demande)){
                 $echantillons =  Echantillon::where('demand_id',$_GET['demandeId'])->get();
                 return response()->json([
-                    'success' => true,
                     'demande' => $demande,
                     'echantillons' => $echantillons,
                     'demandeExist' => true,
                 ]);
             }else{
                 return response()->json([
-                    'success' => true,
                     'demandeExist' => false,
                     'message' => "Aucune demande trouvée pour le numéro de demande : "  .$_GET['demandeId'],
                 ]);

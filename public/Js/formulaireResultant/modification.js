@@ -14,13 +14,26 @@ $(function() {
             $.get(modificationUrl, { demandeId: query }, (data) => {
                 localData = data
             }).then(() => {
-                console.log(localData)
-                if (localData.success) {
-
+                //console.log(localData)
+                if (localData.demandeExist) {
+                    let demande = localData.demande
+                    let echantillons = localData.echantillons
+                    let dateTime = demande.created_at.date.split(' ')
+                    let date = dateTime[0]
+                    let heure = dateTime[1].split('.')[0]
+                    console.log(demande)
+                    console.log(echantillons)
+                } else {
+                    let errorMessage = localData.message
+                    console.log(errorMessage)
                 }
             })
         }
 
+    })
+
+    $('#modificationBTNclass').on('click', () => {
+        alert('Modification')
     })
 
 
