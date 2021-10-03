@@ -118,14 +118,9 @@ class DemandeAndEchantillonController extends Controller {
                 return response()->json([
                     'success' => true,
                     'demandeExist' => false,
-                    'message' => "Aucune demande trouvée pour le numéro de demande : " + $_GET['demandeId'],
+                    'message' => "Aucune demande trouvée pour le numéro de demande : "  .$_GET['demandeId'],
                 ]);
             }
-        }else{
-            return response()->json([
-                'success' => false,
-                'text' =>'je suis par la'
-            ]);
         }
     }
     
