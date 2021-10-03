@@ -16,6 +16,7 @@
 
     export function getDemandeEchantillonsInfos(demandeId) {
         let modificationUrl = "http://127.0.0.1:8000/getDemande"
+        let localData
         $.get(modificationUrl, { demandeId: demandeId }, (data) => {
             localData = data
         }).then(() => {

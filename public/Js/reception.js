@@ -69,6 +69,7 @@ $(function() {
                 (data) => {
                     localData = data
                 }).then(() => {
+                let demandeId = localData.demande.demand_id
                 if (localData.demandAlreadyExist) {
                     //numero de mande existant
                 } else {
@@ -90,10 +91,11 @@ $(function() {
                         }
                     }
                 }
+                console.log("start")
+                getDemandeEchantillonsInfos(demandeId)
             }).then(() => {
                 if (localData.success) {
                     let demande = localData.demande
-                    let demandeId = localData.demand_id
                     console.log(localData)
 
                     let dateTime = demande.created_at.date.split(' ')
@@ -144,7 +146,7 @@ $(function() {
                         })
                     })
 
-                    getDemandeEchantillonsInfos(demandeId)
+
 
                     $('#reinitialiser').on('click', function() {
                         document.location = "http://127.0.0.1:8000/reception"
