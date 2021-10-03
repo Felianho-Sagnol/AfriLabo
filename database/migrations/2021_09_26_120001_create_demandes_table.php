@@ -25,6 +25,7 @@ class CreateDemandesTable extends Migration
             $table->string('echantillonnage');
             $table->string('depot')->nullable();
             $table->string('nombre_echantillons');
+            $table->string('Emplacement');
             $table->dateTime('created_at');
         });
     }

@@ -50,14 +50,14 @@
                     <li><span>A13 : </span> <em>Analyse du Co par Absorption Atomique flamme</em> </li>
                     <li><span>A14 : </span> <em>Analyse du Ni par Absorption Atomique flamme</em> </li>
                     <li><span>A15 : </span> <em>Analyse du Fe par Absorption Atomique flamme</em> </li>
-                    <li><span>A16 : </span> <em>Détermination de la teneur des majeurs (Al2O3, CaO,Fe2O3,K2O,MgO,P2O5,S,SiO2,TiO2 Traces: As,B,Ba,Be,Bi,Cd,Co,Cr,Cu,Li,Mo,Nb,Ni,Pb,Sb,Se,Sr,Ta,V,Zn)</em> </li>
-                    <li><span>A17 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A18 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A19 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A20 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A21 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A22 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
-                    <li><span>A23 : </span> <em>Analyse de l'Au par plombeuse</em> </li>
+                    <li><span>A16 : </span> <em>Détermination de la teneur des majeurs (Al2O3, CaO...)</em> </li>
+                    <li><span>A17 : </span> <em>Mesure de la Densité</em> </li>
+                    <li><span>A18 : </span> <em>Analyse de l'Hg par ICP</em> </li>
+                    <li><span>A19 : </span> <em>Détermination de la teneur des majeurs dans les argiles</em> </li>
+                    <li><span>A20 : </span> <em>Analyse du Sb par ICP</em> </li>
+                    <li><span>A21 : </span> <em>Analyse de la granulométrie</em> </li>
+                    <li><span>A22 : </span> <em>Préparation mécanique des échantillons et détermination de l'humidité dans les échantillons issus des opérations d'échantillonnage</em> </li>
+                    <li><span>A23 : </span> <em>Mesure de l'humidité</em> </li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3 EchantillonModification"> Modification</div>
