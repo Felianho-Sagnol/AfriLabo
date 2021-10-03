@@ -36,7 +36,7 @@
         font-family: Georgia, 'Times New Roman', Times, serif;
         color: black;
         top:-100vh;
-        right:50vh;
+        right:30vh;
         background-color:white;
 
     } 
@@ -55,4 +55,5 @@
         font-size:15px;
         font-weight:bold;
     }
+
 </style>

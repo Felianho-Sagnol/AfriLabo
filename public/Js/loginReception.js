@@ -1,6 +1,7 @@
 import { receteurLogin, receteurRegister, logout } from './receptorAuth/authentication.js'
 $(".listElement ul").hide()
 $(".quitter").hide()
+$("#layoutAppercue").hide()
 $('#solideOptions').hide();
 $(function() {
     

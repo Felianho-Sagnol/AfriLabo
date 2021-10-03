@@ -52,10 +52,14 @@
     font-size: 20px;
 
 }
-.popup span{
+span{
     color: #f9bc14;
 }
-i:hover{
-    color: #f9bc14;
+.popup i{
+        cursor: pointer;
+        opacity: 0.8;
+}
+.popup i:hover{
+    opacity: 1;
 }
 </style>

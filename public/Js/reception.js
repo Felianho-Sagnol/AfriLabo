@@ -134,6 +134,9 @@ $(function() {
                         $.get(deleteUrl, { demandeId: demandId }, (data) => {
                             console.log(data)
                         })
+                        $('.headBar').css({
+                            "filter":"blur(0px)"
+                        })
                     })
                     $('#reinitialiser').click(function() {
                         document.location = "http://127.0.0.1:8000/reception"
@@ -142,7 +145,9 @@ $(function() {
                     console.log("Error demand already exist")
                 }
             })
-
+            $('.headBar').css({
+                "filter":"blur(5px)"
+            })
         })
     }
 
@@ -271,9 +276,13 @@ $(function() {
     $( ".teteLi" ) .click(function() {
          $(".listElement ul").show(200).fadeIn(200)
          $(".quitter").show(400).fadeIn(200)
+
     })
     $(".quitter").click(function(){
         $(".listElement ul").hide(200).fadeOut(200)
         $(".quitter").hide().fadeOut(400)
+        // $('.headBar').css({
+        //     "filter": "blur(5px)"
+        // })
     })
 })
