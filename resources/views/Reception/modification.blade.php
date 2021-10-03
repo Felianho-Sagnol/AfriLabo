@@ -44,6 +44,9 @@
         <div class="footer">
             <button type="button" class="btn btn-danger btn-lg retour">Retour </button>
         </div>
+        <div class="btns" >
+            <button id="modificationBTNclass" type="button" class="btn btn-lg  ">Enregistrer</button>
+        </div>
     </div>
     
     @endsection
