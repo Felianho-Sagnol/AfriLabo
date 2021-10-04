@@ -276,6 +276,8 @@ $(function() {
         $('#btnForm').css({
             "visibility": "visible"
         }).show()
+        $("#ref1").text("R/" + $('#numDemande').val() + "_2021_1")
+
     })
 
     $('.EchantillonModification').click(() => {

@@ -19,10 +19,8 @@
             Elements d'Analyse: 
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4 col-sm-4 col-xs-4 ech"> <em>R/2021_23424_1</em> </div>
-        <div class="col-md-4 col-sm-4 col-xs-4 ech"> <em>Ech1</em> </div>
-        <div class="col-md-4 col-sm-4 col-xs-4 ech">Cu, Zn</div>
+    <div class="row"  id="echantillonShow">
+     
     </div>
 </div>
 <style>
