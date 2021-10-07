@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Elements extends Migration
+class CreateElementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,6 @@ class Elements extends Migration
      */
     public function up()
     {
-
         Schema::create('elements', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('identicateur');
@@ -30,6 +29,5 @@ class Elements extends Migration
     public function down()
     {
         Schema::dropIfExists('elements');
-        
     }
 }

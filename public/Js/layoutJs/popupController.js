@@ -15,9 +15,9 @@
     })
 
     export function getDemandeEchantillonsInfos(demandeId) {
-        let modificationUrl = "http://127.0.0.1:8000/getDemande"
+        let url = "http://127.0.0.1:8000/getDemande"
         let localData
-        $.get(modificationUrl, { demandeId: demandeId }, (data) => {
+        $.get(url, { demandeId: demandeId }, (data) => {
             localData = data
         }).then(() => {
             if (localData.demandeExist) {
@@ -25,13 +25,11 @@
                 console.log(echantillons)
                 console.log(echantillons.length)
                 console.log(echantillons[0].designation)
-                //remplir le popup ici avec echantillons
+                    //remplir le popup ici avec echantillons
                 echantillons.forEach(element => {
                     console.log(element.reference_labo)
-                    $("#echantillonShow").append("<div class='col-md-4 col-sm-4 col-xs-4 ech'> <em>"+element.reference_labo+"</em> </div><div class='col-md-4 col-sm-4 col-xs-4 ech'> <em>"+element.designation+"</em> </div><div class='col-md-4 col-sm-4 col-xs-4 ech'>"+element.elements_d_analyse+"</div>")
-                    
+                    $("#echantillonShow").append("<div class='col-md-4 col-sm-4 col-xs-4 ech'> <em>" + element.reference_labo + "</em> </div><div class='col-md-4 col-sm-4 col-xs-4 ech'> <em>" + element.designation + "</em> </div><div class='col-md-4 col-sm-4 col-xs-4 ech'>" + element.elements_d_analyse + "</div>")
                 });
-                
             }
         })
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Demande;
+use App\Models\Element;
 use App\Models\Recepteur;
 use App\Models\Echantillon;
 use Illuminate\Http\Request;
@@ -85,10 +86,21 @@ class DemandeAndEchantillonController extends Controller {
             && isset($_GET['elementAnalyse'])
             && isset($_GET['demandId'])
         ){
+            $table = explode(';',$_GET['elementAnalyse']);
+            $elements_d_analyse =  "";
+            for($i=0;$i < count($table);$i++) {
+                $element = Element::where("identicateur",trim($table[$i]))->first();
+                if($i ==0){
+                    $elements_d_analyse .= $element->nom_analyse;
+                }else{
+                    $elements_d_analyse .= ",".$element->nom_analyse;
+                }
+            }
+
             $echantillon = new Echantillon();
             $echantillon->designation = $_GET['designation'];
             $echantillon->reference_labo = $_GET['reference'];
-            $echantillon->elements_d_analyse = $_GET['elementAnalyse'];
+            $echantillon->elements_d_analyse = $elements_d_analyse;
             $echantillon->demand_id = $_GET['demandId'];
             $echantillon->created_at = new \DateTime();
 
@@ -119,6 +131,77 @@ class DemandeAndEchantillonController extends Controller {
                     'message' => "Aucune demande trouvée pour le numéro de demande : "  .$_GET['demandeId'],
                 ]);
             }
+        }
+    }
+
+    public function updateDemand(Request $request){
+        if(
+            isset($_GET['demand']) && isset($_GET['societe']) && isset($_GET['etat'])
+            && isset($_GET['identification_echantillon']) && isset($_GET['numeroDemande']) 
+            && isset($_GET['echantillonnage']) 
+            && isset($_GET['emplacement'])
+        ){
+
+            $demande = Demande::where("demand_id",$_GET['numeroDemande']);
+            $demande->society = $_GET['societe'];
+            $demande->identification_echantillon = $_GET['identification_echantillon'];
+            $demande->demandeur = $_GET['demand'];
+            $demande->emplacement = $_GET['emplacement'];
+            $demande->etat = $_GET['etat'];
+            $demande->echantillonnage = $_GET['echantillonnage'];
+
+            if(isset($_GET['depot'])){
+                $demande->depot = $_GET['depot'];
+            }
+            
+            if(isset($_GET['etatSolid'])){
+                $demande->etat_solid = $_GET['etatSolid'];
+            }
+
+            $demande->save();
+            return response()->json([
+                'success' => true,
+            ]);
+        }else{
+            return response()->json([
+                'success' => false,
+            ]);
+        }
+    }
+
+    public function updateEchantillon(Request $request){
+        if(
+            isset($_GET['designation']) && isset($_GET['reference']) 
+            && isset($_GET['elementAnalyse'])
+            && isset($_GET['demandId'])
+        ){
+            $table = explode(';',$_GET['elementAnalyse']);
+            $elements_d_analyse =  "";
+            for($i=0;$i < count($table);$i++) {
+                $element = Element::where("identicateur",trim($table[$i]))->first();
+                if($i ==0){
+                    $elements_d_analyse .= $element->nom_analyse;
+                }else{
+                    $elements_d_analyse .= ",".$element->nom_analyse;
+                }
+            }
+
+            $echantillon = Echantillon::where([
+                ['demand_id',$_GET['demandeId']],
+                ['reference_labo',$_GET['reference']]
+            ])->first();
+
+            $echantillon->designation = $_GET['designation'];
+            $echantillon->elements_d_analyse = $elements_d_analyse;
+
+            $echantillon->save();
+            return response()->json([
+                'success' => true,
+            ]);
+        }else{
+            return response()->json([
+                'success' => false,
+            ]);
         }
     }
 
