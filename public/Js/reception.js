@@ -91,7 +91,6 @@ $(function() {
                         }
                     }
                 }
-                console.log("start")
                 getDemandeEchantillonsInfos(demandeId)
             }).then(() => {
                 if (localData.success) {

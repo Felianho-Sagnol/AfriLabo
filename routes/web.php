@@ -36,7 +36,11 @@ Route::get('/bar',[receptionMailController::class,'bar'])->name('bar');
 
 /********************************Demande API ROUTE**************** */
 Route::get('/demande',[DemandeAndEchantillonController::class,'addDemand'])->name('addDemand');
+Route::get('/demandeUpdate',[DemandeAndEchantillonController::class,'updateDemand'])->name('updateDemand');
+
 Route::get('/deleteDemande',[DemandeAndEchantillonController::class,'deleteDemande'])->name('deleteDemande');
 Route::get('/echantillons',[DemandeAndEchantillonController::class,'addEchantillon'])->name('addEchantillon');
+Route::get('/echantillonsUpdate',[DemandeAndEchantillonController::class,'updateEchantillon'])->name('updateEchantillon');
+
 Route::get('/getDemande',[DemandeAndEchantillonController::class,'getDemande'])->name('getDemande');
 
