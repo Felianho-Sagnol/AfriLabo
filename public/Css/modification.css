@@ -3,10 +3,6 @@
     width: auto;
     margin-bottom: 3%;
 }
-/* .affichage{
-    overflow-y: scroll;
-  
-} */
 .rechercheText{
     margin: initial;
     width: 100%;
@@ -44,6 +40,7 @@ em{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     color:rgb(3, 73, 119);
+    font-size: auto;
 }
 #errorMessage{
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -61,6 +58,8 @@ em{
     border:2px solid rgb(3, 73, 119);
     border-radius: 10px;
     text-align: center;
+    width: 100%;
+    margin: 0%;
 
 }
 #modificationBTNclass{
@@ -69,4 +68,7 @@ em{
     font-weight: bold;
     color: white;
     transform: translateX(50vh);
+}
+#echantillonM table{
+    background-color: white !important;
 }

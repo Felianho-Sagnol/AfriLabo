@@ -32,7 +32,7 @@ $(function() {
                     console.log(echantillons)
                     let i = 1
                     echantillons.forEach(element => {
-                        $("#echantillonM").append(" <div class='col-md-4'><input class=' input ' id='ref" + i + "' type='text' class='input' value='" + element.reference_labo + "'></div><div class='col-md-4'><input type='text' class='input' id='design" + i + "' value='" + element.designation + "'></div><div class='col-md-4'><input id='element" + i + "' type='text' class='input' value='" + element.elements_d_analyse + "'></div>")
+                        $("#echantillonM").append(" <div class='col-md-2'><input class=' input ' id='ref" + i + "' type='text' class='input' value='" + element.reference_labo + "'></div><div class='col-md-2'><input type='text' class='input' id='design" + i + "' value='" + element.designation + "'></div><div class='col-md-8'><table><tr><td> <input type='checkbox' name='line" + (i) + "' value='A1'></td> <td><input type='checkbox' name='line" + (i) + "' value='A2'></td> <td><input type='checkbox' name='line" + (i) + "' value='A3'></td> <td><input type='checkbox' name='line" + (i) + "' value='A4'></td> <td><input type='checkbox' name='line" + (i) + "' value='A5'></td><td><input type='checkbox' name='line" + (i) + "' value='A6'></td><td><input type='checkbox' name='line" + (i) + "' value='A7'></td><td><input type='checkbox' name='line" + (i) + "' value='A8'></td><td><input type='checkbox' name='line" + (i) + "' value='A9'></td><td><input type='checkbox' name='line" + (i) + "' value='A10'></td><td><input type='checkbox' name='line" + (i) + "' value='A11'></td><td><input type='checkbox' name='line" + (i) + "' value='A12'></td><td><input type='checkbox' name='line" + (i) + "' value='A13'></td><td><input type='checkbox' name='line" + (i) + "' value='A14'></td><td><input type='checkbox' name='line" + (i) + "' value='A15'></td><td><input type='checkbox' name='line" + (i) + "' value='A16'></td><td><input type='checkbox' name='line" + (i) + "' value='A17'></td><td><input type='checkbox' name='line" + (i) + "' value='A18'></td><td><input type='checkbox' name='line" + (i) + "' value='19'></td><td><input type='checkbox' name='line" + (i) + "' value='A20'></td><td><input type='checkbox' name='line" + (i) + "' value='A21'></td><td><input type='checkbox' name='line" + (i) + "' value='A22'></td><td><input type='checkbox' name='line" + (i) + "' value='23'></td></tr></table></div>")
                         i++
                     });
                 } else {
@@ -59,21 +59,28 @@ $(function() {
             'nombreEchantillon': $("#nombre option:selected").val(),
             'emplacement': $("#emplacement").val(),
         }
-        console.log(tableauDemande)
         let elementAnalyse = []
         let designations = []
         let references = []
 
-
         for (let j = 1; j <= tableauDemande['nombreEchantillon']; j++) {
+            var elements = [];
+            $.each($("input[name='line" + j + "']:checked"), function() {
+                elements.push($(this).val());
+            });
             designations[j] = $('#design' + j).val()
-            references[j] = $('#ref' + j).val()
-            elementAnalyse[j] = $('#element' + j).val()
-        }
-        // console.log(designations)
-        // console.log(references)
-        // console.log(elementAnalyse)
+            references[j] = $('#ref' + j).text()
+            elementAnalyse[j] = elements.join(";")
+            console.log(designations[j])
+            console.log(references[j])
+            console.log(elementAnalyse[j])
 
+
+        }
+        console.log(" Designation ",designations)
+        console.log("Reference ",references)
+        console.log("els elements",elementAnalyse)
+  
         let demandeUrl = "http://127.0.0.1:8000/demandeUpdate"
         let localData
         $.get(

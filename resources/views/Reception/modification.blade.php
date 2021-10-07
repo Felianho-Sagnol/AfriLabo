@@ -121,9 +121,36 @@
                 </div>
         </div>
         <div class="row" id="echantillonM">
-            <div class="col-md-4 th">REFERENCE</div>
-            <div class="col-md-4 th">DESIGNATION</div>
-            <div class="col-md-4 th">ELEMENT D'ANALYSES</div>
+            <div class="col-md-2 th">REFERENCE</div>
+            <div class="col-md-2 th">DESIGNATION</div>
+            <div class="col-md-8 th" id="enteteElement">
+                <table>
+                    <th>A1</th>
+                    <th>A2</th>
+                    <th>A3</th>
+                    <th>A4</th>
+                    <th>A5</th>
+                    <th>A6</th>
+                    <th>A7</th>
+                    <th>A8</th>
+                    <th>A9</th>
+                    <th>A10</th>
+                    <th>A11</th>
+                    <th>A12</th>
+                    <th>A13</th>
+                    <th>A14</th>
+                    <th>A15</th>
+                    <th>A16</th>
+                    <th>A17</th>
+                    <th>A18</th>
+                    <th>A19</th>
+                    <th>A20</th>
+                    <th>21</th>
+                    <th>A22</th>
+                    <th>A23</th>
+                </table>
+          
+            </div>
 
         </div>
         <div class="footer">

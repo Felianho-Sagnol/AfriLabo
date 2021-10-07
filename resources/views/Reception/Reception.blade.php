@@ -132,7 +132,7 @@
                 <option value="26">26</option>
            </select >
     </div>
-    <table class="tab2" toHide>
+    <table class="tab2 toHide" >
         <tr id="entete">
             <th rowspan="2">Designation</th>
             <th rowspan="2">Reference Labo</th>

@@ -48,6 +48,7 @@
     }
     #layoutAppercue .ech{
         border-right:1px solid #f9bc14;
+        border-bottom:1px solid #f9bc14;
         text-align:center;
         border-radius:2px;
         font-size:15px;
