@@ -27,7 +27,7 @@ class PreparationController extends Controller
         }
         elseif ($name=='PC') {
             return view('preparation.homePA',[
-                'titre' => 'La Salle de Preparation',
+                'titre' => 'Preparation ',
                 'inf' => 'mdd X'
             ]);
         }
@@ -35,7 +35,8 @@ class PreparationController extends Controller
     }
     public function showPagePM(){
         return view('preparation.homePM',[
-            'titre' => 'La Salle de Preparation',
+            'titre' => 'Preparation Mecanique',
+            'nbEchantillon' => 20,
             'inf' => 'mdd X']
         );
     }
