@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReceptionController;
 use App\Http\Controllers\APIReceptorController;
+use App\Http\Controllers\PreparationController;
 use App\Http\Controllers\receptionMailController;
 use App\Http\Controllers\DemandeAndEchantillonController;
 
@@ -23,6 +24,14 @@ Route::get('/',[Controller::class,'home'])->name('home');
 /********************Recetion ROUTING******************/
 Route::get('/reception',[ReceptionController::class,'reception'])->name('reception');
 Route::get('/modification',[ReceptionController::class,'modification'])->name('modification');
+Route::get('/modification/{id}',[ReceptionController::class,'showDemande'])->name('showDemande');
+/********************services ROUTING******************/
+Route::get('preparation/{name}',[PreparationController::class,'showPage'])->name('preparation');
+Route::get('/AppLogin',[PreparationController::class,'loginPage'])->name('login');
+
+/********************LoginBTN ROUTING******************/
+Route::get('preparationPM',[PreparationController::class,'showPagePM'])->name('preparationPM');
+Route::get('preparationPC',[PreparationController::class,'showPagePC'])->name('preparationPC');
 
 
 

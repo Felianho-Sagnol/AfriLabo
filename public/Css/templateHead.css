@@ -296,7 +296,7 @@ body {
 
 /* gestion du popup  */
 .popup{
-    border: 2px solid rgb(3, 73, 119);;
+    border: 2px solid rgb(3, 73, 119);
     position: relative;
     z-index: 20;
     width: 50% ;
