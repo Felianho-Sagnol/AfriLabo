@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegistrePerteFeusTable extends Migration
+class CreateDensitesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateRegistrePerteFeusTable extends Migration
      */
     public function up()
     {
-        Schema::create('registre_perte_feus', function (Blueprint $table) {
-            $table->integer('id_pf');
+        Schema::create('densites', function (Blueprint $table) {
+            $table->unsignedBigInteger('densite_id')->unique();
             $table->float('masse_creuse',8,2);
             $table->float('masse_initiale',8,2);
             $table->float('vol_initial', 8, 2);
             $table->float('masse_2h', 8, 2);
             $table->float('temperature',8,2);
-            $table->float('pf_mo',8,2);
             $table->dateTime('created_at');
         });
     }
@@ -32,6 +31,6 @@ class CreateRegistrePerteFeusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registre_perte_feus');
+        Schema::dropIfExists('densites');
     }
 }

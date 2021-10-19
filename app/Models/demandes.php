@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class rapport extends Model
+class demandes extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'demande_id';
 }

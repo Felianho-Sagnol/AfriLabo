@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRapportsTable extends Migration
+class CreateIcpsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateRapportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rapports', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('id_aa');
-            $table->string('demand_id');
+        Schema::create('icps', function (Blueprint $table) {
+            $table->unsignedBigInteger('icp_id')->unique();
             $table->dateTime('created_at');
         });
     }
@@ -28,6 +26,6 @@ class CreateRapportsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rapports');
+        Schema::dropIfExists('icps');
     }
 }

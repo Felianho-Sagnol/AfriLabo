@@ -14,7 +14,7 @@ class CreateElementsTable extends Migration
     public function up()
     {
         Schema::create('elements', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->unique();
             $table->string('idencateur');
             $table->string('code');
             $table->string('nom_analyse');

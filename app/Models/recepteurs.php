@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Echantillon extends Model
+class recepteurs extends Model
 {
+    protected $table = 'recepteurs';
     use HasFactory;
+    protected $primaryKey = 'recepteur_id';
 
-    public $timestamps = false;
 }

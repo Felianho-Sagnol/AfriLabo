@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAnalyseAASTable extends Migration
+class CreateAasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateAnalyseAASTable extends Migration
      */
     public function up()
     {
-        Schema::create('analyse_a_a_s', function (Blueprint $table) {
-            $table->integer('id_aa');
-            $table->string('demand_id');
+        Schema::create('aas', function (Blueprint $table) {
+            $table->unsignedBigInteger('aa_id');
+            $table->float('lecture',8,2);
+            $table->float('vid',8,2);
+            $table->float('pd',8,2);
+
             $table->dateTime('created_at');
         });
     }
@@ -27,6 +30,6 @@ class CreateAnalyseAASTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('analyse_a_a_s');
+        Schema::dropIfExists('aas');
     }
 }
