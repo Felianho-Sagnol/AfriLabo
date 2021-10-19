@@ -1,15 +1,14 @@
 @extends('baseLabo')
     @section('titleHead')
-        AfriLab|Salle de Préparation Chimique
+        AfriLab|Salle de Préparation Mecanique
     @endsection
     @section('titlePage')
-       Préparation Chimique
+       Préparation Mecanique
     @endsection
     @section('autre')
        rien
     @endsection
     @section('content')
-        <h1>{{$titre}}</h2>
         <p>{{$inf}}</p>
 
         <h2>Nous sommes dans la salle de preparation<h2>

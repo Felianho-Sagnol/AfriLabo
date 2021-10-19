@@ -26,6 +26,8 @@ class CreateDemandesTable extends Migration
             $table->string('depot')->nullable();
             $table->string('nombre_echantillons');
             $table->string('Emplacement');
+            $table->integer('id_aa');
+            $table->integer('id_icp');
             $table->dateTime('created_at');
         });
     }

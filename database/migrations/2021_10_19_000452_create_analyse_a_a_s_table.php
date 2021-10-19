@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateElementsTable extends Migration
+class CreateAnalyseAASTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateElementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('elements', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('identicateur');
-            $table->string('code');
-            $table->string('nom_analyse');
-         });
+        Schema::create('analyse_a_a_s', function (Blueprint $table) {
+            $table->integer('id_aa');
+            $table->string('demand_id');
+            $table->dateTime('created_at');
+        });
     }
 
     /**
@@ -28,6 +27,6 @@ class CreateElementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('elements');
+        Schema::dropIfExists('analyse_a_a_s');
     }
 }

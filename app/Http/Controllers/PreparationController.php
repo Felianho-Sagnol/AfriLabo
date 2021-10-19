@@ -21,23 +21,26 @@ class PreparationController extends Controller
         }
         elseif ($name=='PM') {
             return view('preparation.homePM',[
-                'titre' => 'La Salle de Preparation',
-                'inf' => 'mdd X'
+                'inf' => 'les information'
             ]);
         }
         elseif ($name=='PC') {
-            return view('preparation.homePA',[
-                'titre' => 'Preparation ',
-                'inf' => 'mdd X'
+            return view('preparation.homePC',[
+                'inf' => 'les informations '
             ]);
         }
 
     }
     public function showPagePM(){
         return view('preparation.homePM',[
-            'titre' => 'Preparation Mecanique',
             'nbEchantillon' => 20,
-            'inf' => 'mdd X']
+            'inf' => 'les informations']
+        );
+    }
+    public function showPagePC(){
+        return view('preparation.homePC',[
+            'nbEchantillon' => 20,
+            'inf' => 'les informations']
         );
     }
 
