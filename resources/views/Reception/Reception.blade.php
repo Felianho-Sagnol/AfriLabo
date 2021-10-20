@@ -50,21 +50,20 @@
                         
                         <div id="solideOptions" class="col-md-6">
                             <div >
-                                <input type="radio" id="roche" name="solide" value="roche"
-                                        >
+                                <input type="radio" id="roche" name="solide" value="roche" class="option-input radio">
                                 <label  for="roche">Roche</label>
                             </div>
 
                             <div>
-                                <input type="radio" id="minerai" name="solide" value="minerai">
+                                <input type="radio" id="minerai" name="solide" value="minerai" class="option-input radio">
                                 <label  for="minerai">Minerai</label>
                             </div>
                             <div>
-                                <input type="radio" id="carotte" name="solide" value="carotte">
+                                <input type="radio" id="carotte" name="solide" value="carotte" class="option-input radio">
                                 <label  for="carotte">Carotte</label>
                             </div>
                             <div>
-                                <input type="radio" id="sol" name="solide" value="sol">
+                                <input type="radio" id="sol" name="solide" value="sol" class="option-input radio">
                                 <label  for="sol">Sol</label>
                             </div>
                         </div>
@@ -81,24 +80,24 @@
                         </div>
                         <div id="depotoire" class="col-md-9">
                             <div >
-                                <input type="radio" id="ULS" name="depot" value="ULS">
+                                <input type="radio" id="ULS" name="depot" value="ULS" class="option-input radio">
                                 <label  for="ULS">ULS</label>
                             </div>
 
                             <div>
-                                <input type="radio" id="AZILOG" name="depot" value="AZILOG">
+                                <input type="radio" id="AZILOG" name="depot" value="AZILOG"  class="option-input radio">
                                 <label  for="AZILOG">AZILOG</label>
                             </div>
                             <div>
-                                <input type="radio" id="SSL" name="depot" value="SSL">
+                                <input type="radio" id="SSL" name="depot" value="SSL"  class="option-input radio">
                                 <label  for="SSL">SSL</label>
                             </div>
                             <div>
-                                <input type="radio" id="BELARCO" name="depot" value="BELARCO">
+                                <input type="radio" id="BELARCO" name="depot" value="BELARCO"  class="option-input radio">
                                 <label  for="BELARCO">BELARCO</label>
                             </div>
                             <div>
-                                <input type="radio" id="Site_client" name="depot" value="Site client">
+                                <input type="radio" id="Site_client"  class="option-input radio" name="depot" value="Site client">
                                 <label  for="Site_client">Site client</label>
                             </div>
                         </div>
