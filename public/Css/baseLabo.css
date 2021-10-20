@@ -6,7 +6,7 @@
   font-size: 24px;
 }
 .navbar{
-    border-bottom: 2px solid rgba(3, 73, 119, 1); ;
+    border-bottom: 2px solid rgba(3, 73, 119, 1); 
     /* background:rgba(3, 73, 119, 0.794); */
     box-shadow: 0px 0px 10px black;
 }

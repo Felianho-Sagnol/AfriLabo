@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
+<link rel="stylesheet" href="{{asset('css/echantillon.css')}}">
 <script defer type='module' src="{{asset('/js/reception.js')}}"></script>
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -10,11 +11,11 @@
 
     @endsection
     @section('titlePage')
-        Réception
+    <a class="navbar-brand" href=" {{route('ReceptionON')}}">Réception</a> 
     @endsection
 
     @section('content')
-    <form action="#">
+    <form action="#" id="echantillonForm">
             <table class="tab2" border="2">
                 <tr id="entete">
                     <th >Designation</th>
