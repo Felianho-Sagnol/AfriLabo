@@ -27,34 +27,35 @@ class CreateDemandesTable extends Migration
             $table->dateTime('created_at');
         });
 
-
-        Schema::create('demandes', function (Blueprint $table) {
-            
-            $table->unsignedBigInteger('member_id');
-            $table->foreign('member_id')->references('id')->on('members');
-            $table->unsignedBigInteger('recepteur_id');
-            $table->foreign('recepteur_id')
-                        ->references('recepteur_id')
-                        ->on('recepteurs')
-                        ->onDelete('cascade')
-                        ->onUpdate('cascade'); 
-         });
         Schema::table('demandes', function($table)
         {
             //les cles etrangeres...
-     
+            $table->unsignedBigInteger('employe_id');
+            $table->foreign('employe_id')
+                        ->references('id')
+                        ->on('employes')
+                        ->onDelete('cascade')
+                        ->onUpdate('cascade')
+                        ->nullable(); 
 
+            $table->unsignedBigInteger('aa_id');
             $table->foreign('aa_id')
                         ->references('aa_id')
                         ->on('aas')
                         ->onDelete('cascade')
-                        ->onUpdate('cascade'); 
-                        
+                        ->onUpdate('cascade')
+                        ->nullable(); 
+
+            $table->unsignedBigInteger('icp_id');
             $table->foreign('icp_id')
                         ->references('icp_id')
-                        ->on('aas')
+                        ->on('icps')
                         ->onDelete('cascade')
-                        ->onUpdate('cascade'); 
+                        ->onUpdate('cascade')
+                        ->nullable(); 
+
+            Schema::enableForeignKeyConstraints();
+
         });
     }
 
@@ -65,6 +66,11 @@ class CreateDemandesTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
+        $table->dropForeign('employe_id');
+        $table->dropForeign('aa_id');
+        $table->dropForeign('icp_id');
+        Schema::drop('employes');
         Schema::dropIfExists('demandes');
     }
 }

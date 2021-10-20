@@ -12,11 +12,9 @@ function redBox(idElement) {
     return false
 }
 
-function redOnly(idElement) {
 
-}
 $(function() {
-
+    let variable_js
 
     function getDemandeInformations() {
         $('.registerBTN').on('click', () => {
@@ -205,7 +203,7 @@ $(function() {
         $("#nombre").change(function() {
             $("#ref1").text("R/" + $('#numDemande').val() + "_2021_1")
                 //les verification
-            if ($(" #nombre option:selected").val() != 1) {
+            if ($(" #nombre option:selected").val() != 0) {
                 //--------------------------------sur le champ demandeur-----------
                 errorDemande = redBox("#demandeur")
                     //--------------------------------sur le champ societe-----------
@@ -255,7 +253,7 @@ $(function() {
                             // max = i;
                         }
                         max = i - 1;
-                        console.log("max: " + max)
+                        
 
                         //i != max &&//i != max && i > max
                     }
@@ -295,4 +293,10 @@ $(function() {
             //     "filter": "blur(5px)"
             // })
     })
+
+    $("#ehantillon").on('click',function() {
+        $("#echantillonNbr").text($("#nombre option:selected").val())
+        variable_js=$("#nombre option:selected").val()
+        
+    });
 })

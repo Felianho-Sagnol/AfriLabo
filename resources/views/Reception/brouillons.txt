@@ -1,0 +1,60 @@
+   <table class="tab2" >
+                <tr id="entete">
+                    <th rowspan="2">Designation</th>
+                    <th rowspan="2">Reference Labo</th>
+                    <th colspan="23">Elements démandés</th>
+                </tr>
+                <tr id="enteteElement">
+                    <th>A1</th>
+                    <th>A2</th>
+                    <th>A3</th>
+                    <th>A4</th>
+                    <th>A5</th>
+                    <th>A6</th>
+                    <th>A7</th>
+                    <th>A8</th>
+                    <th>A9</th>
+                    <th>A10</th>
+                    <th>A11</th>
+                    <th>A12</th>
+                    <th>A13</th>
+                    <th>A14</th>
+                    <th>A15</th>
+                    <th>A16</th>
+                    <th>A17</th>
+                    <th>A18</th>
+                    <th>A19</th>
+                    <th>A20</th>
+                    <th>21</th>
+                    <th>A22</th>
+                    <th>A23</th>
+                </tr>
+                <tr>
+                <td  class='elementscar'><input id="design1" type='text' placeholder='Designation'></td>
+                <td id='ref1'>Reference</td>
+                <td> <input type="checkbox" class="btnAffichage" name="line1" value="A1" alt="Analyse de l'Au par plombeuse"> </td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A2"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A3"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A4"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A5"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A6"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A7"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A8"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A9"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A10"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A11"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A12"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A13"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A14"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A15"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A16"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A17"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A18"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A19"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A20"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A21"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A22"></td>
+                <td><input type="checkbox" class="btnAffichage"  name="line1" value="A23"></td>
+                
+                </tr>
+            </table>

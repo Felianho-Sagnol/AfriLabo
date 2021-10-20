@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Recepteur;
+use App\Models\employes;
 use Illuminate\Http\Request;
 
 class APIReceptorController extends Controller
@@ -16,7 +16,7 @@ class APIReceptorController extends Controller
                     'userAlreadyExists' => false,
                 ]);
             }else{
-                $info = Recepteur::where('matricule', $_GET['matricule'])->first();
+                $info = employes::where('matricule', $_GET['matricule'])->first();
                 if(!empty($info)){
                     return response()->json([
                         'success' => false,
@@ -24,10 +24,11 @@ class APIReceptorController extends Controller
                         'userAlreadyExists' => true,
                     ]);
                 }else{
-                    $receptor = new Recepteur();
+                    $receptor = new employes();
                     $receptor->name = htmlspecialchars($_GET['name']);
                     $receptor->matricule = htmlspecialchars($_GET['matricule']);
                     $receptor->password = sha1($_GET['password']);
+                    $receptor->service = "rien pour le moment";
                     $receptor->created_at = new \DateTime();
     
                     $receptor->save();
@@ -44,7 +45,7 @@ class APIReceptorController extends Controller
 
     public function login(Request $request){
         if(isset($_GET['matricule']) && isset($_GET['password'])){
-            $receptor = Recepteur::where([
+            $receptor = employes::where([
                 ['matricule',$_GET['matricule']],
                 ['password',sha1($_GET['password'])],
             ])->first();

@@ -13,10 +13,15 @@
             $namePage='AfriLab|Preparation Mecanique';
             $page='preparationPM';
         }
-        else {
+        elseif ($NamePrepa=="PC") {
             $namePage='AfriLab|Preparation Chimique';
             $page='preparationPC';
         }
+		elseif ($NamePrepa=="reception_") {
+			$namePage='AfriLab|Preparation Chimique';
+            $page='ReceptionON';
+		}
+		else echo "chemin non reconnu";
     ?>
 	<title><?php echo $namePage?></title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">

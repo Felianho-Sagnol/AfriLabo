@@ -32,33 +32,43 @@ class CreateEchantillonsTable extends Migration
         
         Schema::table('echantillons', function($table)
         {
+            $table->string('demande_id');
             $table->foreign('demande_id')
                         ->references('demande_id')
                         ->on('demandes')
                         ->onDelete('cascade')
                         ->onUpdate('cascade');
+
+            $table->unsignedBigInteger('densite_id');
             $table->foreign('densite_id')
                         ->references('densite_id')
                         ->on('densites')
                         ->onDelete('cascade')
-                        ->onUpdate('cascade'); 
-
+                        ->onUpdate('cascade')
+                        ->nullable(); 
+                        
+            $table->unsignedBigInteger('pertefeu_id');
             $table->foreign('pertefeu_id')
                         ->references('pertefeu_id')
                         ->on('pertefeus')
                         ->onDelete('cascade')
-                        ->onUpdate('cascade') ;        
-                                                        
+                        ->onUpdate('cascade')
+                        ->nullable() ;  
+                             
+            $table->unsignedBigInteger('humidite_id');
             $table->foreign('humidite_id')
                         ->references('humidite_id')
                         ->on('humidites')
                         ->onDelete('cascade')
                         ->onUpdate('cascade'); 
+
+            $table->unsignedBigInteger('volumetrie_id');
             $table->foreign('volumetrie_id')
                         ->references('volumetrie_id')
                         ->on('volumetries')
                         ->onDelete('cascade')
-                        ->onUpdate('cascade'); 
+                        ->onUpdate('cascade')
+                        ->nullable(); 
         });
     }
 

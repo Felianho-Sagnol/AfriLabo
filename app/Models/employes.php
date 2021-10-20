@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class recepteurs extends Model
+class employes extends Model
 {
-    protected $table = 'recepteurs';
+    public $timestamps = false;
     use HasFactory;
-    protected $primaryKey = 'recepteur_id';
-
 }

@@ -6,14 +6,14 @@ export function receteurLogin() {
         localData = data
     }).then(() => {
         if (!localData.isLoggedIn) {
-            $('.formReception').css({
-                "visibility":"visible"
-            }).hide().delay().show()
-            $('.toHide').css({
-                "filter": "blur(5px)",
-                "cursor": "wait"
-            });
-            $('.logout').hide();
+            // $('.formReception').css({
+            //     "visibility":"visible"
+            // }).hide().delay().show()
+            // $('.toHide').css({
+            //     "filter": "blur(5px)",
+            //     "cursor": "wait"
+            // });
+            // $('.logout').hide();
             $('.connexion').click(function() {
                 let matricule = $('#conncexionMatricule').val()
                 let password = $('#connexionPassword').val()
@@ -32,12 +32,12 @@ export function receteurLogin() {
                     }).then(() => {
                         status = localData.success
                         if (status) {
-                            $('.formReception').hide(100);
-                            $('.toHide').css({
-                                "filter": "blur(0px)",
-                                "cursor": "auto"
-                            });
-                            $('.logout').show();
+                            // $('.formReception').hide(100);
+                            // // $('.toHide').css({
+                            // //     "filter": "blur(0px)",
+                            // //     "cursor": "auto"
+                            // // });
+                            // $('.logout').show();
                         } else {
                             $('.errorLogin').text("Aucun compte trouvé ")
                         }
@@ -45,11 +45,11 @@ export function receteurLogin() {
                 }
             });
         } else {
-            $('.formReception').hide(0);
-            $('.toHide').css({
-                "filter": "blur(0px)",
-                "cursor": "auto"
-            });
+            // $('.formReception').hide(0);
+            // $('.toHide').css({
+            //     "filter": "blur(0px)",
+            //     "cursor": "auto"
+            // });
         }
     })
 }

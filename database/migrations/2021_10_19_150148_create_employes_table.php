@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRecepteursTable extends Migration
+class CreateEmployesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateRecepteursTable extends Migration
      */
     public function up()
     {
-        Schema::create('recepteurs', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('employes', function (Blueprint $table) {
+            $table->unsignedBigInteger('id')->unique();
             $table->string('name');
-            $table->string('recepteur_id')->unique();
+            $table->string('matricule')->unique();
             $table->string('password');
+            $table->string('service');
             $table->dateTime('created_at');
         });
     }
@@ -29,6 +30,6 @@ class CreateRecepteursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recepteurs');
+        Schema::dropIfExists('employes');
     }
 }

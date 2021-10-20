@@ -14,7 +14,7 @@ class CreateAasTable extends Migration
     public function up()
     {
         Schema::create('aas', function (Blueprint $table) {
-            $table->unsignedBigInteger('aa_id');
+            $table->unsignedBigInteger('aa_id')->unique();
             $table->float('lecture',8,2);
             $table->float('vid',8,2);
             $table->float('pd',8,2);

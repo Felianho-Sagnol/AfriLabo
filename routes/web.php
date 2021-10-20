@@ -23,8 +23,10 @@ Route::get('/',[Controller::class,'home'])->name('home');
 
 /********************Recetion ROUTING******************/
 Route::get('/reception',[ReceptionController::class,'reception'])->name('reception');
+Route::match(['get', 'post'],'/ReceptionON',[ReceptionController::class,'receptionON'])->name('ReceptionON');
 Route::get('/modification',[ReceptionController::class,'modification'])->name('modification');
 Route::get('/modification/{id}',[ReceptionController::class,'showDemande'])->name('showDemande');
+Route::match(['get', 'post'],'/reception/demande/echantillons',[ReceptionController::class,'echatillon'])->name('echantillon');
 /********************services ROUTING******************/
 Route::get('preparation/{name}',[PreparationController::class,'showPage'])->name('preparation');
 Route::get('/AppLogin',[PreparationController::class,'loginPage'])->name('login');

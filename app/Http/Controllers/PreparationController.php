@@ -34,12 +34,14 @@ class PreparationController extends Controller
     public function showPagePM(){
         return view('preparation.homePM',[
             'nbEchantillon' => 20,
+            'nbDemande' =>10,
             'inf' => 'les informations']
         );
     }
     public function showPagePC(){
         return view('preparation.homePC',[
             'nbEchantillon' => 20,
+            'nbDemande' => 10,
             'inf' => 'les informations']
         );
     }

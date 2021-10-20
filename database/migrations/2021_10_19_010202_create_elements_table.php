@@ -18,6 +18,8 @@ class CreateElementsTable extends Migration
             $table->string('idencateur');
             $table->string('code');
             $table->string('nom_analyse');
+            $table->string('nom_simple');
+            
         });
     }
 
