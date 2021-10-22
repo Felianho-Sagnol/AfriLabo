@@ -14,7 +14,6 @@ class CreateEmployesTable extends Migration
     public function up()
     {
         Schema::create('employes', function (Blueprint $table) {
-            $table->unsignedBigInteger('id')->unique();
             $table->string('name');
             $table->string('matricule')->unique();
             $table->string('password');

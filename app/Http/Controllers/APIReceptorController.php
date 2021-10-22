@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\demandes;
+use App\Models\elements;
 use App\Models\employes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class APIReceptorController extends Controller
 {
@@ -24,14 +27,14 @@ class APIReceptorController extends Controller
                         'userAlreadyExists' => true,
                     ]);
                 }else{
-                    $receptor = new employes();
-                    $receptor->name = htmlspecialchars($_GET['name']);
-                    $receptor->matricule = htmlspecialchars($_GET['matricule']);
-                    $receptor->password = sha1($_GET['password']);
-                    $receptor->service = "rien pour le moment";
-                    $receptor->created_at = new \DateTime();
+                    $employes = new employes();
+                    $employes->name = htmlspecialchars($_GET['name']);
+                    $employes->matricule = htmlspecialchars($_GET['matricule']);
+                    $employes->password = sha1($_GET['password']);
+                    $employes->service = "rien pour le moment";
+                    $employes->created_at = new \DateTime();
     
-                    $receptor->save();
+                    $employes->save();
                             
                     return response()->json([
                         'success' => true,
@@ -43,41 +46,93 @@ class APIReceptorController extends Controller
         }
     }
 
-    public function login(Request $request){
-        if(isset($_GET['matricule']) && isset($_GET['password'])){
-            $receptor = employes::where([
-                ['matricule',$_GET['matricule']],
-                ['password',sha1($_GET['password'])],
-            ])->first();
 
-            if(!empty($receptor)){
-                if(session()->has('receptor_id')){
-                    session()->pull('receptor_id');
-                    $request->session()->put('receptor_id',$receptor->matricule);
-                }else{
-                    $request->session()->put('receptor_id',$receptor->matricule);
+
+    public function login(Request $request,$page){
+       
+
+        if(isset($_POST['matricule']) && isset($_POST['password'])){
+            $employe = employes::where([
+                ['matricule',$_POST['matricule']],
+                ['password',sha1($_POST['password'])],
+            ])->first();
+            if(!empty($employe)){
+                if ($page=="PreparationMecanique" && $employe->service=="mecanique") {
+                    if(session()->has('employe_id')){
+                        session()->pull('employe_id');
+                        $request->session()->put('employe_id',$employe->matricule);
+                    }else{
+                        $request->session()->put('employe_id',$employe->matricule);
+                    }
+                   $elements = elements::all();
+                    $demandes=DB::table('demandes')->whereIn('demande_id', function($query){
+                        $query->select('demande_id')
+                        ->from('echantillons')
+                        ->where('pm', 0)
+                        ->where('pc', 0);
+                    })->get();
+                    $nbrDem=count($demandes);
+                    $nbrEch=DB::table('echantillons')->where('pm', 0)->where('pc', 0)->get()->count();
+                    return view('preparation.homePM',[
+                        'nbEchantillon' => $nbrEch,
+                        'nbDemande' =>$nbrDem,
+                        'demandes' => $demandes,]
+                    );
                 }
-                
-                return response()->json([
-                    'receptor ' => $receptor,
-                    'success' => true
-                ]);
+                elseif ($page=="PreparationChimique" && $employe->service=="chimique") {
+                    if(session()->has('employe_id')){
+                        session()->pull('employe_id');
+                        $request->session()->put('employe_id',$employe->matricule);
+                    }else{
+                        $request->session()->put('employe_id',$employe->matricule);
+                    }
+                   
+                    return view('preparation.homePC',[
+                        'nbEchantillon' => 20,
+                        'nbDemande' => 10,
+                        'inf' => 'les informations']
+                    );
+                   
+                }
+                elseif ($page=="Reception" && $employe->service=="reception") {
+                    if(session()->has('employe_id')){
+                        session()->pull('employe_id');
+                        $request->session()->put('employe_id',$employe->matricule);
+                    }else{
+                        $request->session()->put('employe_id',$employe->matricule);
+                    }
+                   
+                    $elements = elements::all();
+                    return view('reception.reception',[
+                        'nbEchantillon' => 0,
+                        'nbDemande' => 0,
+                        'elements' =>$elements
+                    ]);
+                    
+                }
+                else{
+                    dd("page inconnu");
+                }
             }else{
-                return response()->json([
-                    'receptor ' => [],
-                    'success' => false
-                ]);
+                dd("pas de compte");
+              
             }
         }else{
-            return response()->json([
-                'receptor ' => [],
-                'success' => false
-            ]);
+            dd("les champs sont vides");
         }
     }
 
+    // public function beginSession(){
+    //     if(session()->has('employe_id')){
+    //         session()->pull('employe_id');
+    //         $request->session()->put('employe_id',$employe->matricule);
+    //     }else{
+    //         $request->session()->put('employe_id',$employe->matricule);
+    //     }
+    //     dd(session());
+    // }
     public function isLoggedIn(){
-        if(session()->has('receptor_id')){
+        if(session()->has('employe_id')){
             return response()->json([
                 'isLoggedIn' => true
             ]);
@@ -89,8 +144,8 @@ class APIReceptorController extends Controller
     }
 
     public function logout(){
-        if(session()->has('receptor_id')){
-            session()->pull('receptor_id');
+        if(session()->has('employe_id')){
+            session()->pull('employe_id');
         }
     }
 }

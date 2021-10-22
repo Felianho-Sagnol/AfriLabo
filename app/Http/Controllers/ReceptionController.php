@@ -10,30 +10,25 @@ use Illuminate\Http\Request;
 class ReceptionController extends Controller
 {
     public function reception(){
-        if(session()->has('receptor_id')){
+        if(session()->has('employe_id')){
             $log=true;
          }else{
             $log=FALSE;
- 
          }
-         // var_dump($log);
  
          if($log==FALSE){
              return view('loginForm',[
                  'NamePrepa' => 'reception_']);
          }else
-            return view('reception.reception');
-    }
-    public function receptionON(){
-        $elements = elements::all();
-        return view('reception.reception',[
+            $nbDemande = demandes::all()->count();
+           $elements = elements::all();
+           return view('reception.reception',[
             'nbEchantillon' => 0,
-            'nbDemande' => 0,
+            'nbDemande' => $nbDemande,
             'elements' =>$elements
         ]);
-    
     }
-
+ 
     public function modification(){
 
 
@@ -45,7 +40,6 @@ class ReceptionController extends Controller
         dd($infoDemande);
         return view(home);
     }
-
 
     public function echatillon(){
 

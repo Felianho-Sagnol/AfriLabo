@@ -12,6 +12,9 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function home(){
+            if(session()->has('employe_id')){
+                session()->pull('employe_id');
+            }
         return view('home');
     }
 }

@@ -39,7 +39,7 @@ class CreateEchantillonsTable extends Migration
                         ->onDelete('cascade')
                         ->onUpdate('cascade');
 
-            $table->unsignedBigInteger('densite_id');
+            $table->unsignedBigInteger('densite_id')->nullable();
             $table->foreign('densite_id')
                         ->references('densite_id')
                         ->on('densites')
@@ -47,7 +47,7 @@ class CreateEchantillonsTable extends Migration
                         ->onUpdate('cascade')
                         ->nullable(); 
                         
-            $table->unsignedBigInteger('pertefeu_id');
+            $table->unsignedBigInteger('pertefeu_id')->nullable();
             $table->foreign('pertefeu_id')
                         ->references('pertefeu_id')
                         ->on('pertefeus')
@@ -55,20 +55,20 @@ class CreateEchantillonsTable extends Migration
                         ->onUpdate('cascade')
                         ->nullable() ;  
                              
-            $table->unsignedBigInteger('humidite_id');
+            $table->unsignedBigInteger('humidite_id')->nullable();
             $table->foreign('humidite_id')
                         ->references('humidite_id')
                         ->on('humidites')
                         ->onDelete('cascade')
                         ->onUpdate('cascade'); 
 
-            $table->unsignedBigInteger('volumetrie_id');
+            $table->unsignedBigInteger('volumetrie_id')->nullable();
             $table->foreign('volumetrie_id')
                         ->references('volumetrie_id')
                         ->on('volumetries')
                         ->onDelete('cascade')
                         ->onUpdate('cascade')
-                        ->nullable(); 
+                       ; 
         });
     }
 
@@ -80,11 +80,11 @@ class CreateEchantillonsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        $table->dropForeign('demande_id');
-        $table->dropForeign('pertefeu_id');
-        $table->dropForeign('densite_id');
-        $table->dropForeign('humidite_id');
-        $table->dropForeign('volumetrie_id');
+        // $table->dropForeign('demande_id');
+        // $table->dropForeign('pertefeu_id');
+        // $table->dropForeign('densite_id');
+        // $table->dropForeign('humidite_id');
+        // $table->dropForeign('volumetrie_id');
         Schema::dropIfExists('echantillons');
     }
 }

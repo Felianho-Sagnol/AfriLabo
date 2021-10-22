@@ -2,66 +2,61 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Demande;
-use App\Models\Element;
-use App\Models\Recepteur;
-use App\Models\Echantillon;
+use App\Models\demandes;
+use App\Models\elements;
+use App\Models\echantillons;
 use Illuminate\Http\Request;
 
 class DemandeAndEchantillonController extends Controller {
     public function addDemand(Request $request){
         if(
-            isset($_GET['demand']) && isset($_GET['societe']) && isset($_GET['etat'])
-            && isset($_GET['identification_echantillon']) && isset($_GET['numeroDemande']) 
-            && isset($_GET['echantillonnage']) 
-            && isset($_GET['nombreEchantillons'])
-            && isset($_GET['emplacement'])
+            isset($_POST['demandeur']) && isset($_POST['societe'])&&
+            isset($_POST['numDemande']) && isset($_POST['emplacement']) &&
+            isset($_POST['etat']) && isset($_POST['nombre']) &&
+            isset($_POST['identificateur'])
         ){
-            $verifDemand = Demande::where('demand_id',$_GET['numeroDemande'])->first();
-
+            
+            $verifDemand = demandes::where('demande_id',$_POST['numDemande'])->first();
             if(!empty($verifDemand)){
-                return response()->json([
-                    'success' => false,
-                    'demandId' => 0,
-                    'demandAlreadyExist' =>true,
-                ]);
+                $elements = elements::all();
+                $nbDemande = demandes::all()->count();
+                return redirect('reception');
+               
             }else{
-                $demande = new Demande();
-                $demande->demand_id = $_GET['numeroDemande'];
-                $demande->society = $_GET['societe'];
-                $demande->identification_echantillon = $_GET['identification_echantillon'];
-                $demande->demandeur = $_GET['demand'];
-                $demande->emplacement = $_GET['emplacement'];
-                $demande->etat = $_GET['etat'];
-                $demande->echantillonnage = $_GET['echantillonnage'];
-                $demande->nombre_echantillons = $_GET['nombreEchantillons'];
+                $demande = new demandes();
+                $demande->demande_id = $_POST['numDemande'];
+                $demande->society = $_POST['societe'];
+                $demande->identification_echantillon = $_POST['identificateur'];
+                $demande->demandeur = $_POST['demandeur'];
+                $demande->emplacement = $_POST['emplacement'];
+                $demande->etat = $_POST['etat'];
+                $demande->echantillonnage = "non renseigner pour le moment";
+                $demande->nombre_echantillons = $_POST['nombre'];
                 $demande->created_at = new \DateTime();
-                $demande->recepteur_id = $request->session()->get('receptor_id');
+                $demande->receptor_id =session('employe_id');
     
-                if(isset($_GET['depot'])){
-                    $demande->depot = $_GET['depot'];
+                if(isset($_POST['depot'])){
+                    $demande->depot = $_POST['depot'];
                 }
                 
-                if(isset($_GET['etatSolid'])){
-                    $demande->etat_solid = $_GET['etatSolid'];
+                if(isset($_POST['etatSolid'])){
+                    $demande->etat_solid = $_POST['etatSolid'];
                 }
     
                 $demande->save();
                 $id = $demande->demand_id;
-    
-                return response()->json([
-                    'success' => true,
-                    'demande' => $demande,
-                    'recepteur' => Recepteur::where('matricule',session()->get('receptor_id'))->first()->name,
-                    'demandAlreadyExist' =>false,
+                $elements = elements::all();
+                $nbDemande = demandes::all()->count();
+                $request->url('Demande/Echantillons');
+                return view('reception.echantillons',[
+                    'nbEchantillon' => 0,
+                    'nbDemande' => $nbDemande,
+                    'elements' =>$elements,
+                    'demande_id' => $_POST['numDemande'],
                 ]);
             }
         }else{
-            return response()->json([
-                'success' => false,
-                'demandId' => 0,
-                'demandAlreadyExist' =>false,
-            ]);
+           dd("on est a la fin");
         }
     }
 
@@ -80,44 +75,39 @@ class DemandeAndEchantillonController extends Controller {
     }
 
 
-    public function addEchantillon(Request $request){
+    public function addEchantillon(Request $request,$damande_path){
         if(
-            isset($_GET['designation']) && isset($_GET['reference']) 
-            && isset($_GET['elementAnalyse'])
-            && isset($_GET['demandId'])
+            isset($_POST['designation1']) && isset($_POST['elementAna1'])
+            
+           
         ){
-            $table = explode(';',$_GET['elementAnalyse']);
-            $elements_d_analyse =  "";
-            for($i=0;$i < count($table);$i++) {
-                $element = Element::where("identicateur",trim($table[$i]))->first();
-                if($i ==0){
-                    $elements_d_analyse .= $element->nom_analyse;
-                }else{
-                    $elements_d_analyse .= ",".$element->nom_analyse;
-                }
+            $nbrECH=(count($_POST)-1)/2;
+            for ($i=0; $i <$nbrECH ; $i++) { 
+                $et1="designation".($i+1);
+                $et2="elementAna".($i+1);
+                $reference="R/".$damande_path."_2021_".($i+1);
+                echo $_POST[$et1]."   ".$_POST[$et2]."  ".$reference."<br>";
+
+                $echantillon = new echantillons();
+                $echantillon->designation = $_POST[$et1];
+                $echantillon->reference_labo = $reference;
+                $echantillon->elements_d_analyse =$_POST[$et2];
+                $echantillon->demande_id = $damande_path;
+                $echantillon->created_at = new \DateTime();
+    
+                $echantillon->save();
             }
+            return redirect('reception');
 
-            $echantillon = new Echantillon();
-            $echantillon->designation = $_GET['designation'];
-            $echantillon->reference_labo = $_GET['reference'];
-            $echantillon->elements_d_analyse = $elements_d_analyse;
-            $echantillon->demand_id = $_GET['demandId'];
-            $echantillon->created_at = new \DateTime();
-
-            $echantillon->save();
-            return response()->json([
-                'success' => true,
-            ]);
+          
         }else{
-            return response()->json([
-                'success' => false,
-            ]);
+            dd('on est a la fin');
         }
     }
 
     public function getDemande(){
         if(isset($_GET['demandeId'])){
-            $demande = Demande::where('demand_id',$_GET['demandeId'])->first();
+            $demande = demandes::where('demand_id',$_GET['demandeId'])->first();
             if(!empty($demande)){
                 $echantillons =  Echantillon::where('demand_id',$_GET['demandeId'])->get();
                 return response()->json([
@@ -137,12 +127,12 @@ class DemandeAndEchantillonController extends Controller {
     public function updateDemand(Request $request){
         if(
             isset($_GET['demand']) && isset($_GET['societe']) && isset($_GET['etat'])
-            && isset($_GET['identification_echantillon']) && isset($_GET['numeroDemande']) 
+            && isset($_GET['identification_echantillon']) && isset($_GET['numDemande']) 
             && isset($_GET['echantillonnage']) 
             && isset($_GET['emplacement'])
         ){
 
-            $demande = Demande::where("demand_id",$_GET['numeroDemande']);
+            $demande = demandes::where("demand_id",$_GET['numDemande']);
             $demande->society = $_GET['societe'];
             $demande->identification_echantillon = $_GET['identification_echantillon'];
             $demande->demandeur = $_GET['demand'];

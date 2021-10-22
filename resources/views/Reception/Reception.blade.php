@@ -9,12 +9,12 @@
         AfriLab|Réception
     @endsection
     @section('titlePage')
-    <a class="navbar-brand" href=" {{route('ReceptionON')}}">Réception</a> 
+    <a class="navbar-brand" href=" {{route('reception')}}">Réception</a> 
     @endsection
 
     @section('content')
  <center>
-    <form method="POST" action="{{route('echantillon')}}" id="demadeForm">
+    <form method="POST" action="http://127.0.0.1:8000/demande" id="demadeForm">
             @csrf
             <div class="row tab1 ">
                 <div class="col-md-12 line">
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="col-md-12 line col-sm-12">
-                    <input id='emplacement'  type="text" class="input"  placeholder="Emplacement">
+                    <input id='emplacement'  name="emplacement" type="text" class="input"  placeholder="Emplacement">
                 </div>
 
                 <div class="col-md-12 line col-sm-12">

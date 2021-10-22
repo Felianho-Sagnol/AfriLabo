@@ -30,29 +30,37 @@ class CreateDemandesTable extends Migration
         Schema::table('demandes', function($table)
         {
             //les cles etrangeres...
-            $table->unsignedBigInteger('employe_id');
-            $table->foreign('employe_id')
-                        ->references('id')
+            $table->string('receptor_id');
+            $table->foreign('receptor_id')
+                        ->references('matricule')
                         ->on('employes')
                         ->onDelete('cascade')
-                        ->onUpdate('cascade')
-                        ->nullable(); 
-
-            $table->unsignedBigInteger('aa_id');
+                        ;
+            $table->string('pm_id')->nullable();
+            $table->foreign('pm_id')
+                        ->references('matricule')
+                        ->on('employes')
+                        ->onDelete('cascade')
+                        ;
+            $table->string('pc_id')->nullable();
+            $table->foreign('pc_id')
+                        ->references('matricule')
+                        ->on('employes')
+                        ->onDelete('cascade')
+                        ;
+            $table->unsignedBigInteger('aa_id')->nullable();
             $table->foreign('aa_id')
                         ->references('aa_id')
                         ->on('aas')
                         ->onDelete('cascade')
-                        ->onUpdate('cascade')
-                        ->nullable(); 
+                        ->default(NULL); 
 
-            $table->unsignedBigInteger('icp_id');
+            $table->unsignedBigInteger('icp_id')->nullable();
             $table->foreign('icp_id')
                         ->references('icp_id')
                         ->on('icps')
                         ->onDelete('cascade')
-                        ->onUpdate('cascade')
-                        ->nullable(); 
+                        ;
 
             Schema::enableForeignKeyConstraints();
 
@@ -67,9 +75,9 @@ class CreateDemandesTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        $table->dropForeign('employe_id');
-        $table->dropForeign('aa_id');
-        $table->dropForeign('icp_id');
+        // $table->dropForeign('employe_id');
+        // $table->dropForeign('aa_id');
+        // $table->dropForeign('icp_id');
         Schema::drop('employes');
         Schema::dropIfExists('demandes');
     }

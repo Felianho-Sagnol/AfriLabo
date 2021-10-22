@@ -9,4 +9,5 @@ class employes extends Model
 {
     public $timestamps = false;
     use HasFactory;
+    protected $primaryKey = 'matricule';
 }

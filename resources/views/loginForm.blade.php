@@ -11,15 +11,15 @@
         
         if ($NamePrepa=="PM") {
             $namePage='AfriLab|Preparation Mecanique';
-            $page='preparationPM';
+            $page='http://127.0.0.1:8000/connexion/PreparationMecanique';
         }
         elseif ($NamePrepa=="PC") {
             $namePage='AfriLab|Preparation Chimique';
-            $page='preparationPC';
+            $page='http://127.0.0.1:8000/connexion/PreparationChimique';
         }
 		elseif ($NamePrepa=="reception_") {
 			$namePage='AfriLab|Preparation Chimique';
-            $page='ReceptionON';
+			$page='http://127.0.0.1:8000/connexion/Reception';
 		}
 		else echo "chemin non reconnu";
     ?>
@@ -41,18 +41,19 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form >
+					<form method="POST" action="<?=$page?>">
+    					@csrf
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="Matricule">
+							<input type="text" name="matricule" class="form-control input_user" value="" placeholder="Matricule" required>
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="Mot de passe">
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="Mot de passe" required>
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -62,7 +63,7 @@
 						</div>
 						<div class="d-flex justify-content-center mt-3 login_container">
 
-				 	        <button type="submit" name="button" class="btn login_btn"><a href="{{route($page)}}">Connexion</a> </button>
+				 	        <button type="submit" name="button" class="btn login_btn">Connexion</a> </button>
 				        </div>
 					</form>
 				</div>

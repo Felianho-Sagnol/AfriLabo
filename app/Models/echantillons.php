@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class echantillons extends Model
 {
     use HasFactory;
-    
+    public $timestamps = false;
     protected $primaryKey = 'reference_labo';
 
 }
