@@ -28,7 +28,6 @@ class CreateEchantillonsTable extends Migration
             $table->dateTime('created_at');
             Schema::enableForeignKeyConstraints();
         });
-
         
         Schema::table('echantillons', function($table)
         {
@@ -38,37 +37,6 @@ class CreateEchantillonsTable extends Migration
                         ->on('demandes')
                         ->onDelete('cascade')
                         ->onUpdate('cascade');
-
-            $table->unsignedBigInteger('densite_id')->nullable();
-            $table->foreign('densite_id')
-                        ->references('densite_id')
-                        ->on('densites')
-                        ->onDelete('cascade')
-                        ->onUpdate('cascade')
-                        ->nullable(); 
-                        
-            $table->unsignedBigInteger('pertefeu_id')->nullable();
-            $table->foreign('pertefeu_id')
-                        ->references('pertefeu_id')
-                        ->on('pertefeus')
-                        ->onDelete('cascade')
-                        ->onUpdate('cascade')
-                        ->nullable() ;  
-                             
-            $table->unsignedBigInteger('humidite_id')->nullable();
-            $table->foreign('humidite_id')
-                        ->references('humidite_id')
-                        ->on('humidites')
-                        ->onDelete('cascade')
-                        ->onUpdate('cascade'); 
-
-            $table->unsignedBigInteger('volumetrie_id')->nullable();
-            $table->foreign('volumetrie_id')
-                        ->references('volumetrie_id')
-                        ->on('volumetries')
-                        ->onDelete('cascade')
-                        ->onUpdate('cascade')
-                       ; 
         });
     }
 

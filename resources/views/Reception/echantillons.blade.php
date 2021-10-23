@@ -48,7 +48,7 @@
                                         foreach ($elements as $element) {
                                             
                                             ?>
-                                                <option value="<?=$element->code  ?>" ><em><?php echo $element->nom_analyse ?></em></option>
+                                                <option value="<?=$element->code ?>" ><em><?php echo $element->nom_analyse ?></em></option>
                                             <?php
                                         }
                                     ?>

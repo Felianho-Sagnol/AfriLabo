@@ -20,6 +20,21 @@ class CreateHumiditesTable extends Migration
             $table->float('poids_seche', 8, 2);
             $table->float('poids', 8, 2);
             $table->dateTime('created_at');
+
+
+
+
+        });
+
+
+        Schema::table('humidites', function($table)
+        {
+            $table->string('reference_labo')->nullable();
+            $table->foreign('reference_labo')
+                        ->references('reference_labo')
+                        ->on('echantillons')
+                        ->onDelete('cascade')
+                        ->onUpdate('cascade'); 
         });
     }
 
