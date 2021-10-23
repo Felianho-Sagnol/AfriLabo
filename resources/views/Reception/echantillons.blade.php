@@ -34,16 +34,18 @@
                     $classDiv="id".($i+1);
                    ?>
                 <tr>
-                    <td  class='elementscar'><input class="<?= $classDiv?>" type='text' placeholder='Designation' name="<?= $design?>"></td>
+                    <td  class='elementscar'>
+                        <input class="<?= $classDiv?>" type='text' placeholder='Designation' name="<?= $design?>">
+                    </td>
                     <td id='ref1'> <em name="<?=$ref ?>">R/<?php echo $_POST['numDemande'] ?>_2021_<?php echo ($i+1)?></em> </td>
                     <td colspan="2">
                         <div class="row">
                         <div class="col-md-9">
-                                 <input type="text" id="<?= $elem?>" name="<?= $elem?>" readonly  value="...." class="<?=$classDiv?>" >
+                                 <input type="text" id="<?= $elem?>" name="<?= $elem?>" readonly  value="" class="<?=$classDiv?>" placeholder="élément d'analyse" >
                             </div>
                             <div class="col-md-3">
                                 <?php $allClass= "col-md-6  ech".($i+1)?>
-                                <select name="<?= $elem?>" id="<?=($i+1)?>" class="col-md-6 optionElement">
+                                <select name="<?= $elem?>" id="<?=($i+1)?>" class="col-md-6 selectfield optionElement">
                                     <?php
                                         foreach ($elements as $element) {
                                             
