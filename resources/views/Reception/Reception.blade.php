@@ -1,9 +1,8 @@
-<script defer type='module' src="{{asset('/js/reception.js')}}"></script>
+<script defer type='module' src="{{asset('js/reception.js')}}"></script>
 <link rel="stylesheet" href="{{asset('css/formulaireEchantillon.css')}}">
 <link rel="stylesheet" href="{{asset('css/demande.css')}}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <script defer type='module' src="{{asset('/js/layoutJs/popupController.js')}}"></script>
-<script defer type='module' src="{{asset('/js/recepteur.js')}}"></script>
 @extends('baseLabo')
     @section('titleHead')
         AfriLab|Réception
