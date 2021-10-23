@@ -17,7 +17,22 @@ class CreateVolumetriesTable extends Migration
             $table->unsignedBigInteger('volumetrie_id')->unique();
             $table->float('vol_edta',8,2);
             $table->dateTime('created_at');
+
+
+
+       
         });
+
+        Schema::table('volumetries', function($table)
+        {
+            $table->string('reference_labo')->nullable();
+            $table->foreign('reference_labo')
+                        ->references('reference_labo')
+                        ->on('echantillons')
+                        ->onDelete('cascade')
+                        ->onUpdate('cascade'); 
+        });
+           
     }
 
     /**

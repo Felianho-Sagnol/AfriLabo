@@ -22,7 +22,21 @@ class CreatePertefeusTable extends Migration
             $table->float('temperature',8,2);
             $table->float('pf_mo',8,2);
             $table->dateTime('created_at');
+
         });
+
+
+        Schema::table('pertefeus', function($table)
+        {
+            $table->string('reference_labo')->nullable();
+            $table->foreign('reference_labo')
+                        ->references('reference_labo')
+                        ->on('echantillons')
+                        ->onDelete('cascade')
+                        ->onUpdate('cascade')
+                        ->nullable(); 
+        });
+
     }
 
     /**
