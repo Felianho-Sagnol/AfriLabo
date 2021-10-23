@@ -34,13 +34,16 @@ Route::get('/modification/{id}',[ReceptionController::class,'showDemande'])->nam
 /********************services ROUTING******************/
 Route::get('preparation/{name}',[PreparationController::class,'showPage'])->name('preparation');
 Route::get('/AppLogin',[PreparationController::class,'loginPage'])->name('login');
+Route::get('/PmValidate/{demande_id}',[PreparationController::class,'changePM'])->name('changePM');
+Route::get('/connexion/preparation/mecaniqueON',[PreparationController::class,'homePM'])->name('homePM');
+
 
 
 
 
 /********************Receptor API ROUTING******************/
 Route::get('/register',[APIReceptorController::class,'registerReceptor'])->name('registerReceptor');
-Route::post('/connexion/{page}',[APIReceptorController::class,'login'])->name('login');
+Route::match(['post','get'],'/connexion/{page}',[APIReceptorController::class,'login'])->name('login');
 Route::get('/isLoggedIn',[APIReceptorController::class,'isLoggedIn'])->name('isLoggedIn');
 Route::get('/logout',[APIReceptorController::class,'logout'])->name('logout');
 Route::get('/bar',[receptionMailController::class,'bar'])->name('bar');

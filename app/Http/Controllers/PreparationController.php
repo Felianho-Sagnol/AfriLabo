@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\demandes;
+use App\Models\echantillons;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PreparationController extends Controller
 {
@@ -30,5 +33,22 @@ class PreparationController extends Controller
             ]);
         }
 
+    }
+    public function changePM($demande_id){
+        $echantillons=DB::table('echantillons')->where('demande_id',$demande_id)
+                                            ->update([
+                                                'pm'=>1
+                                            ]);
+        $demandes=DB::table('demandes')->whereIn('demande_id', function($query){
+                                                $query->select('demande_id')
+                                                ->from('echantillons')
+                                                ->where('pm', 0)
+                                                ->where('pc', 0);
+                                            })->get();
+        $echantillons=DB::table('demandes')->where('demande_id',$demande_id)
+                                            ->update([
+                                                'pm_id'=>session('employe_id')
+                                            ]);
+                            return redirect('PreparationMecanique#');
     }
 }
