@@ -12,7 +12,6 @@ function redBox(idElement) {
 
 function getElementName() {
     let selectfield = document.getElementsByClassName('selectfield');
-    console.log(selectfield)
     for (let i = 0; i < selectfield.length; i++) {
         let element = selectfield[i]
         element.addEventListener('change', () => {
@@ -27,18 +26,6 @@ function getElementName() {
 
 $(function() {
     getElementName()
-    $('.optionElement option').click(function() {
-        let idName = $(this).attr('id')
-
-        var str = "";
-        // $("#"+idName+" option:selected")
-        str = $("#" + idName + " option:selected").val();
-        console.log(str + " " + idName)
-
-    })
-
-
-
 
     $("select").change(function() {
         var str = "";
@@ -109,39 +96,8 @@ $(function() {
         //-----------------------------------------------
     }).change();
 
+    // $('#ehantillon').on('submit',function(){
 
+    // })
 
-
-
-    // affichages des buttons enregistre et annuler
-    $('.btnAffichage').click(function() {
-        $('#btnForm').css({
-            "visibility": "visible"
-        }).show()
-        $("#ref1").text("R/" + $('#numDemande').val() + "_2021_1")
-
-    })
-
-    $('.EchantillonModification').click(() => {
-        document.location = "http://127.0.0.1:8000/modification"
-    })
-
-    $(".teteLi").click(function() {
-        $(".listElement ul").show(200).fadeIn(200)
-        $(".quitter").show(400).fadeIn(200)
-
-    })
-    $(".quitter").click(function() {
-        $(".listElement ul").hide(200).fadeOut(200)
-        $(".quitter").hide().fadeOut(400)
-            // $('.headBar').css({
-            //     "filter": "blur(5px)"
-            // })
-    })
-
-    $("#ehantillon").on('click', function() {
-        $("#echantillonNbr").text($("#nombre option:selected").val())
-        variable_js = $("#nombre option:selected").val()
-
-    });
 })

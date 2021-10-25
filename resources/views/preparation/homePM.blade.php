@@ -32,7 +32,7 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Demande pour la Préparation</h5>
-                                <p class="card-text" style="height:1vh;">Cette demande contient <?php echo $demande->nombre_echantillons?> , Veuillez finir tout avant de cliquez sur TERMINEE</p>
+                                <p class="card-text" style="height:1vh;">Cette demande contient <?php echo $demande->nombre_echantillons?> echantillons, Veuillez finir tout avant de cliquez sur TERMINEE</p>
                                 <a href="<?= $path?>" class="btn btn-primary">Préparation Terminée!!!</a>
                             </div>
                             <div class="card-footer text-muted">
@@ -48,6 +48,5 @@
         
         ?>
 </div>
-        <h2>Nous sommes dans la salle de preparation<h2>
     @endsection
 

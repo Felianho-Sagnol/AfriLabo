@@ -14,7 +14,7 @@ class CreateVolumetriesTable extends Migration
     public function up()
     {
         Schema::create('volumetries', function (Blueprint $table) {
-            $table->unsignedBigInteger('volumetrie_id')->unique();
+            $table->bigIncrements('volumetrie_id')->unique();
             $table->float('vol_edta',8,2);
             $table->dateTime('created_at');
 

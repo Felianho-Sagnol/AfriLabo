@@ -35,14 +35,21 @@ Route::get('/modification/{id}',[ReceptionController::class,'showDemande'])->nam
 Route::get('preparation/{name}',[PreparationController::class,'showPage'])->name('preparation');
 Route::get('/AppLogin',[PreparationController::class,'loginPage'])->name('login');
 Route::get('/PmValidate/{demande_id}',[PreparationController::class,'changePM'])->name('changePM');
-Route::get('/connexion/preparation/mecaniqueON',[PreparationController::class,'homePM'])->name('homePM');
+Route::get('/Préparation/Mecanique',[PreparationController::class,'homePagePM'])->name('homePagePM');
+Route::get('/Préparation/Chimique',[PreparationController::class,'homePagePC'])->name('homePagePC');
+Route::get('/Préparation/Chimique/detatils/demande/{demande_id}',[PreparationController::class,'demandeDetails']);
+Route::post('/Préparation/Chimique/MasseVolume/{demande_id}',[PreparationController::class,'demandeAddMasseVolume']);
+Route::get('/Préparation/Chimique/Registre/{nameRegistre}',[PreparationController::class,'registres']);
+Route::match(['post','get'],'/Préparation/Chimique/Registre/{nameRegistre}/enregistrement/{demande_id}',[PreparationController::class,'registreEnregistrement']);
+Route::match(['post','get'],'/Préparation/Chimique/RegistreAdd/humidite',[PreparationController::class,'addRegistreHumidite']);
+Route::match(['post','get'],'/Préparation/Chimique/RegistreAdd/densite',[PreparationController::class,'addRegistreDensite']);
+Route::match(['post','get'],'/Préparation/Chimique/RegistreAdd/pertefeu',[PreparationController::class,'addRegistrePertefeu']);
 
 
 
 
 
 /********************Receptor API ROUTING******************/
-Route::get('/register',[APIReceptorController::class,'registerReceptor'])->name('registerReceptor');
 Route::match(['post','get'],'/connexion/{page}',[APIReceptorController::class,'login'])->name('login');
 Route::get('/isLoggedIn',[APIReceptorController::class,'isLoggedIn'])->name('isLoggedIn');
 Route::get('/logout',[APIReceptorController::class,'logout'])->name('logout');
@@ -53,7 +60,7 @@ Route::get('/bar',[receptionMailController::class,'bar'])->name('bar');
 Route::post('/demande',[DemandeAndEchantillonController::class,'addDemand'])->name('addDemand');
 Route::get('/demandeUpdate',[DemandeAndEchantillonController::class,'updateDemand'])->name('updateDemand');
 
-Route::get('/deleteDemande',[DemandeAndEchantillonController::class,'deleteDemande'])->name('deleteDemande');
+Route::get('/demande/deleteDemande/{demande_id}',[DemandeAndEchantillonController::class,'deleteDemande'])->name('deleteDemande');
 Route::post('/echantillons/{damande_path}',[DemandeAndEchantillonController::class,'addEchantillon'])->name('addEchantillon');
 Route::get('/echantillonsUpdate',[DemandeAndEchantillonController::class,'updateEchantillon'])->name('updateEchantillon');
 

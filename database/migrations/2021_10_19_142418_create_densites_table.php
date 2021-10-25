@@ -14,11 +14,10 @@ class CreateDensitesTable extends Migration
     public function up()
     {
         Schema::create('densites', function (Blueprint $table) {
-            $table->unsignedBigInteger('densite_id')->unique();
-            $table->float('masse_creuse',8,2);
-            $table->float('masse_initiale',8,2);
+            $table->bigIncrements('densite_id')->unique();
+            $table->float('vol_v1',8,2);
             $table->float('vol_initial', 8, 2);
-            $table->float('masse_2h', 8, 2);
+            $table->float('masse', 8, 2);
             $table->float('temperature',8,2);
             $table->dateTime('created_at');
         });

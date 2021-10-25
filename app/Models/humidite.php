@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class humidite extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+
     protected $primaryKey = 'humidite_id';
 
 }

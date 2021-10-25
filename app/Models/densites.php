@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class densites extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $primaryKey = 'densite_id';
 }

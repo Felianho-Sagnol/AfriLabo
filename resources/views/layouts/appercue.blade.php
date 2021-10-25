@@ -1,5 +1,5 @@
 
-<div id="layoutAppercue" class="container">
+<div id="layoutAppercue" class="container" class="hide">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 titlePopup">Echantillon(s)</div>
     </div>
@@ -33,9 +33,10 @@
         box-shadow: 0px 0px 5px black;
         font-family: Georgia, 'Times New Roman', Times, serif;
         color: black;
-        top:-100vh;
+        top:-150vh;
         right:30vh;
         background-color:white;
+        visibility:hidden;
 
     } 
     #layoutAppercue .titlePopup{
@@ -54,5 +55,6 @@
         font-size:15px;
         font-weight:bold;
     }
+
 
 </style>

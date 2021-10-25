@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\demandes;
 use App\Models\elements;
 use App\Models\employes;
+use App\Models\echantillons;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -64,7 +65,6 @@ class APIReceptorController extends Controller
                     }else{
                         $request->session()->put('employe_id',$employe->matricule);
                     }
-                   $elements = elements::all();
                     $demandes=DB::table('demandes')->whereIn('demande_id', function($query){
                         $query->select('demande_id')
                         ->from('echantillons')
@@ -86,11 +86,18 @@ class APIReceptorController extends Controller
                     }else{
                         $request->session()->put('employe_id',$employe->matricule);
                     }
-                   
+                    $demandes=DB::table('demandes')->whereIn('demande_id', function($query){
+                        $query->select('demande_id')
+                        ->from('echantillons')
+                        ->where('pm', 1)
+                        ->where('pc', 0);
+                    })->get();
+                    $nbrDemChi=count($demandes);
+                    $nbrEchChi=DB::table('echantillons')->where('pm', 1)->where('pc', 0)->get()->count();
                     return view('preparation.homePC',[
-                        'nbEchantillon' => 20,
-                        'nbDemande' => 10,
-                        'inf' => 'les informations']
+                        'nbEchantillon' => $nbrEchChi,
+                        'nbDemande' => $nbrDemChi,
+                        'demandes' => $demandes]
                     );
                    
                 }
@@ -103,9 +110,11 @@ class APIReceptorController extends Controller
                     }
                    
                     $elements = elements::all();
+                    $nbDemande = demandes::all()->count();
+                    $nbrECH=echantillons::all()->count();
                     return view('reception.reception',[
-                        'nbEchantillon' => 0,
-                        'nbDemande' => 0,
+                        'nbEchantillon' => $nbrECH,
+                        'nbDemande' =>$nbDemande,
                         'elements' =>$elements
                     ]);
                     

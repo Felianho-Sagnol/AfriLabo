@@ -14,13 +14,13 @@ class CreatePertefeusTable extends Migration
     public function up()
     {
         Schema::create('pertefeus', function (Blueprint $table) {
-            $table->unsignedBigInteger('pertefeu_id')->unique();
+            $table->bigIncrements('pertefeu_id')->unique();
             $table->float('masse_creuse',8,2);
             $table->float('masse_initiale',8,2);
-            $table->float('vol_initial', 8, 2);
             $table->float('masse_2h', 8, 2);
             $table->float('temperature',8,2);
-            $table->float('pf_mo',8,2);
+            $table->float('pf',8,2);
+            $table->float('mo',8,2);
             $table->dateTime('created_at');
 
         });

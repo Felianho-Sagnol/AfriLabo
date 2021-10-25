@@ -1,21 +1,23 @@
-<link rel="stylesheet" href="{{asset('css/preparation/preparationPC.css')}}">
-@extends('baseLabo')
+@extends('preparation.registreBase')
     @section('titleHead')
         AfriLab|Salle de Préparation Chimique
     @endsection
     @section('titlePage')
        
-       <a class="navbar-brand" style='color:black !important;' href="#">Préparation Chimique</a> 
+       <a class="navbar-brand" href="{{route('homePagePC')}}">Préparation Chimique</a> 
+    @endsection
+    @section('registreName')
+       
+      {{$nameRegistre}}
     @endsection
 
-    @section('content')
-    <?php if (count($demandes)==0) {
+@section('content')
+
+<?php if (count($demandes)==0) {
         echo "aucun echantillon pour le moment";
     }
     else{
         ?>
-     <div class="container row">
-        <div class="col-md-9">
             <table class="table">
                 <thead>
                     <tr>
@@ -31,7 +33,7 @@
                     <?php
                     $nb=1;
                         foreach ($demandes as $demande) {
-                            $demandePath="/Préparation/Chimique/detatils/demande/".$demande->demande_id;
+                            $demandePath="Préparation/Chimique/Registre/".$nameRegistre."/"."enregistrement/".$demande->demande_id;
                             ?>
                             <tr class="line" href="1">
                                     <th scope="row">{{$nb}}</th>
@@ -39,7 +41,7 @@
                                     <td>{{$demande->demandeur}}</td>
                                     <td>{{$demande->nombre_echantillons}}</td>
                                     <td>{{$demande->created_at}}</td>
-                                    <td class="detaille"><a href="{{url($demandePath)}}" class="link">Détails</a></td>
+                                    <td class="detaille"><a href="{{url($demandePath)}}" class="link">Enregistrer</a></td>
                             </tr>
                            
                         <?php
@@ -50,14 +52,20 @@
 
                 </tbody>
             </table>
-        </div>
-        <div class="col-md-3 btns">
-        <a href="http://127.0.0.1:8000/Préparation/Chimique/Registre/humidite" class='link'><button type="button" style="opacity:1 " class="btn btn-registre btn-lg btn-block">Registre Humidité </button></a>
-            <a href="http://127.0.0.1:8000/Préparation/Chimique/Registre/densite" ><button type="button" class="btn btn-registre btn-lg btn-block">Registre de Densité </button></a>
-            <a href="http://127.0.0.1:8000/Préparation/Chimique/Registre/pertefeu" > <button type="button" class="btn btn-registre btn-lg btn-block ">Registre Perte Feu </button></a>
-        </div>
-     </div>
+            <?php }?>
+@endsection
+<style>
+  .detaille{
+    background-color: #f9bc14;
+    
+}
+.detaille a {
+  color:white;
+  font-weight:bold;
+  text-align:center !important;
 
-     <?php } ?>
-    @endsection
-
+}
+.detaille a:hover{
+  text-decoration:none;
+}
+</style>

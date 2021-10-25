@@ -7,69 +7,7 @@ body {
     overflow-x: hidden;
 }
 
-.headBar {
-    /* position: static; */
-    width: 100%;
-    height: 15%;
-    background-color: rgba(3, 73, 119, 0.5);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: black;
-    font-weight: bold;
-    margin: 2px;
-    box-shadow: 0px 0px 5px black;
-    cursor: pointer;
-    margin-bottom: 2%;
-}
-
-.title {
-    padding-top: 13px;
-    font-size: 35px;
-}
-.teteLi{
-    background-color:rgba(3, 73, 119, 0.5) !important;
-    width: 100%;
-    text-align: center;
-    margin-top: 10%;
-    border: 2px solid #f9bc14;
-    font-size: auto;
-    cursor: pointer !important;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: black;
-    text-align: center;
-    border-radius: 10px;
-
-}
-.listElement{
-    position: relative;
-    z-index: 2;
- 
-
-}
-.elementLi{
-    height: 50vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    box-shadow: 0px 0px 5px black;
-}
-
-.listElement ul li{
-    text-decoration: none;
-    border-bottom: 1px solid rgba(3, 73, 119, 0.5);
-    list-style-type: none;
-    text-align: start;
-    display: block;
-}
-.listElement ul li span{
-    color:#f9bc14;
-}
-.listElement ul{
-    background-color: white;
-    border-radius: 10px;
-    text-align: center;
-    /* visibility: hidden; */
-}
-
-.quitter img{
+.quitter {
     /* background-color: black; */
     color: white;
     margin: 2%;
@@ -132,26 +70,6 @@ body {
     transition: all 0.3 ease;
     opacity: 1;
 }
-.logout{
-    transform: translateX(25vh);
-}
-
-.logo {
-    position: absolute;
-    /* top: 2%; */
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    box-shadow: 0 3px 3px black;
-    font-size: 1.8em;
-    background-color: rgb(3, 73, 119);
-    color: #f0f6fb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .tab-body {
     position: relative;
@@ -183,23 +101,6 @@ body {
     border-bottom: 1px solid #f9bc14;
     padding: 1.1% 0;
     margin: 10px 0; 
-}
-.formReception input{
-    border: none ;
-
-}
-.formReception .rowTab .input {
-    width: 90%;
-    border: none ;
-    outline: none;
-    color: black;
-    font-weight: 550;
-    font-size: 20px;
-}
-
-.formReception .input::placeholder {
-    font-size: 15px;
-    transition: all .5 ease;
 }
 
 .link {
@@ -235,9 +136,7 @@ body {
     font-weight: bold;
     color: black;
 }
-/* .rowTab .btn{
-    background-color: red;
-} */
+
 @media screen and (max-width: 520px) {
     .container {
         width: 80%;
@@ -291,19 +190,6 @@ body {
     border: 2px solid #df4759 !important; 
     transition: .5 all ease;
 }
-#btnForm,#popup{
-    visibility: hidden;
-}
 
-/* gestion du popup  */
-.popup{
-    border: 2px solid rgb(3, 73, 119);
-    position: relative;
-    z-index: 20;
-    width: 50% ;
-    border-radius: 10px;
-    box-shadow: 0px 3px 10px black;
-    transform: translateY(-50vh);
-    background-color: white;
-}
+
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\demandes;
 use App\Models\elements;
+use App\Models\employes;
 use App\Models\echantillons;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,12 @@ class DemandeAndEchantillonController extends Controller {
             isset($_POST['etat']) && isset($_POST['nombre']) &&
             isset($_POST['identificateur'])
         ){
+            $request->validate([
+                'demandeur' => 'bail|required',
+                'numDemande' => 'bail|required',
+                'emplacement' => 'required',
+                'nombre' => 'bail|required|min:1|not_in:0'
+            ]);
             
             $verifDemand = demandes::where('demande_id',$_POST['numDemande'])->first();
             if(!empty($verifDemand)){
@@ -23,6 +30,7 @@ class DemandeAndEchantillonController extends Controller {
                 return redirect('reception');
                
             }else{
+                
                 $demande = new demandes();
                 $demande->demande_id = $_POST['numDemande'];
                 $demande->society = $_POST['societe'];
@@ -44,15 +52,20 @@ class DemandeAndEchantillonController extends Controller {
                 }
     
                 $demande->save();
-                $id = $demande->demand_id;
                 $elements = elements::all();
                 $nbDemande = demandes::all()->count();
-                $request->url('Demande/Echantillons');
+                $nbrECH=echantillons::all()->count();
+               $recepteur=employes::select('name')->where('matricule',session('employe_id'))->get();
                 return view('reception.echantillons',[
-                    'nbEchantillon' => 0,
+                    'nbEchantillon' => $nbrECH,
                     'nbDemande' => $nbDemande,
                     'elements' =>$elements,
                     'demande_id' => $_POST['numDemande'],
+                    'societe' =>$_POST['societe'],
+                    'demandeur' => $_POST['societe'],
+                    'NombreEch' => $_POST['nombre'],
+                    'recepteur' => $recepteur
+
                 ]);
             }
         }else{
@@ -60,17 +73,12 @@ class DemandeAndEchantillonController extends Controller {
         }
     }
 
-    public function deleteDemande(){
-        if(isset($_GET['demandeId'])){
-            Echantillon::where('demand_id',$_GET['demandeId'])->delete();
-            Demande::where('demand_id',$_GET['demandeId'])->delete();
-            return response()->json([
-                'success' => true,
-            ]);
-        }else{
-            return response()->json([
-                'success' => false,
-            ]);
+    public function deleteDemande($demande_id){
+        if(isset($demande_id)){
+            // echantillons::where('demand_id',$demande_id)->delete();
+            demandes::where('demande_id',$demande_id)->delete();
+            return redirect('reception/');
+
         }
     }
 
@@ -97,7 +105,7 @@ class DemandeAndEchantillonController extends Controller {
     
                 $echantillon->save();
             }
-            return redirect('reception');
+            return redirect('reception/');
 
           
         }else{

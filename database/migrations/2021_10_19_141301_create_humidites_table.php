@@ -14,7 +14,7 @@ class CreateHumiditesTable extends Migration
     public function up()
     {
         Schema::create('humidites', function (Blueprint $table) {
-            $table->unsignedBigInteger('humidite_id')->unique();
+            $table->bigIncrements('humidite_id')->unique();
             $table->float('poids_tar',8,2);
             $table->float('poids_humid',8,2);
             $table->float('poids_seche', 8, 2);
