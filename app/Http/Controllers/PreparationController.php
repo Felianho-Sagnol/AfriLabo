@@ -177,8 +177,6 @@ class PreparationController extends Controller
                     $humidite->poids_tar =$_POST[$PT];
                     $humidite->poids_humid =$_POST[$PH];
                     $humidite->poids_seche =$_POST[$PS];
-                    $humidite->poids =0;
-                    
                     $humidite->created_at = new \DateTime();
 
                     $humidite->save();
@@ -227,8 +225,6 @@ public function addRegistrePertefeu(){
             $densite->masse_creuse =$_POST[$MC];
             $densite->masse_initiale =$_POST[$Mo];
             $densite->masse_2h =$_POST[$M2h];
-            $densite->pf =0;
-            $densite->mo =0;
             $densite->created_at = new \DateTime();
 
             $densite->save();

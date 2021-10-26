@@ -19,8 +19,6 @@ class CreatePertefeusTable extends Migration
             $table->float('masse_initiale',8,2);
             $table->float('masse_2h', 8, 2);
             $table->float('temperature',8,2);
-            $table->float('pf',8,2);
-            $table->float('mo',8,2);
             $table->dateTime('created_at');
 
         });

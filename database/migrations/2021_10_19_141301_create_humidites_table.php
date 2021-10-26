@@ -18,7 +18,6 @@ class CreateHumiditesTable extends Migration
             $table->float('poids_tar',8,2);
             $table->float('poids_humid',8,2);
             $table->float('poids_seche', 8, 2);
-            $table->float('poids', 8, 2);
             $table->dateTime('created_at');
 
 
